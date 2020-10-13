@@ -217,10 +217,10 @@ p.paragraph{
     grid-column: 1 / 3;
 }
 
-/* a.btn.btn--start{
+a.btn.btn--start{
     grid-row: 3 / -1;
     grid-column: 1 / -1;
-} */
+}
 
 section.second-section{
     background: black;
@@ -255,8 +255,10 @@ section.second-section > div.info-1 > div.info-1__text > a:nth-child(4){
     font-weight: 200;
 }
 
-body > app-root > div > section.second-section > div.info-1 > div.info-1__text > a:nth-child(5){
+section.second-section > div.info-1 > div.info-1__text > a:nth-child(5){
     color: #a8a8a8;
     text-decoration: none;
     font-weight: 200;
 }
+
+/* body > app-root > app-landing-page > div > section.second-section > div.info-1 > div.info-1__text > a:nth-child(5) */
