@@ -30,14 +30,14 @@ a:hover{
     color: rgb(245, 45, 88);
 }
 
-#nav-contact-tab{
-    padding-right: 25%;
-}
-
 #nav-tab{
     justify-content: flex-end;
     /* padding-right: 5%; */
     font-size: 145%;
     padding-left: 55%;
     padding-top: 2%;
+}
+
+#nav-registro-tab{
+    padding-right: 25%;
 }

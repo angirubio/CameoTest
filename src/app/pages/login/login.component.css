@@ -1,0 +1,46 @@
+body > div{
+    margin-left: 32%;
+    margin-right: 32%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+body > div > div{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 20%;
+    padding-top: 10%;
+}
+
+body > div > div > h3{
+    text-align: center;
+    padding-bottom: 6%;
+}
+body > div > div > form > div:nth-child(1) > span{
+    background: #080808ce;
+    color: white;
+}
+body > div > div > form > div:nth-child(2) > span{
+    background: #080808ce;
+    color: white;
+}
+body > div > div > form > button{
+    border: #080808ce;
+    background: #080808ce;    
+}
+
+body > div > div > form > button:hover{
+    background: rgb(245, 45, 88);
+}
+
+body > div > div > form > button{
+    width: 100%;
+    margin-top: 7%;
+}
+
+body > div > div > form > div:nth-child(1){
+    margin-bottom: 3%;
+}
+body > div > div > form > div:nth-child(2){
+    margin-bottom: 3%;
+}
