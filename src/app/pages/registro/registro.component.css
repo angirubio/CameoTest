@@ -16,8 +16,6 @@ body > div > div{
     padding-bottom: 10%;
 }
 
-body
-
 body > div > div > h3{
     text-align: center;
     padding-bottom: 6%;
@@ -48,8 +46,8 @@ body > div > div > form > div:nth-child(6) > span{
     color: white;
 }
 body > div > div > form > button{
-    border: #a8a8a8;
-    background: #a8a8a8;
+    border: #080808ce;
+    background: #080808ce;
     
 }
 body > div > div > form > button:hover{
@@ -57,7 +55,7 @@ body > div > div > form > button:hover{
 }
 
 body > div > div > h3{
-    color: rgb(245, 45, 88);
+    color: #080808ce;
 }
 
 body > div > div > form > button{

@@ -1,14 +1,14 @@
 a{
-    color: rgb(245, 45, 88);
+    color: #080808ce;
 }
 
 a:hover{
-    color: #dee2e6;
+    color: rgb(245, 45, 88);
 }
 
-#nav-tab{
+/* #nav-tab{
     justify-content: start;
-}
+} */
 
 .nav-tabs {
     border-bottom: none;
@@ -23,9 +23,21 @@ a:hover{
 }
 
 .nav-tabs .nav-link.active {
-    color: rgb(245, 45, 88);
+    color: #080808ce;
 }
 
 .nav-tabs .nav-link.active:hover {
-    color: #dee2e6;
+    color: rgb(245, 45, 88);
+}
+
+#nav-contact-tab{
+    padding-right: 25%;
+}
+
+#nav-tab{
+    justify-content: flex-end;
+    /* padding-right: 5%; */
+    font-size: 145%;
+    padding-left: 55%;
+    padding-top: 2%;
 }
