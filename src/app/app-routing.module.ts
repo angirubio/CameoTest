@@ -14,13 +14,10 @@ const routes: Routes =
   {path: "landing-page", component: LandingPageComponent},
   {path: "home", component: HomeComponent},
   {path: "perfil", component: PerfilPropioComponent},
-<<<<<<< HEAD
   {path: "chat", component: ChatComponent},
   {path: "organizar-clases", component: OrganizarClasesComponent},
-=======
   {path: "login", component: LoginComponent},
   {path: "registro", component: RegistroComponent },
->>>>>>> 5b015dcf8dab47ab2128adc2b9ced09804010cb3
 ];
 
 @NgModule({
