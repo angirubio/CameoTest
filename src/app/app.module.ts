@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-cl
 import { MisCameosComponent } from './pages/mis-cameos/mis-cameos.component';
 import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+
 
 @NgModule({
   declarations: [
@@ -34,11 +37,14 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
     PeticionesClaseComponent,
     MisCameosComponent,
     PublicarClaseComponent,
-    PublicacionComponent
+    PublicacionComponent,
+    CarrouselComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
