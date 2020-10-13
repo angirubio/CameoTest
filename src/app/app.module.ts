@@ -11,7 +11,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PerfilPropioComponent } from './pages/perfil-propio/perfil-propio.component';
 import { PerfilAjenoComponent } from './pages/perfil-ajeno/perfil-ajeno.component';
-import { PrincipalChatComponent } from './pages/principal-chat/principal-chat.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { OrganizarClasesComponent } from './pages/organizar-clases/organizar-clases.component';
 import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-clase.component';
@@ -30,7 +29,6 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
     HomeComponent,
     PerfilPropioComponent,
     PerfilAjenoComponent,
-    PrincipalChatComponent,
     ChatComponent,
     OrganizarClasesComponent,
     PeticionesClaseComponent,

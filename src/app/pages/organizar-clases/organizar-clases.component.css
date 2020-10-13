@@ -1,0 +1,34 @@
+body{
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.encabezado{
+    display: flex;
+    flex-direction: row;
+}
+h1{
+    font-size: 72px;
+}
+.btn.btn-primary{
+    background-color: rgb(245, 45, 88);
+    border: 2px solid black;
+    float: right;
+    margin-right: 20%;
+    width: 170px;
+    height: 30px;
+    color:black;
+    align-content: center;
+}
+.container{
+    padding: 7%;
+}
+.carta{
+    float: left;
+    height: 140px;
+    width: 140px;
+}
+.card{
+    width: 150%;
+    height: 150%;
+    border-radius: 25px;
+}

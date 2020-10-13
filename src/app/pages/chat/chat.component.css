@@ -1,0 +1,127 @@
+body{
+  height: 100%;
+  padding: 4%;
+  background-color: rgba(240, 240, 240, 0.726);
+}
+
+.chat{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.card{
+  height: 550px;
+  border-radius: 4px !important;
+}
+.contacts_body{
+  padding:  0.75rem 0 !important;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+.msg_card_body{
+  overflow-y: auto;
+}
+.card-header{
+  border-radius: 4px 4px 0 0 !important;
+  border-bottom: 0 !important;
+}
+.container{
+  align-content: center;
+}
+.search{
+  border-radius: 4px 0 0 4px !important;
+  background-color: white !important;
+  border:0 !important;
+}
+.search:focus{
+   box-shadow:none !important;
+ outline:0px !important;
+}
+.contacts :hover{
+background-color:  rgb(245, 45, 88);
+}
+.type_msg{
+  border:0 !important;
+  height: 60px !important;
+  overflow-y: auto;
+}
+  .type_msg:focus{
+   box-shadow:none !important;
+ outline:0px !important;
+}
+.send_btn{
+border-radius: 0 4px 4px 0 !important;
+background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color: white !important;
+  cursor: pointer;
+}
+.search_btn{
+  border-radius: 0 4px 4px 0 !important;
+  background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color: white !important;
+  cursor: pointer;
+}
+.contacts{
+  list-style: none;
+  padding: 0;
+}
+.contacts li{
+  width: 100% !important;
+  padding: 5px 10px;
+  margin-bottom: 15px !important;
+}
+.user_img{
+  height: 60px;
+  width: 60px;
+}
+.user_info{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 15px;
+}
+.user_info span{
+font-size: 20px;
+}
+.user_info p{
+font-size: 10px;
+color: #A8A8A8;
+}
+.btn-danger{
+  color: #fff;
+  background-color: rgb(245, 45, 88) !important;
+  border-color: rgb(245, 45, 88) !important;
+}
+.msg_cotainer{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 10px;
+border-radius: 4px;
+background-color:rgb(245, 45, 88);
+padding: 10px;
+position: relative;
+}
+.msg_cotainer_send{
+margin-top: auto;
+margin-bottom: auto;
+margin-right: 10px;
+border-radius: 4px;
+background-color: #A8A8A8;
+padding: 10px;
+position: relative;
+}
+.msg_head{
+position: relative;
+}
+#action_menu_btn{
+position: absolute;
+right: 4%;
+top: 35%;
+cursor: pointer;
+font-size: 15px;
+}
+@media(max-width: 576px){
+.contacts_card{
+margin-bottom: 15px !important;
+}
+}
