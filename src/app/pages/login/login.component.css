@@ -6,8 +6,8 @@ body > div{
 }
 
 body > div > div{
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-bottom: 20%;
     padding-top: 10%;
 }
@@ -43,4 +43,20 @@ body > div > div > form > div:nth-child(1){
 }
 body > div > div > form > div:nth-child(2){
     margin-bottom: 3%;
+}
+
+.alreadyLogged{
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+    font-size: 125%;    
+}
+
+body > div > div > div > a{
+    text-decoration: none;
+    color: rgb(245, 45, 88);
+}
+
+body > div > div > div > a:hover{
+    color: #080808ce;
 }
