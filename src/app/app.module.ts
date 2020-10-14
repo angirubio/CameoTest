@@ -19,7 +19,6 @@ import { MisCameosComponent } from './pages/mis-cameos/mis-cameos.component';
 import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 import { HeaderActiveComponent } from './components/header-active/header-active.component';
-import { HeaderLandingComponent } from './components/header-landing/header-landing.component';
 
 
 @NgModule({
@@ -40,7 +39,6 @@ import { HeaderLandingComponent } from './components/header-landing/header-landi
     PublicarClaseComponent,
     PublicacionComponent,
     HeaderActiveComponent,
-    HeaderLandingComponent,
   ],
   imports: [
     BrowserModule,
