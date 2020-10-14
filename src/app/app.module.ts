@@ -36,7 +36,7 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
     PeticionesClaseComponent,
     MisCameosComponent,
     PublicarClaseComponent,
-    PublicacionComponent
+    PublicacionComponent,
   ],
   imports: [
     BrowserModule,
