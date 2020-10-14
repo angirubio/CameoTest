@@ -1,4 +1,9 @@
-*,
+/* MEDIA QUERIES */
+
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+
+    *,
 *::before,
 *::after{
     margin: 0;
@@ -258,4 +263,58 @@ section.second-section > div.info-1 > div.info-1__text > a:nth-child(5){
     color: #a8a8a8;
     text-decoration: none;
     font-weight: 200;
-}
+}   
+  
+  }
+
+  /************Fin Escritorio**********/
+  
+  
+  
+  /* Tablet */
+  /*Portrait*/
+  @media (min-width: 768px) and (max-width: 991.98px) and (orientation: portrait) {
+    body {    
+    
+      background: orange;
+    }
+
+    html{
+        background: black;
+    }
+  }
+  
+  
+  /* FINAL Tablet */
+  
+  /*landscape*/
+  @media (min0-width: 991.98px) and (max-width: 1199.98px) and (orientation: landscape) {
+    body {
+      background: blue;
+    }
+
+   
+  }
+  /*fin tablet*/
+  
+  /*movil*/
+  /*Portrait*/
+  /*Default*/
+  @media (max-width: 575.98px) and (orientation: portrait) {
+    body {
+      background: green;
+    }
+   
+  }
+  /*landscape*/
+  @media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
+    body {
+      background: black;
+    }
+  }
+  /*fin movil*/
+
+
+
+
+
