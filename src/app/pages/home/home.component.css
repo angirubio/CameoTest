@@ -1,0 +1,42 @@
+body{
+    padding-top: 5%;
+    padding-left: 5%;
+}
+h1{
+    font-size: 72px;
+    color: rgb(245, 45, 88);
+}
+h4{
+    padding-top: 10%;
+}
+.encabezado{
+    display: flex;
+    flex-direction: row;
+}
+.buscador{
+    margin-top: 3%;
+    margin-left: 15%;
+    width: 30%;
+}
+.search-slt{
+    border-radius:0;
+}
+.wrn-btn{
+    width: 100%;
+    border-radius:0;
+}
+.publicaciones{
+    padding: 5%;
+}
+.publicacion1{
+    padding-top: 5%;
+    padding-right: 5%;
+}
+.publicacion2{
+    padding-left: 15%;
+    padding-right: 5%;
+}
+.publicacion3{
+    padding-top: 15%;
+    padding-left: 5%;
+}

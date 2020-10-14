@@ -1,0 +1,43 @@
+a{
+    color: #080808ce;
+}
+
+a:hover{
+    color: rgb(245, 45, 88);
+}
+
+/* #nav-tab{
+    justify-content: start;
+} */
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link.active {
+    border-color: white;
+}
+
+.nav-tabs .nav-link {
+    border: white;
+}
+
+.nav-tabs .nav-link.active {
+    color: #080808ce;
+}
+
+.nav-tabs .nav-link.active:hover {
+    color: rgb(245, 45, 88);
+}
+
+#nav-tab{
+    justify-content: flex-end;
+    /* padding-right: 5%; */
+    font-size: 145%;
+    padding-left: 55%;
+    padding-top: 2%;
+}
+
+#nav-registro-tab{
+    padding-right: 25%;
+}

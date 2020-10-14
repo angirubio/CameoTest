@@ -1,1 +1,35 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+<body>
+    <app-header></app-header>
+    <div class="card">
+        <div class="card-body">
+            <h3>Login</h3>
+            <form>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="nombreUsuario" type="text" class="form-control" name="nombreUsuario" placeholder="Nombre de usuario">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña">
+                  </div> 
+                  <button type="submit" class="btn btn-danger">Login</button>
+               </form>
+               <div class="alreadyLogged">
+                <a routerLink="/registro">¿ Aún no te has registrado ?</a>
+            </div>
+        </div>
+      </div>
+   <app-footer></app-footer>
+</body>
+</html>
+
+
