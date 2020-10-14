@@ -40,3 +40,7 @@ h4{
     padding-top: 15%;
     padding-left: 10%;
 }
+
+body > div.encabezado > div.buscador > section > div > form > div > div > div > div.col-lg-2.col-md-2.col-sm-2.p-0 > button{
+    background: rgb(245, 45, 88);
+}
