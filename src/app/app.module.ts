@@ -18,7 +18,6 @@ import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-cl
 import { MisCameosComponent } from './pages/mis-cameos/mis-cameos.component';
 import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
-import { CarrouselComponent } from './components/carrousel/carrousel.component';
 
 
 @NgModule({
@@ -37,8 +36,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
     PeticionesClaseComponent,
     MisCameosComponent,
     PublicarClaseComponent,
-    PublicacionComponent,
-    CarrouselComponent
+    PublicacionComponent
   ],
   imports: [
     BrowserModule,
