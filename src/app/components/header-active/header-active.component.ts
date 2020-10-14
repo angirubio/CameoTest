@@ -6,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-active.component.css']
 })
 export class HeaderActiveComponent implements OnInit {
-  navbarOpen = false; 
-
-  toggleNavbar () { 
-    this.navbarOpen =! this.navbarOpen; 
-  } 
+  
+  // selected = 'option2';
 
   constructor() { }
 
