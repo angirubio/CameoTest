@@ -7,6 +7,8 @@ import { OrganizarClasesComponent } from './pages/organizar-clases/organizar-cla
 import { PerfilPropioComponent } from './pages/perfil-propio/perfil-propio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-clase.component';
+import { MisCameosComponent } from './pages/mis-cameos/mis-cameos.component';
 
 const routes: Routes =
 [
@@ -17,7 +19,9 @@ const routes: Routes =
   {path: "chat", component: ChatComponent},
   {path: "organizar-clases", component: OrganizarClasesComponent},
   {path: "login", component: LoginComponent},
-  {path: "registro", component: RegistroComponent },
+  {path: "registro", component: RegistroComponent},
+  {path: "peticiones", component: PeticionesClaseComponent},
+  {path: "mis-cameos", component: MisCameosComponent}
 ];
 
 @NgModule({
