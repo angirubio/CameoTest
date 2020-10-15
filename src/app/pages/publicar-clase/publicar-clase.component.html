@@ -1,41 +1,40 @@
 
-<div id="generalContainer">
-    
-    <div id="containerBoton">
-        <button type="button" id="botonPublicar" class="btn btn-dark">publicar clase</button>
-    </div>
 
-    <div id="contenedorClase">
-        <div id="contenedorFotoClase">
-            <img src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg">
-        </div>
 
-        <div id="contenedorTexto">
-            <div id="contenedorSubirFoto">
-                <h6>Sube una foto</h6>
-                <input type="text" placeholder="Insertar"> 
-            </div>
-
-            <div id="contenedorTitulo">
-                <h6>¿Qué quieres enseñar?</h6>
-                <input type="text" placeholder="Introduce una clase">
-            </div>
-
-            <div id="contenedorPrecio">
-                <h6>Establece un precio</h6>
-                <input type="text" placeholder="Añadir">
-            </div>
-        </div>
-
-        <div id="containerAbajo">
-            <div id="contenedorUbi">
-                <h6>Introduce ubicación</h6>
-                <input type="text" placeholder="Añadir">
-            </div>
-        </div>
-     
-
+<mat-card class="main-content-card">
+    <button mat-raised-button color="accent" class="button-publish">Publicar Clase</button>
+    <mat-card-content class="content-column">
         
-    </div>
-</div>
+    <mat-card class="content-card-row">      
+        <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="publicar_clase">
+        <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+        <form class="example-form">            
+            <mat-form-field class="example-full-width">
+              <mat-label>Título</mat-label>
+              <textarea matInput placeholder="Escribe título de clase..."></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="precio" value="€">
+              </mat-form-field>
+                <mat-label>Subir Foto</mat-label>
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon> camera_alt </mat-icon>
+              </button>
+          </form>
+    </mat-card>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+   <!-- <div class="low">
+    <mat-form-field class="example-full-width">
+        <mat-label>Precio</mat-label>
+        <input matInput placeholder="precio" value="€">
+      </mat-form-field>
+   </div> -->
+</mat-card-content>
+</mat-card>
 

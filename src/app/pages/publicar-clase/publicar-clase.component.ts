@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publicar-clase.component.css']
 })
 export class PublicarClaseComponent implements OnInit {
-
+  hide = true;
   constructor() { }
 
   ngOnInit(): void {
