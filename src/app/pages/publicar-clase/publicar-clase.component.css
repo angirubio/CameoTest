@@ -1,6 +1,6 @@
 
 .main-content-card{
-    margin: 5% 15% 5% 15%;
+    margin: 1% 15% 5% 15%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -24,15 +24,15 @@
 
   .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent{
       background: black;
-      margin-top: 20%;
+      margin-top: 25%;
       margin-right: 30px;
-      padding-right: 15%;
+      padding-right: 17%;
   }
 
   .mat-card.mat-focus-indicator.content-card-row{
       display: flex;
       flex-direction: row;
-      margin-right: 65%;
+      margin-right: 64%;
       /* margin-bottom: 25%; */
   }
 
@@ -56,7 +56,8 @@
 
   .example-form.ng-untouched.ng-pristine.ng-valid{
     margin-left: 70%;
-    margin-top: 22%;
+    font-size: 135%;
+    /* margin-top: 22%; */
   }
 
   .mat-focus-indicator.mat-mini-fab.mat-button-base.mat-primary{
@@ -68,15 +69,34 @@
   .secondInfoPublish{
     display: flex;
     flex-direction: row-reverse;
-    padding-right: 50%;
+    padding-right: 65%;
     margin-bottom: 15%;
+    margin-top: 2%;
   }
 
-  /* .mat-form-field.ng-tns-c69-2.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder{
-    width: 40%;
-    margin-bottom: 12%;
-    margin-left: 5%;
-  } */
+  .mat-form-field.example-full-width.ng-tns-c69-2.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    font-size: 115%;
+  }
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.mat-accordion.example-headers-align{
+    margin-top: 8%;
+}
 
   
   
