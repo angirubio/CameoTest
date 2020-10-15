@@ -1,0 +1,51 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="header-active">
+  <button mat-button color="basic" routerLink="/home">Cameo</button>
+  <button mat-button [matMenuTriggerFor]="menu" routerLink="/chat">Chat</button>
+  <button mat-button [matMenuTriggerFor]="menu" color="basic"><mat-icon>menu</mat-icon></button>
+  <mat-menu #menu="matMenu" color="dark">
+    <button mat-menu-item routerLink="/perfil">Mi perfil</button>
+    <button mat-menu-item routerLink="/perfil">Peticiones de clase</button>
+    <button mat-menu-item routerLink="/perfil">Publicar clase</button>
+    <button mat-menu-item routerLink="/organizar-clases">Organizar mis clases</button>
+    <button mat-menu-item routerLink="/perfil">Mis cameos</button>
+    <button mat-menu-item routerLink="/landing-page"><mat-icon color="warn"> exit_to_app </mat-icon></button>
+  </mat-menu>
+</div>
+
+
+<!-- Botones -->
+
+<!-- <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button> -->
+<!-- #docregion menu-position -->
+<!-- <mat-menu #aboveMenu="matMenu" yPosition="above"> -->
+<!-- #enddocregion menu-position -->
+  <!-- <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+
+<button mat-button [matMenuTriggerFor]="afterMenu">After</button>
+<mat-menu #afterMenu="matMenu" xPosition="after">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu> -->
+
+
+
+
+
+

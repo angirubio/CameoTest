@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +24,8 @@ import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-cl
 import { MisCameosComponent } from './pages/mis-cameos/mis-cameos.component';
 import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
+import { HeaderActiveComponent } from './components/header-active/header-active.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -37,12 +45,20 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
     MisCameosComponent,
     PublicarClaseComponent,
     PublicacionComponent,
+    HeaderActiveComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

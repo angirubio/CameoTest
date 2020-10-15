@@ -41,3 +41,14 @@ a:hover{
 #nav-registro-tab{
     padding-right: 25%;
 }
+
+#nav-landing-tab{
+    border-right: 2px solid;
+    padding-right: 4%;
+}
+
+#nav-login-tab{
+    border-right: 2px solid;
+    padding-left: 4%;
+    padding-right: 4%;
+}
