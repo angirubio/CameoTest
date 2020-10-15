@@ -29,6 +29,11 @@
       padding-right: 17%;
   }
 
+  .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent:hover{
+    background: rgb(245, 45, 88);
+    color: black;
+  }
+
   .mat-card.mat-focus-indicator.content-card-row{
       display: flex;
       flex-direction: row;
