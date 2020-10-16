@@ -13,8 +13,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatStepperModule} from '@angular/material/stepper';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -33,7 +31,8 @@ import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.co
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 import { HeaderActiveComponent } from './components/header-active/header-active.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -53,7 +52,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MisCameosComponent,
     PublicarClaseComponent,
     PublicacionComponent,
-    HeaderActiveComponent,
+    HeaderActiveComponent
   ],
   imports: [
     BrowserModule,
@@ -72,9 +71,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDatepickerModule,
     MatNativeDateModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDividerModule
   ],
   providers: [
+    MatButtonModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatCardModule,
+    MatGridListModule
   ],
   bootstrap: [AppComponent]
 })

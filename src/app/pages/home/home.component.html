@@ -34,64 +34,193 @@
             </section>
         </div>
     </div>
-    
+
     <div class="publicaciones">
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="publicacion1">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src="https://www.65ymas.com/uploads/s1/78/04/3/mejores-aplicaciones-para-encontrar-aparcamiento-bigstock.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Maestría aparcando en batería</p>
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-8">
+              <div class="row space-16">&nbsp;</div>
+              <div class="row">
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
                 </div>
-                <div class="publicacion2">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src="https://www.bezzia.com/wp-content/uploads/2019/03/tender-ropa.jpg" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Tender bien, planchar menos.</p>
-                        </div>
-                    </div>
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
                 </div>
-                <div class="publicacion3">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src="data:image/jpeg;base64,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" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Papiroflexia de helipuertos.</p>
-                        </div>
-                    </div>
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
                 </div>
+              </div>
+              <div class="col-md-2">&nbsp;</div>
+              <div class="row">
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+                <div class="col-sm-4">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                          <p>
+                            Clase para que tu perro aprenda a traerte el periódico.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button routerLink="/publicacion">Ver</button>
+                          <button mat-button routerLink="/chat">Contactar</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+              </div>
+              <div class="col-md-2">&nbsp;</div>
             </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="publicacion1">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src="data:image/jpeg;base64,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" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Retratos de la Mona Lisa en Paint</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="publicacion2">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src="https://www.pingodoce.pt/wp-content/uploads/2017/09/omelete.jpg" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Aprende a hacer una tortilla sin huevos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="publicacion3">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRldFNLaiUbCg1rjOMbXYV5x9Q7smhaLF-R1w&usqp=CAU" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Crea tu propio amigurumis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </div>
     </div>
 </body>
 <app-footer></app-footer>

@@ -6,8 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-ajeno.component.css']
 })
 export class PerfilAjenoComponent implements OnInit {
+  
+  public cameosHidden: boolean;
+  public clasesHidden: boolean;
 
-  constructor() { }
+  constructor()
+  {
+    this.cameosHidden = false;
+    this.clasesHidden = false;
+  }
+
+  hideCameos(){
+    this.cameosHidden = true;
+  }
+  hideClases(){
+    this.clasesHidden = true;
+  }
 
   ngOnInit(): void {
   }

@@ -25,16 +25,8 @@
     color: rgb(245, 45, 88);
 }
 
-.mat-focus-indicator.mat-menu-item.ng-tns-c82-0{
-    color: white;
-}
-
 .mat-focus-indicator.mat-menu-item.ng-tns-c82-0:hover{
     color: rgb(245, 45, 88);
-}
-
-.mat-focus-indicator.mat-menu-item.ng-tns-c82-0{
-    background: black;
 }
 
 .mat-icon.mat-warn {
@@ -44,8 +36,3 @@
 /* .cdk-overlay-pane{
     background: black;
 } */
-
-
-#mat-menu{
-    background: black;
-}

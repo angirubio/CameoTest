@@ -4,7 +4,11 @@
 		<title>Chat</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	</head>
+	
+	<app-header-active></app-header-active>
+
 	<body>
+
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">
 				<div class="col-md-4 col-xl-3 chat"><div class="card mb-sm-3 mb-md-0 contacts_card">
@@ -66,13 +70,13 @@
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight">
 								<div class="img_cont">
-									<img src="https://i.pinimg.com/originals/fa/34/07/fa3407bbfc876fd7e1019238c5b6984f.jpg" class="rounded-circle user_img">
+									<img routerLink="/user" src="https://i.pinimg.com/originals/fa/34/07/fa3407bbfc876fd7e1019238c5b6984f.jpg" class="rounded-circle user_img">
 								</div>
 								<div class="user_info">
 									<span>Roberta</span>
 								</div>
 							</div>
-							<span id="action_menu_btn"><i class="fas fa-trash-alt"></i></span>
+							<span id="action_menu_btn"><mat-icon>delete</mat-icon></span>
 						</div>
 						<div class="card-body msg_card_body">
 							<div class="d-flex justify-content-start mb-4">

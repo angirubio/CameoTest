@@ -13,23 +13,21 @@ import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.co
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 
-
 const routes: Routes =
 [
   {path: "", redirectTo: "/landing-page", pathMatch:'full'},
   {path: "landing-page", component: LandingPageComponent},
   {path: "home", component: HomeComponent},
   {path: "perfil", component: PerfilPropioComponent},
-  {path: "user", component: PerfilAjenoComponent},
+  {path: "usuario", component: PerfilAjenoComponent},
   {path: "publicar", component: PublicarClaseComponent},
-  {path: "publicacion", component: PublicacionComponent},
-
   {path: "chat", component: ChatComponent},
   {path: "organizar-clases", component: OrganizarClasesComponent},
   {path: "login", component: LoginComponent},
   {path: "registro", component: RegistroComponent},
   {path: "peticiones", component: PeticionesClaseComponent},
-  {path: "mis-cameos", component: MisCameosComponent}
+  {path: "mis-cameos", component: MisCameosComponent},
+  {path: "publicacion", component: PublicacionComponent}
 ];
 
 @NgModule({
