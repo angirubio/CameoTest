@@ -1,8 +1,14 @@
 body{
   height: 100%;
-  padding: 4%;
 }
-
+.encabezado{
+  padding-left: 10%;
+  display: flex;
+  flex-direction: row;
+}
+h1{
+  font-size: 72px;
+}
 .chat{
   margin-top: auto;
   margin-bottom: auto;
@@ -120,7 +126,7 @@ cursor: pointer;
 font-size: 15px;
 }
 @media(max-width: 576px){
-.contacts_card{
-margin-bottom: 15px !important;
-}
+  .contacts_card{
+  margin-bottom: 15px !important;
+  }
 }

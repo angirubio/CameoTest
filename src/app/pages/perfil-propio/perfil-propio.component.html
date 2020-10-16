@@ -1,46 +1,76 @@
 <app-header-active></app-header-active>
 
+<div class="encabezado">
+  <div>
+      <h1>tu perfil</h1>
+  </div>
+</div>
+
 <div id="metaContainer">
-
-
     <div id="containerFoto">
-        <img src="https://previews.123rf.com/images/atdigit/atdigit1801/atdigit180100120/93297984-handsome-girl-posing-in-a-city-streets-with-car-traffic-on-the-blurred-background-she-is-wearing-blu.jpg">
+        <img src="https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b">
         <div id="#seguir" >
-            <button type="button" id="botonSeguir" class="btn btn-dark">cambiar foto</button>
-        </div> 
-
+            <mat-label>Subir Foto</mat-label>
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+              <mat-icon> camera_alt </mat-icon>
+            </button>
+        </div>
     </div>
-    
     <div id="container">
         <div id="usuario">
-            <h6>usuario</h6>
-            <h4>Elvira</h4>
+            <mat-form-field class="example-full-width">
+                <mat-label><h4>Ricardito</h4></mat-label>
+                <textarea matInput placeholder="Escribe tu nombre de usuario..."></textarea>
+            </mat-form-field>
         </div>
-    
         <div id="nivel">
-            <h6>nivel</h6>
-            <h4>crack</h4>
+            <mat-form-field class="example-full-width">
+                <mat-label><h4>nivel: hacker</h4></mat-label>
+                <textarea matInput placeholder="¿cuál es tu nivel?"></textarea>
+            </mat-form-field>
         </div>
-    
         <div id="followers">
             <h6>followers</h6>
-            <h4>poquitos</h4>
+            <h4>3005</h4>
         </div>
-    
-    
         <div id="following">
             <h6>folowing</h6>
-            <h4>stalker</h4>
+            <h4>510</h4>
         </div>
-    
-        
         <div id="doctrinas">
-            <h6>doctrinas</h6>
-            <h4>#paint #papiroflexia</h4>
+            <mat-form-field class="example-full-width">
+                <mat-label><h4>#toppings</h4></mat-label>
+                <textarea matInput placeholder="#doctrinas"></textarea>
+            </mat-form-field>
         </div>
-
     </div>
+</div>
 
+<mat-divider></mat-divider>
+
+<div id="metaContainer">
+    <div id="container">
+        <h3>datos de tu cuenta:</h3>
+        <mat-form-field class="example-full-width">
+            <mat-label><h5>Ricardo</h5></mat-label>
+            <textarea matInput placeholder="Cambiar nombre:"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label><h5>Ricardez</h5></mat-label>
+            <textarea matInput placeholder="Cambiar apellido"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label><h5>ricardoeldeloshelados@yahoo.com</h5></mat-label>
+            <textarea matInput placeholder="Cambiar email:"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label><h5>**********</h5></mat-label>
+            <textarea matInput placeholder="¿Quieres cambiar la contraseña?"></textarea>
+        </mat-form-field>
+    </div>
 </div>
 
 <app-footer></app-footer>

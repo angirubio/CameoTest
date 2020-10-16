@@ -1,13 +1,20 @@
-.main-content-card{
-    margin: 1% 15% 5% 15%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.encabezado{
+  padding-left: 5%;
+  display: flex;
+  flex-direction: row;
 }
-  
-  .example-full-width {
-    width: 100%;
-  }
+h1{
+  font-size: 72px;
+}
+.main-content-card{
+  margin: 1% 15% 5% 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.example-full-width {
+  width: 100%;
+}
 
   .content-column{
       display: flex;
