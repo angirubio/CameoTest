@@ -63,3 +63,17 @@ h1{
 .claseCancelated{
     background-color: white;
 }
+
+.datosDrch{
+    display: contents;
+}
+
+.btn.btn-dark{
+    margin-right: 5%;
+}
+
+body > div.publicaciones > div:nth-child(1) > div.row > div > div > div > div.datosArriba > div.datosDrch > button:nth-child(1){
+    margin-right: 5%;
+    margin-left: 4%;
+}
+
