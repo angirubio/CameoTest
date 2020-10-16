@@ -47,6 +47,7 @@
 
   .mat-card-image{
     height: 117%;
+    width: 135%;
   }
 
   .mat-card.mat-focus-indicator.main-content-card{
@@ -64,7 +65,7 @@
   }
 
   .example-form.ng-untouched.ng-pristine.ng-valid{
-    margin-left: 70%;
+    margin-left: 60%;
     font-size: 135%;
     margin-top: 25%;
     /* margin-top: 22%; */
