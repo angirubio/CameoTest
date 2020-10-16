@@ -1,92 +1,101 @@
 
-body > div{
-    margin-left: 27%;
-    margin-right: 27%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
+/* MEDIA QUERIES */
 
-body > div > div{
-    padding-left: 18%;
-    padding-right: 18%;
-    padding-bottom: 10%;
-}
-
-body > div > div > h3{
-    text-align: center;
-    padding-bottom: 6%;
-}
-
-body > div > div > form > div:nth-child(1) > span{
-    background: #080808ce;
-    color: white;
-}
-body > div > div > form > div:nth-child(2) > span{
-    background: #080808ce;
-    color: white;
-}
-body > div > div > form > div:nth-child(3) > span{
-    background: #080808ce;
-    color: white;
-}
-body > div > div > form > div:nth-child(4) > span{
-    background: #080808ce;
-    color: white;
-}
-body > div > div > form > div:nth-child(5) > span{
-    background: #080808ce;
-    color: white;
-}
-body > div > div > form > div:nth-child(6) > span{
-    background: #080808ce;
-    color: white;
-}
-body > div > div > form > button{
-    border: #080808ce;
-    background: #080808ce;
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+    body > div{
+        margin-left: 27%;
+        margin-right: 27%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
     
-}
-body > div > div > form > button:hover{
-    background: rgb(245, 45, 88);
+    body > div > div{
+        padding-left: 18%;
+        padding-right: 18%;
+        padding-bottom: 10%;
+    }
+    
+    body > div > div > h3{
+        text-align: center;
+        padding-bottom: 6%;
+    }
+    
+    body > div > div > form > div:nth-child(1) > span{
+        background: #080808ce;
+        color: white;
+    }
+    body > div > div > form > div:nth-child(2) > span{
+        background: #080808ce;
+        color: white;
+    }
+    body > div > div > form > div:nth-child(3) > span{
+        background: #080808ce;
+        color: white;
+    }
+    body > div > div > form > div:nth-child(4) > span{
+        background: #080808ce;
+        color: white;
+    }
+    body > div > div > form > div:nth-child(5) > span{
+        background: #080808ce;
+        color: white;
+    }
+    body > div > div > form > div:nth-child(6) > span{
+        background: #080808ce;
+        color: white;
+    }
+    body > div > div > form > button{
+        border: #080808ce;
+        background: #080808ce;
+        
+    }
+    body > div > div > form > button:hover{
+        background: rgb(245, 45, 88);
+    }
+    
+    body > div > div > h3{
+        color: #080808ce;
+    }
+    
+    body > div > div > form > button{
+        width: 100%;
+        margin-top: 7%;
+    }
+    
+    body > div > div > form > div:nth-child(1){
+        margin-bottom: 3%;
+    }
+    body > div > div > form > div:nth-child(2){
+        margin-bottom: 3%;
+    }
+    body > div > div > form > div:nth-child(3){
+        margin-bottom: 3%;
+    }
+    body > div > div > form > div:nth-child(4){
+        margin-bottom: 3%;
+    }
+    body > div > div > form > div:nth-child(5){
+        margin-bottom: 3%;
+    }
+    
+    .alreadyRegistered{
+        display: flex;
+        justify-content: center;
+        padding-top: 15%;
+        font-size: 125%;    
+    }
+    
+    body > div > div > div > a{
+        text-decoration: none;
+        color: rgb(245, 45, 88);
+    }
+    
+    body > div > div > div > a:hover{
+        color: #080808ce;
+    }
+    
+
 }
 
-body > div > div > h3{
-    color: #080808ce;
-}
 
-body > div > div > form > button{
-    width: 100%;
-    margin-top: 7%;
-}
-
-body > div > div > form > div:nth-child(1){
-    margin-bottom: 3%;
-}
-body > div > div > form > div:nth-child(2){
-    margin-bottom: 3%;
-}
-body > div > div > form > div:nth-child(3){
-    margin-bottom: 3%;
-}
-body > div > div > form > div:nth-child(4){
-    margin-bottom: 3%;
-}
-body > div > div > form > div:nth-child(5){
-    margin-bottom: 3%;
-}
-
-.alreadyRegistered{
-    display: flex;
-    justify-content: center;
-    padding-top: 15%;
-    font-size: 125%;    
-}
-
-body > div > div > div > a{
-    text-decoration: none;
-    color: rgb(245, 45, 88);
-}
-
-body > div > div > div > a:hover{
-    color: #080808ce;
-}

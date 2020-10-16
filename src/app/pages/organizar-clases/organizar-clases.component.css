@@ -1,49 +1,57 @@
-body{
-    padding-top: 5%;
-    padding-left: 5%;
-}
-.encabezado{
-    display: flex;
-    flex-direction: row;
-}
-h1{
-    font-size: 72px;
-}
-.btn.btn-primary{
-    background-color: rgb(245, 45, 88);
-    border: 2px solid black;
-    margin-left: 30%;
-    margin-top: 5%;
-    width: 200px;
-    height: 37px;
-    color:black;
-    border-radius: 12px;
-}
-.btn.btn-primary.p{
 
-    display: inline-block; 
+/* MEDIA QUERIES */
+
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+    body{
+        padding-top: 5%;
+        padding-left: 5%;
+    }
+    .encabezado{
+        display: flex;
+        flex-direction: row;
+    }
+    h1{
+        font-size: 72px;
+    }
+    .btn.btn-primary{
+        background-color: rgb(245, 45, 88);
+        border: 2px solid black;
+        margin-left: 30%;
+        margin-top: 5%;
+        width: 200px;
+        height: 37px;
+        color:black;
+        border-radius: 12px;
+    }
+    .btn.btn-primary.p{
+    
+        display: inline-block; 
+    }
+    .publicaciones{
+        padding: 2%;
+    }
+    .container{
+        padding-top: 3%;
+    }
+    .carta{
+        float: left;
+        height: 140px;
+        width: 140px;
+        border: 2px solid rgb(245, 45, 88);
+    }
+    .card{
+        width: 150%;
+        height: 100%;
+        border: 2px solid black;
+        border-radius: 25px;
+    }
+    .datos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 1%;
+    }
+
 }
-.publicaciones{
-    padding: 2%;
-}
-.container{
-    padding-top: 3%;
-}
-.carta{
-    float: left;
-    height: 140px;
-    width: 140px;
-    border: 2px solid rgb(245, 45, 88);
-}
-.card{
-    width: 150%;
-    height: 100%;
-    border: 2px solid black;
-    border-radius: 25px;
-}
-.datos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 1%;
-}
+

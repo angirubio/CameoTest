@@ -1,62 +1,73 @@
-#metaContainer
-{
-    display: flex; 
-    flex-direction: row;
-    padding-left: 350px;
-    padding-top: 50px;
-    height: 600px;
-    min-width: 300px;
+
+/* MEDIA QUERIES */
+
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+
+    #metaContainer
+    {
+        display: flex; 
+        flex-direction: row;
+        padding-left: 350px;
+        padding-top: 50px;
+        height: 600px;
+        min-width: 300px;
+    }
+    
+    #container
+    {
+        width: 400px;
+        height: 500px;
+        padding-left: 40px;
+    }
+    
+    img
+    {
+        max-width: 330px;
+        max-height: 430px;
+    }
+    
+    #containerFoto
+    {
+        width: 350px ;
+        height: 450px;
+        border-style: solid;
+        border-width: 10px;
+        border-color: rgb(245, 45, 88);
+        text-align: center;
+    }
+    
+    h6
+    {
+        color: grey;
+    }
+    
+    button
+    {
+       
+        border-radius: 8px;
+        margin-left: 150px;
+        margin-top: 25px; 
+        background-color: black;
+    }
+    
+    
+    #usuario, #nivel, #followers, #following, #doctrinas
+    {
+        padding-top: 20px;
+    }
+    
+    #botonSeguir
+    {
+        height: 40px;
+        width: 120px;
+        border-radius: 8px;
+        margin-top: -90px; 
+        margin-left: 0px;
+        background-color: black;
+    }
+    
+
 }
 
-#container
-{
-    width: 400px;
-    height: 500px;
-    padding-left: 40px;
-}
 
-img
-{
-    max-width: 330px;
-    max-height: 430px;
-}
-
-#containerFoto
-{
-    width: 350px ;
-    height: 450px;
-    border-style: solid;
-    border-width: 10px;
-    border-color: rgb(245, 45, 88);
-    text-align: center;
-}
-
-h6
-{
-    color: grey;
-}
-
-button
-{
-   
-    border-radius: 8px;
-    margin-left: 150px;
-    margin-top: 25px; 
-    background-color: black;
-}
-
-
-#usuario, #nivel, #followers, #following, #doctrinas
-{
-    padding-top: 20px;
-}
-
-#botonSeguir
-{
-    height: 40px;
-    width: 120px;
-    border-radius: 8px;
-    margin-top: -90px; 
-    margin-left: 0px;
-    background-color: black;
-}

@@ -1,4 +1,8 @@
-.main-content-card{
+/* MEDIA QUERIES */
+
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+  .main-content-card{
     margin: 1% 15% 5% 15%;
     display: flex;
     flex-direction: row;
@@ -102,3 +106,7 @@
 .mat-accordion.example-headers-align{
     margin-top: 8%;
 }
+
+
+}
+

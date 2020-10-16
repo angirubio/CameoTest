@@ -1,79 +1,89 @@
-body{
-    padding-top: 5%;
-    padding-left: 5%;
-}
-.encabezado{
-    display: flex;
-    flex-direction: row;
-}
-h1{
-    font-size: 72px;
-}
-.btn.btn-dark{
-    background-color: white;
-    border: 2px solid black;
-    width: 170px;
-    height: 37px;
-    color:black;
-    border-radius: 12px;
-}
-.btn.btn-dark:hover{
-    background-color: black;
-    color: white;
-}
-.publicaciones{
-    padding: 2%;
-}
-.container{
-    padding-top: 3%;
-}
-.carta{
-    float: left;
-    height: 140px;
-    width: 140px;
-    border: 2px solid rgb(245, 45, 88);
-}
-.card{
-    width: 150%;
-    height: 100%;
-    border: 2px solid black;
-    border-radius: 25px;
-}
-.datos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 1%;
-}
-.datosHora, .datosUbicacion, .datosPrecio{
-    padding-left: 7%;
-    border-left: 2px solid black;
-}
-.datosArriba{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.datosIzq{
-    padding-right: 20%;
-}
-.claseConfirmated{
-    background-color: rgba(245, 45, 88, 0.89);
-}
-.claseCancelated{
-    background-color: white;
+/* MEDIA QUERIES */
+
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+    body{
+        padding-top: 5%;
+        padding-left: 5%;
+    }
+    .encabezado{
+        display: flex;
+        flex-direction: row;
+    }
+    h1{
+        font-size: 72px;
+    }
+    .btn.btn-dark{
+        background-color: white;
+        border: 2px solid black;
+        width: 170px;
+        height: 37px;
+        color:black;
+        border-radius: 12px;
+    }
+    .btn.btn-dark:hover{
+        background-color: black;
+        color: white;
+    }
+    .publicaciones{
+        padding: 2%;
+    }
+    .container{
+        padding-top: 3%;
+    }
+    .carta{
+        float: left;
+        height: 140px;
+        width: 140px;
+        border: 2px solid rgb(245, 45, 88);
+    }
+    .card{
+        width: 150%;
+        height: 100%;
+        border: 2px solid black;
+        border-radius: 25px;
+    }
+    .datos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 1%;
+    }
+    .datosHora, .datosUbicacion, .datosPrecio{
+        padding-left: 7%;
+        border-left: 2px solid black;
+    }
+    .datosArriba{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .datosIzq{
+        padding-right: 20%;
+    }
+    .claseConfirmated{
+        background-color: rgba(245, 45, 88, 0.89);
+    }
+    .claseCancelated{
+        background-color: white;
+    }
+    
+    .datosDrch{
+        display: contents;
+    }
+    
+    .btn.btn-dark{
+        margin-right: 5%;
+    }
+    
+    body > div.publicaciones > div:nth-child(1) > div.row > div > div > div > div.datosArriba > div.datosDrch > button:nth-child(1){
+        margin-right: 5%;
+        margin-left: 4%;
+    }
+    
+    
+
+
 }
 
-.datosDrch{
-    display: contents;
-}
-
-.btn.btn-dark{
-    margin-right: 5%;
-}
-
-body > div.publicaciones > div:nth-child(1) > div.row > div > div > div > div.datosArriba > div.datosDrch > button:nth-child(1){
-    margin-right: 5%;
-    margin-left: 4%;
-}
 

@@ -1,43 +1,50 @@
-body{
-    padding-top: 5%;
+/* MEDIA QUERIES */
+
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+    body{
+        padding-top: 5%;
+    }
+    h1{
+        font-size: 72px;
+        color: rgb(245, 45, 88);
+    }
+    h4{
+        padding-top: 10%;
+    }
+    .encabezado{
+        display: flex;
+        flex-direction: row;
+        padding-left: 5%;
+    }
+    .buscador{
+        margin-top: 3%;
+        margin-left: 15%;
+        width: 30%;
+    }
+    .search-slt{
+        border-radius:0;
+    }
+    .wrn-btn{
+        width: 100%;
+        border-radius:0;
+    }
+    .publicaciones{
+        padding: 3%;
+    }
+    .example-card{
+        max-width: 400px;
+    }
+    .mat-card-image{
+        height: 200px;
+    }
+    .example-header-image{
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+    }
+    body > div.encabezado > div.buscador > section > div > form > div > div > div > div.col-lg-2.col-md-2.col-sm-2.p-0 > button{
+        background: rgb(245, 45, 88);
+    }
+
 }
-h1{
-    font-size: 72px;
-    color: rgb(245, 45, 88);
-}
-h4{
-    padding-top: 10%;
-}
-.encabezado{
-    display: flex;
-    flex-direction: row;
-    padding-left: 5%;
-}
-.buscador{
-    margin-top: 3%;
-    margin-left: 15%;
-    width: 30%;
-}
-.search-slt{
-    border-radius:0;
-}
-.wrn-btn{
-    width: 100%;
-    border-radius:0;
-}
-.publicaciones{
-    padding: 3%;
-}
-.example-card{
-    max-width: 400px;
-}
-.mat-card-image{
-    height: 200px;
-}
-.example-header-image{
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-}
-body > div.encabezado > div.buscador > section > div > form > div > div > div > div.col-lg-2.col-md-2.col-sm-2.p-0 > button{
-    background: rgb(245, 45, 88);
-}
+
