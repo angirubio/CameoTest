@@ -1,38 +1,45 @@
-.header-active{
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 12%;
-    padding-top: 3%;
+/* MEDIA QUERIES */
+
+/*Escritorio*/
+@media (min-width: 1199.98px) {
+    .header-active{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 12%;
+        padding-top: 3%;
+    }
+    
+    .mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base.mat-accent{
+        font-size: 22px; 
+    }
+    
+    .mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base{
+        font-size: 22px;
+    }
+    
+    .mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base:hover{
+        color: rgb(245, 45, 88);
+    }
+    
+    .mat-focus-indicator.mat-button.mat-button-base.mat-basic{
+        font-size: 22px;
+    }
+    
+    .mat-focus-indicator.mat-button.mat-button-base.mat-basic:hover{
+        color: rgb(245, 45, 88);
+    }
+    
+    .mat-focus-indicator.mat-menu-item.ng-tns-c82-0:hover{
+        color: rgb(245, 45, 88);
+    }
+    
+    .mat-icon.mat-warn {
+        color: rgb(245, 45, 88);
+    }
+    
+    /* .cdk-overlay-pane{
+        background: black;
+    } */
+
 }
 
-.mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base.mat-accent{
-    font-size: 22px; 
-}
-
-.mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base{
-    font-size: 22px;
-}
-
-.mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base:hover{
-    color: rgb(245, 45, 88);
-}
-
-.mat-focus-indicator.mat-button.mat-button-base.mat-basic{
-    font-size: 22px;
-}
-
-.mat-focus-indicator.mat-button.mat-button-base.mat-basic:hover{
-    color: rgb(245, 45, 88);
-}
-
-.mat-focus-indicator.mat-menu-item.ng-tns-c82-0:hover{
-    color: rgb(245, 45, 88);
-}
-
-.mat-icon.mat-warn {
-    color: rgb(245, 45, 88);
-}
-
-/* .cdk-overlay-pane{
-    background: black;
-} */
