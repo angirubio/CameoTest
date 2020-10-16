@@ -1,6 +1,5 @@
 body{
     padding-top: 5%;
-    padding-left: 5%;
 }
 h1{
     font-size: 72px;
@@ -12,6 +11,7 @@ h4{
 .encabezado{
     display: flex;
     flex-direction: row;
+    padding-left: 5%;
 }
 .buscador{
     margin-top: 3%;
@@ -26,21 +26,18 @@ h4{
     border-radius:0;
 }
 .publicaciones{
-    padding: 5%;
+    padding: 3%;
 }
-.publicacion1{
-    padding-top: 5%;
-    padding-right: 5%;
+.example-card{
+    max-width: 400px;
 }
-.publicacion2{
-    padding-left: 15%;
-    padding-right: 5%;
+.mat-card-image{
+    height: 200px;
 }
-.publicacion3{
-    padding-top: 15%;
-    padding-left: 10%;
+.example-header-image{
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
 }
-
 body > div.encabezado > div.buscador > section > div > form > div > div > div > div.col-lg-2.col-md-2.col-sm-2.p-0 > button{
     background: rgb(245, 45, 88);
 }

@@ -1,41 +1,57 @@
+<app-header-active></app-header-active>
 
-<div id="generalContainer">
+<div class="general">
     
-    <div id="containerBoton">
-        <button type="button" id="botonPublicar" class="btn btn-dark">publicar clase</button>
+    <div class="boton">
+        <button type="button" id="botonPublicar" class="btn btn-dark" routerLink="/organizar-clases">publicar clase</button>
     </div>
 
-    <div id="contenedorClase">
-        <div id="contenedorFotoClase">
-            <img src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg">
+    <div class="container">
+        <div class="boxed">
+            <img src="">
         </div>
-
-        <div id="contenedorTexto">
-            <div id="contenedorSubirFoto">
-                <h6>Sube una foto</h6>
-                <input type="text" placeholder="Insertar"> 
-            </div>
-
-            <div id="contenedorTitulo">
-                <h6>¿Qué quieres enseñar?</h6>
-                <input type="text" placeholder="Introduce una clase">
-            </div>
-
-            <div id="contenedorPrecio">
-                <h6>Establece un precio</h6>
-                <input type="text" placeholder="Añadir">
-            </div>
+        <div class="datosArriba">
+            <p>foto</p>
+            <input type="text" placeholder="Subir foto">
+            <p>titulo</p>
+            <input type="text" placeholder="Aprende a...">
+            <p>precio</p>
+            <input type="text" placeholder="€">
         </div>
-
-        <div id="containerAbajo">
-            <div id="contenedorUbi">
-                <h6>Introduce ubicación</h6>
-                <input type="text" placeholder="Añadir">
+            
+        <div class="datosAbajo">
+            <div class="datosUbicacion">
+                <p>ubicación</p>
             </div>
-        </div>
-     
+            <div class="datosDia">
+              <p>día:</p>
+              <select>
+                <option value="fecha">dia/mes/año</option>
+                <option value="semana">entre semana</option>
+                <option value="finde">findes</option>
+                <option value="completa">disponibilidad completa</option>
+              </select>
+            </div>
+            <div class="horaInicio">
+              <p>hora inicio:</p>
+              <label class="selector"></label>
+              <select>
+                <option value="hora">00.00</option>
+                <option value="cualquiera">cualquiera</option>
+              </select>
+            </div>
+            <div class="horaHasta">
+              <p>hasta</p>
+              <label class="selector"></label>
+              <select>
+                <option value="hora">00.00</option>
+                <option value="cualquiera">cualquiera</option>
+              </select>
+            </div>
+          </div>
 
         
     </div>
 </div>
 
+<app-footer></app-footer>

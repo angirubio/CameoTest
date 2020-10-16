@@ -7,7 +7,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -26,7 +25,10 @@ import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.co
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 import { HeaderActiveComponent } from './components/header-active/header-active.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatMenuModule,
     MatButtonToggleModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

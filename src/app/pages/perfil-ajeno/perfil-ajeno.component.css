@@ -36,15 +36,6 @@ h6
     color: grey;
 }
 
-button
-{
-   
-    border-radius: 8px;
-    margin-left: 150px;
-    margin-top: 25px; 
-    background-color: black;
-}
-
 
 #usuario, #nivel, #followers, #following, #doctrinas
 {
@@ -60,8 +51,16 @@ button
     margin-left: 0px;
     background-color: black;
 }
-
-#botonMensaje
-{
-    width: 150px;
+.containerDos{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+.example-card {
+    max-width: 400px;
+}
+  
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
 }

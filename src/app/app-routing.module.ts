@@ -11,7 +11,7 @@ import { PerfilPropioComponent } from './pages/perfil-propio/perfil-propio.compo
 import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-clase.component';
 import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-
+import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 
 const routes: Routes =
 [
@@ -21,13 +21,13 @@ const routes: Routes =
   {path: "perfil", component: PerfilPropioComponent},
   {path: "user", component: PerfilAjenoComponent},
   {path: "publicar", component: PublicarClaseComponent},
-
   {path: "chat", component: ChatComponent},
   {path: "organizar-clases", component: OrganizarClasesComponent},
   {path: "login", component: LoginComponent},
   {path: "registro", component: RegistroComponent},
   {path: "peticiones", component: PeticionesClaseComponent},
-  {path: "mis-cameos", component: MisCameosComponent}
+  {path: "mis-cameos", component: MisCameosComponent},
+  {path: "publicacion", component: PublicacionComponent}
 ];
 
 @NgModule({
