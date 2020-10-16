@@ -10,6 +10,7 @@ import { PerfilAjenoComponent } from './pages/perfil-ajeno/perfil-ajeno.componen
 import { PerfilPropioComponent } from './pages/perfil-propio/perfil-propio.component';
 import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-clase.component';
 import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.component';
+import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 
 
@@ -21,6 +22,7 @@ const routes: Routes =
   {path: "perfil", component: PerfilPropioComponent},
   {path: "user", component: PerfilAjenoComponent},
   {path: "publicar", component: PublicarClaseComponent},
+  {path: "publicacion", component: PublicacionComponent},
 
   {path: "chat", component: ChatComponent},
   {path: "organizar-clases", component: OrganizarClasesComponent},

@@ -31,7 +31,7 @@
 
   .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent:hover{
     background: rgb(245, 45, 88);
-    color: black;
+    color: white;
   }
 
   .mat-card.mat-focus-indicator.content-card-row{
