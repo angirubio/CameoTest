@@ -57,7 +57,7 @@ body{
     border-right: 1px solid #f0f0f0;
     border-left: 1px solid #f0f0f0;
     grid-column: center-start / center-end;
-    grid-row: 3 / 4;
+    grid-row: 3 / 5;
     display: grid;
     position: relative;
     grid-template-columns: repeat(8, 1fr);
