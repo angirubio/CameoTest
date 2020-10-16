@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  @ViewChild('thirthSection', {static: true}) thirthSection: ElementRef<HTMLDivElement>;
   @ViewChild('secondSection', {static: true}) secondSection: ElementRef<HTMLDivElement>;
   @ViewChild('menu', {static: true}) menu: ElementRef<HTMLDivElement>;
   @ViewChild('menuSecond', {static: true}) menuSecond: ElementRef<HTMLDivElement>;
