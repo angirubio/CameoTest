@@ -131,7 +131,7 @@ p.paragraph{
     line-height: 1.7;
     grid-row: 3 / 4;
     width: 90%;
-    text-align: -webkit-center;
+    text-align: initial;
 }
 
 .info-1__visual{
@@ -361,43 +361,78 @@ section.second-section > div.info-1 > div.info-1__text > a:nth-child(5){
 
 
 
-body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-10__text{
+section.thirth-section > div.info-10 > div.info-10__text{
     background: black;
     color: white;
     justify-content: center;
 }
 
-body > app-root > app-landing-page > div > section.thirth-section > div.info-10{
+section.thirth-section > div.info-10{
     background: black;
     padding-top: 15%;
 }
 
+ section.thirth-section > div.info-10 > div.info-3__visual > img{
+    filter: grayscale(1);
+}
+
+section.thirth-section > div.info-10{
+    filter: grayscale(1);
+}
+
+.info-4__visual{
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    height: 400px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-4__visual > img{
+    width: 300px;
+    height: 400px;
+    border-radius: 50px;
+}
+
+.info-2__visual{
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
+    height: 500px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-2__visual > img{
+    width: 300px;
+    height: 400px;
+    border-radius: 50px;
+}
+
+.info-3__visual{
+    grid-column: 4 / -1;
+    grid-row: 1 / -1;
+    height: 400px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
 body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-3__visual > img{
-    filter: grayscale(1);
+    width: 300px;
+    height: 400px;
+    border-radius: 50px;
 }
 
-body > app-root > app-landing-page > div > section.thirth-section > div.info-10{
-    filter: grayscale(1);
-}
 
-.info-11__visual{
+/* .info-3__visual{
     grid-column: 5 / -1;
     grid-row: 1 / -1;
     height: 500px;
     margin-right: 20px;
     overflow: hidden;
-}
-
-.info-12__visual{
-    grid-column: 5 / -1;
-    grid-row: 1 / -1;
-    height: 500px;
-    margin-right: 20px;
-    overflow: hidden;
-}
+} */
 
 #cameoImage {
-    margin-left: 90%;
+    margin-left: 85%;
     margin-top: 30%;
     width: 90%;
     font-weight: 400;
@@ -405,6 +440,14 @@ body > app-root > app-landing-page > div > section.thirth-section > div.info-10{
     border-radius: 200px;
     /* filter: grayscale(1); */
     opacity: 0.7;
+}
+
+.info-10__text{
+    grid-row: 8 / 11;
+    grid-column: 1 / 8;
+    display: grid;
+    grid-template-rows: repeat(6, min-content);
+    grid-gap: 25px;
 }
 
 /* Fin de tercera section */

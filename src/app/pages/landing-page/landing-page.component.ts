@@ -17,6 +17,11 @@ export class LandingPageComponent implements OnInit {
   @ViewChild('menuSecond', {static: true}) menuSecond: ElementRef<HTMLDivElement>;
   @ViewChild('imageFirst', {static: true}) imageFirst: ElementRef<HTMLDivElement>;
   @ViewChild('imageSecond', {static: true}) imageSecond: ElementRef<HTMLDivElement>;
+  @ViewChild('imageAngi', {static: true}) imageAngi: ElementRef<HTMLDivElement>;
+  @ViewChild('imageDesi', {static: true}) imageDesi: ElementRef<HTMLDivElement>;
+  @ViewChild('imagePipe', {static: true}) imagePipe: ElementRef<HTMLDivElement>;
+
+  
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
@@ -38,6 +43,36 @@ export class LandingPageComponent implements OnInit {
     gsap.to(this.imageSecond.nativeElement, {
       scrollTrigger: {
         trigger: this.imageSecond.nativeElement,
+        scrub: true,
+        start: '80% center'
+      },
+      duration: 1.1,
+      scale: 1.2,
+      height: 380,
+    });
+    gsap.to(this.imageAngi.nativeElement, {
+      scrollTrigger: {
+        trigger: this.imageAngi.nativeElement,
+        scrub: true,
+        start: '80% center'
+      },
+      duration: 1.1,
+      scale: 1.2,
+      height: 380,
+    });
+    gsap.to(this.imageDesi.nativeElement, {
+      scrollTrigger: {
+        trigger: this.imageDesi.nativeElement,
+        scrub: true,
+        start: '80% center'
+      },
+      duration: 1.1,
+      scale: 1.2,
+      height: 380,
+    });
+    gsap.to(this.imagePipe.nativeElement, {
+      scrollTrigger: {
+        trigger: this.imagePipe.nativeElement,
         scrub: true,
         start: '80% center'
       },
@@ -105,9 +140,53 @@ export class LandingPageComponent implements OnInit {
       width: 0,
       opacity: 0,
     });
+    gsap.from(this.document.querySelector('.box1'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('.box1'),
+        scrub: true,
+        toggleClass: 'active',
+        start: '-10% center',
+      },
+      duration: 1.5,
+      width: 0,
+      opacity: 0,
+    });
     gsap.from(this.document.querySelector('.info-1__visual img'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.info-1__visual img'),
+        scrub: true,
+        toggleClass: 'active',
+        start: '-60% bottom',
+      },
+      duration: 1.5,
+      width: 0,
+      opacity: 0,
+    });
+    gsap.from(this.document.querySelector('.info-4__visual img'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('.info-4__visual img'),
+        scrub: true,
+        toggleClass: 'active',
+        start: '-60% bottom',
+      },
+      duration: 1.5,
+      width: 0,
+      opacity: 0,
+    });
+    gsap.from(this.document.querySelector('.info-2__visual img'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('.info-2__visual img'),
+        scrub: true,
+        toggleClass: 'active',
+        start: '-60% bottom',
+      },
+      duration: 1.5,
+      width: 0,
+      opacity: 0,
+    });
+    gsap.from(this.document.querySelector('.info-3__visual img'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('.info-3__visual img'),
         scrub: true,
         toggleClass: 'active',
         start: '-60% bottom',
@@ -137,6 +216,17 @@ export class LandingPageComponent implements OnInit {
       y: 40,
       opacity: 0,
     });
+    // gsap.from(this.document.querySelector('.info-10__visual .heading-10'), {
+    //   scrollTrigger: {
+    //     trigger: this.document.querySelector('.info-10__visual .heading-10'),
+    //     scrub: true,
+    //     toggleClass: 'active',
+    //     start: '-60% bottom',
+    //   },
+    //   duration: 1.5,
+    //   y: 40,
+    //   opacity: 0,
+    // });
     gsap.from(this.document.querySelector('.info-1__visual .btn--learn'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.info-1__visual .btn--learn'),
@@ -173,6 +263,13 @@ export class LandingPageComponent implements OnInit {
       delay: 0.5,
     });
     gsap.from(this.imageSecond.nativeElement.childNodes, {
+      duration: 0.7,
+      opacity: 0,
+      y: -30,
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    gsap.from(this.imageAngi.nativeElement.childNodes, {
       duration: 0.7,
       opacity: 0,
       y: -30,
