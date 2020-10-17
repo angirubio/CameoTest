@@ -113,8 +113,9 @@ body{
 }
 
 span.quote{
-    font-size: 120px;
+    font-size: 80px;
     transform: translateY(80px);
+    display: contents;
 }
 
 .heading-3{
@@ -358,9 +359,12 @@ section.second-section > div.info-1 > div.info-1__text > a:nth-child(5){
     overflow: hidden;
 }
 
+
+
 body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-10__text{
     background: black;
     color: white;
+    justify-content: center;
 }
 
 body > app-root > app-landing-page > div > section.thirth-section > div.info-10{
@@ -393,14 +397,14 @@ body > app-root > app-landing-page > div > section.thirth-section > div.info-10{
 }
 
 #cameoImage {
-    margin-left: 80%;
+    margin-left: 90%;
     margin-top: 30%;
-    width: 130%;
+    width: 90%;
     font-weight: 400;
-    /* border: 2.1px solid #080808ce;
-    border-radius: 200px; */
-    filter: grayscale(1);
-    opacity: 0.8;
+    border: 2.1px solid #080808ce;
+    border-radius: 200px;
+    /* filter: grayscale(1); */
+    opacity: 0.7;
 }
 
 /* Fin de tercera section */
