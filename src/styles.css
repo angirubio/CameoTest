@@ -450,6 +450,18 @@ body > app-root > app-landing-page > div > section.thirth-section > div.info-10 
     grid-gap: 25px;
 }
 
+body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-10__text{
+    justify-content: right;
+}
+
+ #principio{
+    color: rgb(245, 45, 88);
+}
+
+ #final{
+    color: rgb(245, 45, 88);
+}
+
 /* Fin de tercera section */
 
 

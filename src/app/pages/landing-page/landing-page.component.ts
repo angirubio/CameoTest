@@ -129,6 +129,28 @@ export class LandingPageComponent implements OnInit {
       y: 40,
       opacity: 0,
     });
+    gsap.from(this.document.querySelector('#control'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('#control'),
+        scrub: true,
+        toggleClass: 'active',
+        start: 'top center',
+      },
+      duration: 1.5,
+      y: 40,
+      opacity: 0,
+    });
+    gsap.from(this.document.querySelector('#nosotros'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('#nosotros'),
+        scrub: true,
+        toggleClass: 'active',
+        start: 'top center',
+      },
+      duration: 1.5,
+      y: 40,
+      opacity: 0,
+    });
     gsap.from(this.document.querySelector('.box'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.box'),
