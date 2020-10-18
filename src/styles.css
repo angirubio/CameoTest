@@ -287,6 +287,10 @@ section.second-section > div.info-1 > div.info-1__text > a:nth-child(5){
     font-weight: 200;
 }
 
+body > app-root > app-landing-page > div > section.second-section{
+    background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
 
 
 /* Tercera Seccion */
@@ -380,6 +384,10 @@ section.thirth-section > div.info-10{
     filter: grayscale(1);
 }
 
+section.thirth-section > div.info-10{
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,1),rgba(0,0,0,0));
+}
+
 .info-4__visual{
     grid-column: 2 / -1;
     grid-row: 1 / -1;
@@ -388,7 +396,7 @@ section.thirth-section > div.info-10{
     overflow: hidden;
 }
 
-body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-4__visual > img{
+section.thirth-section > div.info-10 > div.info-4__visual > img{
     width: 300px;
     height: 400px;
     border-radius: 50px;
@@ -402,7 +410,7 @@ body > app-root > app-landing-page > div > section.thirth-section > div.info-10 
     overflow: hidden;
 }
 
-body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-2__visual > img{
+section.thirth-section > div.info-10 > div.info-2__visual > img{
     width: 300px;
     height: 400px;
     border-radius: 50px;
@@ -416,20 +424,11 @@ body > app-root > app-landing-page > div > section.thirth-section > div.info-10 
     overflow: hidden;
 }
 
-body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-3__visual > img{
+section.thirth-section > div.info-10 > div.info-3__visual > img{
     width: 300px;
     height: 400px;
     border-radius: 50px;
 }
-
-
-/* .info-3__visual{
-    grid-column: 5 / -1;
-    grid-row: 1 / -1;
-    height: 500px;
-    margin-right: 20px;
-    overflow: hidden;
-} */
 
 #cameoImage {
     margin-left: 85%;
@@ -448,18 +447,31 @@ body > app-root > app-landing-page > div > section.thirth-section > div.info-10 
     display: grid;
     grid-template-rows: repeat(6, min-content);
     grid-gap: 25px;
+    padding-right: 11%;
 }
 
-body > app-root > app-landing-page > div > section.thirth-section > div.info-10 > div.info-10__text{
+.info-1__visual{
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1),rgba(0,0,0,0));
+}
+
+section.thirth-section > div.info-10 > div.info-10__text{
     justify-content: right;
 }
 
  #principio{
     color: rgb(245, 45, 88);
+    font-size: 292%;
 }
 
  #final{
     color: rgb(245, 45, 88);
+    font-size: 292%;
+}
+
+#names{
+    font-size: 292%;
+    margin-right: 80%;
+    color: red;
 }
 
 /* Fin de tercera section */
