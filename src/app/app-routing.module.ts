@@ -12,6 +12,7 @@ import { PeticionesClaseComponent } from './pages/peticiones-clase/peticiones-cl
 import { PublicarClaseComponent } from './pages/publicar-clase/publicar-clase.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes =
 [
@@ -27,7 +28,8 @@ const routes: Routes =
   {path: "registro", component: RegistroComponent},
   {path: "peticiones", component: PeticionesClaseComponent},
   {path: "mis-cameos", component: MisCameosComponent},
-  {path: "publicacion", component: PublicacionComponent}
+  {path: "publicacion", component: PublicacionComponent},
+  {path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({

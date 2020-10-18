@@ -33,6 +33,7 @@ import { HeaderActiveComponent } from './components/header-active/header-active.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MisCameosComponent,
     PublicarClaseComponent,
     PublicacionComponent,
-    HeaderActiveComponent
+    HeaderActiveComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
