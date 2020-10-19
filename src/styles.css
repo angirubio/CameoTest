@@ -221,7 +221,7 @@ img{
 .info{
     position: absolute;
     z-index: 20;
-    top: 26%;
+    top: 15%;
     display: grid;
     grid-template-rows: repeat(3, min-content);
     grid-row-gap: 20px;
@@ -306,7 +306,7 @@ body > app-root > app-landing-page > div > section.second-section{
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(6, min-content);
     grid-gap: 20px;
-    padding-top: 80%;
+    padding-top: 85%;
 }
 
 .box1{
