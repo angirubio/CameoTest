@@ -16,7 +16,7 @@
         <form class="example-form">            
             <mat-form-field class="example-full-width">
               <mat-label>Título</mat-label>
-              <textarea matInput placeholder="Escribe tu clase..."></textarea>
+              <textarea matInput placeholder="Escribe tu clase..." ></textarea>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Precio</mat-label>
@@ -87,6 +87,9 @@
                 <ng-template matStepLabel>Tipo Clase</ng-template>
                 <mat-form-field>
                   <mat-label>Tipo</mat-label>
+                  
+                  <!-- Recojo dato de tipo de plataforma // tipoClase-->
+
                   <input matInput formControlName="firstCtrl" placeholder="Online, Presencial" required>
                 </mat-form-field>
                 <div>
@@ -99,8 +102,8 @@
                 <ng-template matStepLabel>Tipo contacto</ng-template>
                 <mat-form-field>
                   <mat-label>Ubicación</mat-label>
-                  <input matInput formControlName="secondCtrl" placeholder="Plataforma, Dirección"
-                         required>
+                  <!-- Recojo dato de tipo de conexion con el alumno // tipoConexion -->
+                  <input matInput formControlName="secondCtrl" placeholder="Plataforma, Dirección" required>
                 </mat-form-field>
                 <div>
                   <button mat-button matStepperPrevious color="danger">Atras</button>

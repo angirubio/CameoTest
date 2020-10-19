@@ -100,16 +100,13 @@
         background: #080808ce;
         border: #080808ce;
     }
-
     body > div > div > form > div:nth-child(6) > button:hover{
         background: rgb(245, 45, 88);
     }
-
     body > div > div{
         display: flex;
         flex-direction: column;
-    }
-    
+    }    
 
 }
 
