@@ -33,7 +33,7 @@ import { HeaderActiveComponent } from './components/header-active/header-active.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
-
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -72,7 +72,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatNativeDateModule,
     MatExpansionModule,
     MatStepperModule,
-    MatDividerModule
+    MatDividerModule,
+    HttpClientModule
   ],
   providers: [
     MatButtonModule,

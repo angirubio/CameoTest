@@ -1,9 +1,15 @@
 <app-header-active></app-header-active>
 
+<div class="encabezado">
+  <div>
+      <h1>perfil</h1>
+  </div>
+</div>
+
 <div id="metaContainer">
 
     <div id="containerFoto">
-        <img src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+        <img src="https://i.pinimg.com/originals/fa/34/07/fa3407bbfc876fd7e1019238c5b6984f.jpg">
         <div id="#seguir" >
             <button type="button" id="botonSeguir" class="btn btn-dark">seguir</button>
         </div> 
@@ -13,23 +19,23 @@
     <div id="container">
         <div id="usuario">
             <h6>usuario</h6>
-            <h4>Marco Aurelio</h4>
+            <h4>Roberta</h4>
         </div>
     
         <div id="nivel">
             <h6>nivel</h6>
-            <h4>super crack</h4>
+            <h4>mediocre</h4>
         </div>
     
         <div id="followers">
             <h6>followers</h6>
-            <h4>poquitos</h4>
+            <h4>4</h4>
         </div>
     
     
         <div id="following">
             <h6>folowing</h6>
-            <h4>stalker</h4>
+            <h4>0</h4>
         </div>
     
         
@@ -45,155 +51,153 @@
 <mat-divider></mat-divider>
 
 <mat-expansion-panel hideToggle on-click=hideCameos()>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-          <h3>cameos</h3>
-      </mat-panel-title>
-      <mat-panel-description>
-        <mat-icon>reorder</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="row">
-        <div class="col-md-2">&nbsp;</div>
-        <div class="col-md-8">
-          <div class="row space-16">&nbsp;</div>
-          <div class="row">
-            <div class="col-sm-4">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                      <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>Emmanuel</mat-card-title>
-                      <mat-card-subtitle>clase disponible</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                    <mat-card-content>
-                      <p>
-                        Clase para que tu perro aprenda a traerte el periódico.
-                      </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <button mat-button>Ver</button>
-                      <button mat-button>Contactar</button>
-                    </mat-card-actions>
-                  </mat-card>
-            </div>
-            <div class="col-sm-4">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                      <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>Emmanuel</mat-card-title>
-                      <mat-card-subtitle>clase disponible</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                    <mat-card-content>
-                      <p>
-                        Clase para que tu perro aprenda a traerte el periódico.
-                      </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <button mat-button>Ver</button>
-                      <button mat-button>Contactar</button>
-                    </mat-card-actions>
-                  </mat-card>
-            </div>
-            <div class="col-sm-4">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                      <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>Emmanuel</mat-card-title>
-                      <mat-card-subtitle>clase disponible</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                    <mat-card-content>
-                      <p>
-                        Clase para que tu perro aprenda a traerte el periódico.
-                      </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <button mat-button>Ver</button>
-                      <button mat-button>Contactar</button>
-                    </mat-card-actions>
-                  </mat-card>
-            </div>
-          </div>
-          <div class="col-md-2">&nbsp;</div>
-        </div>
-      </div>
-  </mat-expansion-panel>
-
-<div [hidden]="cameosHidden">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+        <h3>mira sus cameos</h3>
+    </mat-panel-title>
+    <mat-panel-description>
+      <mat-icon>reorder</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
   <div class="row">
-    <div class="col-md-2">&nbsp;</div>
-    <div class="col-md-8">
-      <div class="row space-16">&nbsp;</div>
-      <div class="row">
-        <div class="col-sm-4">
-            <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Emmanuel</mat-card-title>
-                  <mat-card-subtitle>clase disponible</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p>
-                    Clase para que tu perro aprenda a traerte el periódico.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>Ver</button>
-                  <button mat-button>Contactar</button>
-                </mat-card-actions>
-              </mat-card>
-        </div>
-        <div class="col-sm-4">
-            <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Emmanuel</mat-card-title>
-                  <mat-card-subtitle>clase disponible</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p>
-                    Clase para que tu perro aprenda a traerte el periódico.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>Ver</button>
-                  <button mat-button>Contactar</button>
-                </mat-card-actions>
-              </mat-card>
-        </div>
-        <div class="col-sm-4">
-            <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Emmanuel</mat-card-title>
-                  <mat-card-subtitle>clase disponible</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p>
-                    Clase para que tu perro aprenda a traerte el periódico.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>Ver</button>
-                  <button mat-button>Contactar</button>
-                </mat-card-actions>
-              </mat-card>
-        </div>
-      </div>
       <div class="col-md-2">&nbsp;</div>
+      <div class="col-md-8">
+        <div class="row space-16">&nbsp;</div>
+        <div class="row">
+          <div class="col-sm-4">
+              <mat-card class="example-card">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Emmanuel</mat-card-title>
+                    <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                  </mat-card-header>
+                  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                  <mat-card-content>
+                    <p>
+                      Clase para que tu perro aprenda a traerte el periódico.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button>Ver</button>
+                    <button mat-button>Contactar</button>
+                  </mat-card-actions>
+                </mat-card>
+          </div>
+          <div class="col-sm-4">
+              <mat-card class="example-card">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Emmanuel</mat-card-title>
+                    <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                  </mat-card-header>
+                  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                  <mat-card-content>
+                    <p>
+                      Clase para que tu perro aprenda a traerte el periódico.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button>Ver</button>
+                    <button mat-button>Contactar</button>
+                  </mat-card-actions>
+                </mat-card>
+          </div>
+          <div class="col-sm-4">
+              <mat-card class="example-card">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Emmanuel</mat-card-title>
+                    <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                  </mat-card-header>
+                  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                  <mat-card-content>
+                    <p>
+                      Clase para que tu perro aprenda a traerte el periódico.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button>Ver</button>
+                    <button mat-button>Contactar</button>
+                  </mat-card-actions>
+                </mat-card>
+          </div>
+        </div>
+        <div class="col-md-2">&nbsp;</div>
+      </div>
     </div>
+</mat-expansion-panel>
+
+<div class="row">
+  <div class="col-md-2">&nbsp;</div>
+  <div class="col-md-8">
+    <div class="row space-16">&nbsp;</div>
+    <div class="row">
+      <div class="col-sm-4">
+          <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Emmanuel</mat-card-title>
+                <mat-card-subtitle>clase disponible</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  Clase para que tu perro aprenda a traerte el periódico.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Ver</button>
+                <button mat-button>Contactar</button>
+              </mat-card-actions>
+            </mat-card>
+      </div>
+      <div class="col-sm-4">
+          <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Emmanuel</mat-card-title>
+                <mat-card-subtitle>clase disponible</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  Clase para que tu perro aprenda a traerte el periódico.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Ver</button>
+                <button mat-button>Contactar</button>
+              </mat-card-actions>
+            </mat-card>
+      </div>
+      <div class="col-sm-4">
+          <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Emmanuel</mat-card-title>
+                <mat-card-subtitle>clase disponible</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  Clase para que tu perro aprenda a traerte el periódico.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Ver</button>
+                <button mat-button>Contactar</button>
+              </mat-card-actions>
+            </mat-card>
+      </div>
+    </div>
+    <div class="col-md-2">&nbsp;</div>
   </div>
 </div>
 
   <mat-expansion-panel hideToggle on-click=hideClases()>
     <mat-expansion-panel-header>
       <mat-panel-title>
-          <h3>clases</h3>
+          <h3>apúntate a sus clases!</h3>
       </mat-panel-title>
       <mat-panel-description>
         <mat-icon>reorder</mat-icon>
@@ -267,7 +271,7 @@
       </div>
   </mat-expansion-panel>
 
-<div class="row" [hidden]="clasesHidden">
+<div class="row">
     <div class="col-md-2">&nbsp;</div>
     <div class="col-md-8">
       <div class="row space-16">&nbsp;</div>
