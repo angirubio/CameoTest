@@ -34,6 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http'
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http'
     MisCameosComponent,
     PublicarClaseComponent,
     PublicacionComponent,
-    HeaderActiveComponent
+    HeaderActiveComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

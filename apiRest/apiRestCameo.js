@@ -76,6 +76,22 @@ app.post("/usuario",
     }
 );
 
+app.post("/login",
+    function(req, response)
+    { console.log(req.body);
+        let sql = "SELECT * FROM usuario WHERE (usuario.nombre_usuario = ? AND usuario.contrasena = ?)";
+        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto], function( err, result)
+        {
+            if (err)
+            console.log(err);
+            else
+            {
+                response.send(result);
+            }
+        })
+    }
+);
+
 // app.put("/usuario",
 //     function(req, response)
 //     {
