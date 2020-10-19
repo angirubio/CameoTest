@@ -15,13 +15,13 @@
             <form>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="nombreUsuario" type="text" class="form-control" name="nombreUsuario" placeholder="Nombre de usuario">
+                    <input id="nombreUsuario" type="text" class="form-control" name="nombreUsuario" placeholder="Nombre de usuario" #nombre_usuario>
                   </div>
                   <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña">
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" #contrasena>
                   </div> 
-                  <button type="submit" class="btn btn-danger">Login</button>
+                  <button type="button" (click)="loginUsuario(nombre_usuario.value,contrasena.value)" class="btn btn-danger">Login</button>
                </form>
                <div class="alreadyLogged">
                 <a routerLink="/registro">¿ Aún no te has registrado ?</a>
