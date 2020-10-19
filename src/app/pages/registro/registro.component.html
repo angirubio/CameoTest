@@ -13,50 +13,67 @@
         <div class="card-body">
             <h3>Registro</h3>
             <form [formGroup]="myForm">
-              <div class="form-group">
-                <label>Nombre Usuario</label>
+              <div class="input-group">
+                <!-- <label>Nombre Usuario</label> -->
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <input 
                   type="text" 
                   class="form-control" 
                   formControlName="nombre"
+                  placeholder="Nombre"
                   [ngClass]="{ 'is-invalid': !myForm.get('nombre').valid }">
                 <div *ngIf="!myForm.get('nombre').valid" class="invalid-feedback">
                     El nombre debe tener max 30 caract
                 </div>
               </div>
-            <div class="form-group">
-              <label>Apellido</label>
+            <div class="input-group">
+              <!-- <label>Apellido</label> -->
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input type="text" class="form-control" formControlName="apellido"
-              [ngClass]="{ 'is-invalid': !myForm.get('apellido').valid}">
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="apellido"  
+                formControlName="apellido"
+                [ngClass]="{ 'is-invalid': !myForm.get('apellido').valid}">
               <div *ngIf="!myForm.get('apellido').valid" class="invalid-feedback">
                   El apellido debe tener max 30 caract
               </div>
           </div>
-          <div class="form-group">
-            <label>Nick de Usuario</label>
+          <div class="input-group">
+            <!-- <label>NickName</label> -->
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" class="form-control" formControlName="nombre_usuario"
-            [ngClass]="{ 'is-invalid': !myForm.get('nombre_usuario').valid}">
+            <input 
+              type="text" 
+              class="form-control"
+              placeholder="nick de usuario" 
+              formControlName="nombre_usuario"
+              [ngClass]="{ 'is-invalid': !myForm.get('nombre_usuario').valid}">
             <div *ngIf="!myForm.get('nombre_usuario').valid" class="invalid-feedback">
                 El nick de usuario debe tener min 4 caracteres y max 30
             </div>
         </div>
-          <div class="form-group">
-            <label>Email</label>
+          <div class="input-group">
+            <!-- <label>Email</label> -->
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input type="email" class="form-control" formControlName="email"
-            [ngClass]="{ 'is-invalid': !myForm.get('email').valid}">
+            <input 
+              type="email" 
+              class="form-control" 
+              placeholder="email"
+              formControlName="email"
+              [ngClass]="{ 'is-invalid': !myForm.get('email').valid}">
             <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
                 Debe introducir un email correcto.
             </div>
         </div>
-        <div class="form-group">
-          <label>Contraseña</label>
+        <div class="input-group">
+          <!-- <label>Contraseña</label> -->
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <input type="contrasena" class="form-control" formControlName="contrasena"
-          [ngClass]="{ 'is-invalid': !myForm.get('contrasena').valid}">
+          <input 
+            type="contrasena"   
+            class="form-control" 
+            formControlName="contrasena"
+            placeholder="contraseña"
+            [ngClass]="{ 'is-invalid': !myForm.get('contrasena').valid}">
           <div *ngIf="!myForm.get('contrasena').valid" class="invalid-feedback">
               Debe introducir una clave min 8 caracteres y máximo 20.
           </div>
@@ -71,8 +88,12 @@
         </div>
     </div> -->
 
-    <div class="form-group">
-      <button type="submit" (click)="insertarUsuario()" class="btn btn-danger">Registrarse</button>
+    <div class="input-group">
+      <button 
+        type="submit" 
+        (click)="insertarUsuario()" 
+        class="btn btn-danger"
+          >Registrarse</button>
     </div>
       
         
