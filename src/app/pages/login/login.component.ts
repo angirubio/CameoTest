@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/models/usuario';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService:UsuarioService) { }
+
+  loginUsuario(nombre_usuario:string, contrasena:string)
+  { 
+    this.apiService.login(new Usuario(0,null,null,nombre_usuario,null,contrasena,null)).subscribe((data) =>
+    {
+      console.log(data);
+    })
+  }
 
   ngOnInit(): void {
   }

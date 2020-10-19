@@ -6,7 +6,7 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private url = "http://localhost:3/usuario"
+  private url = "http://localhost:3000/usuario"
   constructor(private http: HttpClient) { }
 
   // getUsuarios()
@@ -24,6 +24,11 @@ export class UsuarioService {
     return this.http.post(this.url, nuevo_usuario)
   }
 
+  login(usuario:Usuario)
+  {
+    return this.http.post(this.url + "/login", usuario)
+  }
+  
   // putUsuario(nuevo_usuario: Usuario)
   // {
   //   return this.http.put(this.url, nuevo_usuario)
