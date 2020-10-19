@@ -28,13 +28,15 @@ export class RegistroComponent implements OnInit {
   {
     const minPassLength = 8;
     const maxPassLength = 20;
+    const minWordsLength = 4;
+    const maxWordsLength = 30;
 
     this.myForm = this.formBuilder.group({
-      nombre: [, Validators.required],
-      apellido: [, Validators.required],
-      nombre_usuario: [, Validators.required],
-      email: [, [Validators.required, Validators.email]],
-      contrasena: [, [Validators.required, Validators.minLength(minPassLength), Validators.maxLength(maxPassLength)]],
+      nombre: [, Validators.maxLength(maxWordsLength)],
+      apellido: [, Validators.maxLength(maxWordsLength)],
+      nombre_usuario: [, Validators.minLength(minWordsLength)],
+      email: [, [ Validators.email]],
+      contrasena: [, [Validators.minLength(minPassLength), Validators.maxLength(maxPassLength)]],
     });
   }
 
