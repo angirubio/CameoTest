@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -13,15 +14,13 @@ export class RegistroComponent implements OnInit {
   public myForm: FormGroup;
 
   public default_foto:string = "https://cdn2.vectorstock.com/i/thumb-large/23/81/default-avatar-profile-icon-vector-18942381.jpg";
-  constructor(private apiService: UsuarioService, private formBuilder: FormBuilder) { 
+  constructor(private apiService: UsuarioService, private formBuilder: FormBuilder, private router: Router) { 
     this.buildForm();
   }
 
   public insertarUsuario(){
     let usuario = this.myForm.value;
-    this.insertUser(usuario); 
-    console.log(usuario);
-          
+    this.insertUser(usuario);
   }
 
   private buildForm()
@@ -45,6 +44,7 @@ export class RegistroComponent implements OnInit {
     this.apiService.postUsuario(new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, user.contrasena, this.default_foto)).subscribe((data) =>
     {
       console.log(data);
+      this.router.navigateByUrl('/home')
     })
   }
 

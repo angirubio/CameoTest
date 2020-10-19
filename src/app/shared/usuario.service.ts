@@ -26,6 +26,9 @@ export class UsuarioService {
 
   login(usuario:Usuario)
   {
+
+    console.log(usuario);
+    
     return this.http.post(this.url + "/login", usuario)
   }
   
