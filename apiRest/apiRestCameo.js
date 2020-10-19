@@ -76,11 +76,11 @@ app.post("/usuario",
     }
 );
 
-app.post("/login",
+app.post("/usuario/login",
     function(req, response)
     { console.log(req.body);
         let sql = "SELECT * FROM usuario WHERE (usuario.nombre_usuario = ? AND usuario.contrasena = ?)";
-        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto], function( err, result)
+        connection.query(sql, [req.body.nombre_usuario, req.body.contrasena], function( err, result)
         {
             if (err)
             console.log(err);

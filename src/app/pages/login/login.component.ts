@@ -14,9 +14,12 @@ export class LoginComponent implements OnInit {
 
   loginUsuario(nombre_usuario:string, contrasena:string)
   { 
+    console.log(nombre_usuario, contrasena);
+    
     this.apiService.login(new Usuario(0,null,null,nombre_usuario,null,contrasena,null)).subscribe((data) =>
     {
       console.log(data);
+      
       this.router.navigateByUrl('/home')
     })
   }
