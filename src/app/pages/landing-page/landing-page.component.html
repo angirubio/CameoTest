@@ -1,8 +1,8 @@
-
 <div class="main">
     <header class="header">
             <ul class="menu" #menu>
-                <!-- <li class="menu__item"><a routerLink="home" class="menu__link">CAMEO</a></li> -->
+                <li class="menu__item"><img src="../../../assets/cameo.png" alt="cameo" id="cameoImage"></li>
+                <!-- <li class="menu__item"><a routerLink="home" id="cameo" class="menu__link">CAMEO</a></li> -->
                 <!-- <li class="menu__item"><a class="menu__link">+Sobre_Nosotr@s</a></li> -->
                 <!-- <li class="menu__item"><a class="menu__link">How it works</a></li> -->
                 <!-- <li class="menu__item"><a class="menu__link">Benefits</a></li> -->
@@ -13,20 +13,22 @@
                 <li class="menu__item"><a routerLink="/registro"  class="menu__link">Registrarse</a></li>
             </ul>
     </header>
-
-
     <!-- Primera Seccion -->
-
     <section class="first-section">
         <div class="info">
             <h1 class="heading-1">Quiénes somos</h1>
             <p class="paragraph">
-                <i> Cameo es una aplicación que nace con la finalidad de
+                <i> <strong>Cameo</strong> es una aplicación que nace con la finalidad de
                     promover un aprendizaje constante y flexible, permitiendo
                     al usuario recibir y compartir conocimientos sin barreras.
                     Una plataforma en la que potenciar los talentos, encontrar a personas
                     con intereses comunes, maestros y clases de lo que sea, donde sea,
-                    sin esperas, burocracias ni intermediarios.</i> 
+                    sin esperas, burocracias ni intermediarios.
+                    Bajo las premisas de la inmediatez, la versatilidad y la agilidad, el usuario tiene
+                    la posibilidad de hacer "Cameos" en forma de clases en tantas disciplinas como abarquen
+                    sus intereses, de manera que sirvan y faciliten la primera toma de contacto con 
+                    algún ámbito de interés.
+                </i> 
             </p>
             <!-- <a class="btn btn--start">Empezamos!</a> -->
         </div>
@@ -39,10 +41,7 @@
             </div>
         </div>
     </section>
-
     <!-- Segunda sección -->
-
-
     <section class="second-section" #secondSection>
         <div class="box"></div>
         <h4 class="heading-4" id="about">Nuestra Filosofia en Cameo</h4>
@@ -71,28 +70,37 @@
             </div>
         </div>
     </section>
-
     <!-- Tercera sección -->
-
     <section class="thirth-section" #thirthSection>
         <div class="box1"></div>
-        <h4 class="heading-9" id="about">Nuestro equipo</h4>
-        <h1 class="heading-10" id="buy">Apasionados por el código</h1>
+        <h4 class="heading-9" id="nosotros">Nuestro equipo</h4>
+        <h1 class="heading-10" id="control">#Apasionados por el código</h1>
         <div class="info-10">
             <div class="info-10__text">
-                <span class="quote">
+                <span class="quote" id="principio">
+                    < > 
+                </span>
+                <span class="quote" id="names">
+                 #Angi      #Felipe      #Desi
+                </span>
+                <span class="quote" id="final">
                     < /> 
                 </span>
+                <p class="paragraph">
+                    <i>
+                       "La innovación distingue a los líderes de los seguidores" (Steve Jobs)
+                    </i>
+                </p>
             </div>
             <div class="info-4__visual">
-                <img src="../../../assets/Angi.jpeg" alt="">                
+                <img #imageAngi src="../../../assets/Angi.jpeg" alt="">                
             </div>
             <div class="info-3__visual">
-                <img src="../../../assets/descarga.png" alt="">                
+                <img #imagePipe src="../../../assets/descarga.png" alt="">                
             </div>
             <div class="info-2__visual">
-                <img src="../../../assets/Desi.jpeg" alt="">                
-            </div>       
+                <img #imageDesi src="../../../assets/Desi.jpeg" alt="">                
+            </div>            
         </div>
-    </section>
+    </section>    
 </div>
