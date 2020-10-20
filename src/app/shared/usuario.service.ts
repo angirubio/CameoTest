@@ -10,7 +10,7 @@ export class UsuarioService {
   public usuario:Usuario;
   constructor(private http: HttpClient) { }
 
-  postUsuario(nuevo_usuario: Usuario)
+  postUsuario(nuevo_usuario:Usuario)
   {
     return this.http.post(this.url, nuevo_usuario)
   }
@@ -20,10 +20,12 @@ export class UsuarioService {
     return this.http.post(this.url + "/login", usuario_entrada)
   }
 
-  putUsuario(usuario_actualizado: Usuario)
-    {
-      return this.http.put(this.url, usuario_actualizado)
-    }
+  putUsuario(usuario_actualizado:Usuario)
+  {
+    
+    return this.http.put(this.url, usuario_actualizado)
+    
+  }
 
   // deleteUsuario(id:Number)
   // {

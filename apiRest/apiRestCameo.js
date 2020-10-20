@@ -30,7 +30,7 @@ connection.connect(function(err,res)
 
 app.post("/usuario",
     function(req, response)
-    { console.log(req.body);
+    {
         let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto) VALUES (?, ?, ?, ?, ?, ?, ?)";
         connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.satus], function( err, result)
         {
@@ -46,7 +46,7 @@ app.post("/usuario",
 
 app.post("/usuario/login",
     function(req, response)
-    { console.log(req.body);
+    {
         let sql = "SELECT * FROM usuario WHERE (usuario.nombre_usuario = ? AND usuario.contrasena = ?)";
         connection.query(sql, [req.body.nombre_usuario, req.body.contrasena], function( err, result)
         {
@@ -63,14 +63,15 @@ app.post("/usuario/login",
 app.put("/usuario",
     function(req, response)
     {
-        let array = [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.status]
-        let sql = "UPDATE usuario SET nombre = ?, apellido = ?, nombre_usuario = ?, , email = ?, contrasena = ?, foto = ?, status = ?";
+        let array = [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.status, req.body.usuario_id]
+        let sql = "UPDATE usuario SET nombre = ?, apellido = ?, nombre_usuario = ?, email = ?, contrasena = ?, foto = ?, status = ? WHERE usuario_id = ?";
         connection.query(sql, array, function( err, result)
         {
             if (err)
             console.log(err);
             else{
                 response.send(result);
+                console.log(array);
             }
         })
     }

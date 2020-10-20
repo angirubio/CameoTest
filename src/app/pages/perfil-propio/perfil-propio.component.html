@@ -11,55 +11,55 @@
         <img src="https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b">
         <div id="#seguir" >
             <mat-label>Subir Foto</mat-label>
-            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" #foto_up>
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
               <mat-icon> camera_alt </mat-icon>
             </button>
         </div>
     </div>
-    <div id="container" *ngFor="let usuario of usuario">
+    <div id="container">
         <div>
             <mat-form-field class="example-full-width">
                 <mat-label><h4>{{usuario.nombre_usuario}}</h4></mat-label>
-                <textarea matInput placeholder="Escribe tu nombre de usuario..." #nombre_usuario_up></textarea>
+                <textarea matInput placeholder="Escribe tu nombre de usuario..." #nombre_usuario></textarea>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="example-full-width">
                 <mat-label><h4>{{usuario.status}}</h4></mat-label>
-                <textarea matInput placeholder="Actualiza tu status" #status_up></textarea>
+                <textarea matInput placeholder="Actualiza tu status" #status></textarea>
             </mat-form-field>
         </div>
         <div>
-            <button type="button" (click)="actualizar(nombre_up.value,apellido_up.value,nombre_usuario_up.value,email_up.value,contrasena_up.value,foto_up.value,status_up.value)" class="btn btn-dark">Actualizar</button>
+            <button type="button" (click)="actualizar(nombre_usuario.value,status.value)" class="btn btn-dark">Actualizar</button>
         </div>
     </div>
 </div>
 
 <mat-divider></mat-divider>
 
-<div id="metaContainer" *ngFor="let usuario of usuario">
+<div id="metaContainer">
     <div id="container">
         <h3>datos de tu cuenta:</h3>
         <mat-form-field class="example-full-width">
             <mat-label><h5>{{usuario.nombre}}</h5></mat-label>
-            <textarea matInput placeholder="Cambiar nombre:" #nombre_up></textarea>
+            <textarea matInput placeholder="Cambiar nombre:" #nombre></textarea>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label><h5>{{usuario.apellido}}</h5></mat-label>
-            <textarea matInput placeholder="Cambiar apellido" #apellido_up></textarea>
+            <textarea matInput placeholder="Cambiar apellido" #apellido></textarea>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label><h5>{{usuario.email}}</h5></mat-label>
-            <textarea matInput placeholder="Cambiar email:" #email_up></textarea>
+            <textarea matInput placeholder="Cambiar email:" #email></textarea>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label><h5>{{usuario.contrasena}}</h5></mat-label>
-            <textarea matInput placeholder="¿Quieres cambiar la contraseña?" #contrasena_up></textarea>
+            <textarea matInput placeholder="¿Quieres cambiar la contraseña?" #contrasena></textarea>
         </mat-form-field>
-        <button type="button" (click)="actualizar(nombre_up.value,apellido_up.value,nombre_usuario_up.value,email_up.value,contrasena_up.value,foto_up.value,status_up.value)" class="btn btn-dark">Actualizar</button>
+        <button type="button" (click)="actualizar2(nombre.value,apellido.value,email.value,contrasena.value)" class="btn btn-dark">Actualizar</button>
     </div>
 </div>
 
