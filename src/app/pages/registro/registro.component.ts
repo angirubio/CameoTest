@@ -18,6 +18,7 @@ export class RegistroComponent implements OnInit {
     this.buildForm();
   }
 
+  // Este sera el onClick
   public insertarUsuario(){
     let usuario = this.myForm.value;
     this.insertUser(usuario);
