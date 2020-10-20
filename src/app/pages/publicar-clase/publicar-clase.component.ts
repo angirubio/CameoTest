@@ -33,9 +33,9 @@ export class PublicarClaseComponent implements OnInit {
   }
 
   // Metodo que me crea un objeto de tipo clases
-  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date ){
-    console.log(titulo, descripcion, precio, tema, habilidad, fecha);   
-    this.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha)
+  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string ){
+    console.log(titulo, descripcion, precio, tema, habilidad, fecha, plataforma);   
+    this.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha, plataforma)
   }
 
   ngOnInit(): void {
