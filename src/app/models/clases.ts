@@ -3,6 +3,5 @@ export class Clases {
     public titulo: string 
     public precio: number
     public temaClase: string
-    public 
 
 }
