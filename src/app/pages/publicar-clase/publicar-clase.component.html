@@ -7,7 +7,7 @@
 </div>
 
 <mat-card class="main-content-card">
-    <button mat-raised-button color="accent" class="button-publish">Publicar Clase</button>
+    <button mat-raised-button color="accent" class="button-publish" (click)="terminar(titulo.value, descripcion.value, precio.value, tema.value, habilidad.value, fecha.value)">Publicar Clase</button>
     <mat-card-content class="content-column">
         
     <mat-card class="content-card-row">      
@@ -101,8 +101,8 @@
           </mat-expansion-panel-header>
       
           <mat-form-field appearance="fill">
-            <mat-label>Escribe una fecha</mat-label>
-            <input #fecha matInput type="date" placeholder="Escribe una fecha">
+            <mat-label>Escribe una fecha y una hora</mat-label>
+            <input #fecha matInput type="datetime-local" placeholder="Escribe una fecha">
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
           <!-- <mat-datepicker #picker></mat-datepicker> -->
@@ -110,7 +110,7 @@
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Atras</button>
             <!-- <button mat-button color="primary" (click)="nextStep()">Terminar</button> -->
-            <button mat-button color="primary" (click)="terminar(titulo.value, descripcion.value, precio.value, tema.value, habilidad.value, fecha.value)">Terminar</button>
+            <button mat-button color="primary">Terminar</button>
           </mat-action-row>
         </mat-expansion-panel>
       </mat-accordion>

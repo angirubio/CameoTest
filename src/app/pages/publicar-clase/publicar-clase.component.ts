@@ -19,6 +19,7 @@ export class PublicarClaseComponent implements OnInit {
 
   constructor() {}
 
+  // Botones para ir a siguiente
   setStep(index: number) {
     this.step = index;
   }
@@ -31,6 +32,7 @@ export class PublicarClaseComponent implements OnInit {
     this.step--;
   }
 
+  // Metodo que me crea un objeto de tipo clases
   terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date ){
     console.log(titulo, descripcion, precio, tema, habilidad, fecha);   
     this.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha)
