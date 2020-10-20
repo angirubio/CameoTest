@@ -40,6 +40,7 @@
           <input matInput #descripcion>
         </mat-form-field>
         <mat-action-row>          
+          <button mat-button color="warn" (click)="prevStep()">Atras</button>
           <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
         </mat-action-row>
       </mat-expansion-panel>   
@@ -58,12 +59,8 @@
           <mat-label>Escribe el precio</mat-label>
           <input matInput #precio>
         </mat-form-field>
-    
-        <!-- <mat-form-field>
-          <mat-label>Habilidad o Conocimiento</mat-label>
-          <input matInput>
-        </mat-form-field> -->
          <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Atras</button>
           <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
         </mat-action-row>
       </mat-expansion-panel>    
@@ -88,6 +85,7 @@
             <input matInput #habilidad>
           </mat-form-field>
           <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Atras</button>
             <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
           </mat-action-row>
         </mat-expansion-panel>      
@@ -103,8 +101,8 @@
           </mat-expansion-panel-header>
       
           <mat-form-field appearance="fill">
-            <mat-label>Elige una fecha</mat-label>
-            <input #fecha matInput [matDatepicker]="picker" placeholder="start date">
+            <mat-label>Escribe una fecha</mat-label>
+            <input #fecha matInput type="date" placeholder="Escribe una fecha">
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
           <!-- <mat-datepicker #picker></mat-datepicker> -->
@@ -115,46 +113,6 @@
             <button mat-button color="primary" (click)="terminar(titulo.value, descripcion.value, precio.value, tema.value, habilidad.value, fecha.value)">Terminar</button>
           </mat-action-row>
         </mat-expansion-panel>
-        <!-- <button mat-raised-button (click)="isEditable = !isEditable">
-            {{!isEditable ? 'Habilitar edición' : 'Deshabilitar edición'}}
-          </button> -->
-          
-          <!-- <mat-horizontal-stepper linear #stepper>
-            <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
-              <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>Tipo Clase</ng-template>
-                <mat-form-field>
-                  <mat-label>Tipo</mat-label>
-                  <input matInput formControlName="firstCtrl" placeholder="Online, Presencial" required>
-                </mat-form-field>
-                <div>
-                  <button mat-button matStepperNext>Siguiente</button>
-                </div>
-              </form>
-            </mat-step>
-            <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-              <form [formGroup]="secondFormGroup">
-                <ng-template matStepLabel>Tipo contacto</ng-template>
-                <mat-form-field>
-                  <mat-label>Ubicación</mat-label>
-                  <input matInput formControlName="plataforma" placeholder="Plataforma, Dirección"
-                         required>
-                </mat-form-field>
-                <div>
-                  <button mat-button matStepperPrevious color="danger">Atras</button>
-                  <button mat-button matStepperNext>Siguiente</button>
-                </div>
-              </form>
-            </mat-step>
-            <mat-step>
-              <ng-template matStepLabel>Terminado</ng-template>
-              <p>Datos completos!</p>
-              <div>
-                <button mat-button matStepperPrevious>Atras</button>
-                <button mat-button (click)="stepper.reset()">Borrar</button>
-              </div>
-            </mat-step>
-          </mat-horizontal-stepper>   -->   
       </mat-accordion>
     <div class="secondInfoPublish">
         <form class="example-form">
