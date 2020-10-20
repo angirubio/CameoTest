@@ -14,7 +14,7 @@ export class PublicarClaseComponent implements OnInit {
   hide = true;
   step = 0;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   setStep(index: number) {
     this.step = index;
@@ -29,10 +29,10 @@ export class PublicarClaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.firstFormGroup = this._formBuilder.group({
-        firstCtrl: ['', Validators.required]
+      this.firstFormGroup = this.formBuilder.group({
+        tipoClase: ['', Validators.required]
       });
-      this.secondFormGroup = this._formBuilder.group({
+      this.secondFormGroup = this.formBuilder.group({
         secondCtrl: ['', Validators.required]
       });
     }

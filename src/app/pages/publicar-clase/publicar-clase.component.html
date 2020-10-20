@@ -83,14 +83,15 @@
           
           <mat-horizontal-stepper linear #stepper>
             <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+
+              <!-- Comienzo del primer formulario -->
               <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>Tipo Clase</ng-template>
                 <mat-form-field>
                   <mat-label>Tipo</mat-label>
                   
                   <!-- Recojo dato de tipo de plataforma // tipoClase-->
-
-                  <input matInput formControlName="firstCtrl" placeholder="Online, Presencial" required>
+                  <input matInput formControlName="tipoClase" placeholder="Online, Presencial" required>
                 </mat-form-field>
                 <div>
                   <button mat-button matStepperNext>Siguiente</button>
@@ -98,6 +99,7 @@
               </form>
             </mat-step>
             <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+              <!-- Comienzo del segundo formulario -->
               <form [formGroup]="secondFormGroup">
                 <ng-template matStepLabel>Tipo contacto</ng-template>
                 <mat-form-field>
