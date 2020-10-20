@@ -13,21 +13,21 @@
     <mat-card class="content-card-row">      
         <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="publicar_clase">
         <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
-        <form class="example-form">            
+        <!-- <form class="example-form" >            
             <mat-form-field class="example-full-width">
               <mat-label>Título</mat-label>
-              <textarea matInput placeholder="Escribe tu clase..." ></textarea>
+              <textarea matInput placeholder="Escribe tu clase..." formControlName="titulo"></textarea>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Precio</mat-label>
-                <textarea matInput placeholder="Pon un precio €"></textarea>
+                <textarea matInput placeholder="Pon un precio €"></textarea> -->
                 <!-- <input matInput placeholder="precio" value="€"> -->
-              </mat-form-field>
+              <!-- </mat-form-field>
                 <mat-label>Subir Foto</mat-label>
               <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
                 <mat-icon> camera_alt </mat-icon>
               </button>
-          </form>          
+          </form>           -->
     </mat-card>
     <mat-accordion class="example-headers-align">
         <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
@@ -83,15 +83,11 @@
           
           <mat-horizontal-stepper linear #stepper>
             <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
-
-              <!-- Comienzo del primer formulario -->
               <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>Tipo Clase</ng-template>
                 <mat-form-field>
                   <mat-label>Tipo</mat-label>
-                  
-                  <!-- Recojo dato de tipo de plataforma // tipoClase-->
-                  <input matInput formControlName="tipoClase" placeholder="Online, Presencial" required>
+                  <input matInput formControlName="firstCtrl" placeholder="Online, Presencial" required>
                 </mat-form-field>
                 <div>
                   <button mat-button matStepperNext>Siguiente</button>
@@ -99,13 +95,12 @@
               </form>
             </mat-step>
             <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-              <!-- Comienzo del segundo formulario -->
               <form [formGroup]="secondFormGroup">
                 <ng-template matStepLabel>Tipo contacto</ng-template>
                 <mat-form-field>
                   <mat-label>Ubicación</mat-label>
-                  <!-- Recojo dato de tipo de conexion con el alumno // tipoConexion -->
-                  <input matInput formControlName="secondCtrl" placeholder="Plataforma, Dirección" required>
+                  <input matInput formControlName="secondCtrl" placeholder="Plataforma, Dirección"
+                         required>
                 </mat-form-field>
                 <div>
                   <button mat-button matStepperPrevious color="danger">Atras</button>
