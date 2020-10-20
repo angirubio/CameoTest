@@ -6,8 +6,9 @@ export class Usuario {
     public email:string
     public contrasena:string
     public foto:string
+    public status:string
 
-    constructor(usuario_id?:number,nombre?:string,apellido?:string,nombre_usuario?:string,email?:string,contrasena?:string,foto?:string)
+    constructor(usuario_id?:number,nombre?:string,apellido?:string,nombre_usuario?:string,email?:string,contrasena?:string,foto?:string,status?:string)
     {
         this.usuario_id = usuario_id;
         this.nombre = nombre;
@@ -16,5 +17,6 @@ export class Usuario {
         this.email = email;
         this.contrasena = contrasena;
         this.foto = foto;
+        this.status = status;
     }
 }

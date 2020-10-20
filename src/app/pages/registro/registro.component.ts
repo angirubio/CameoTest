@@ -13,7 +13,8 @@ export class RegistroComponent implements OnInit {
 
   public myForm: FormGroup;
 
-  public default_foto:string = "https://cdn2.vectorstock.com/i/thumb-large/23/81/default-avatar-profile-icon-vector-18942381.jpg";
+  public default_foto:string = "https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b";
+  public default_status:string = "nivel: Principiante"
   constructor(private apiService: UsuarioService, private formBuilder: FormBuilder, private router: Router) { 
     this.buildForm();
   }
@@ -41,7 +42,7 @@ export class RegistroComponent implements OnInit {
 
   insertUser(user:any)
   { 
-    this.apiService.postUsuario(new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, user.contrasena, this.default_foto)).subscribe((data) =>
+    this.apiService.postUsuario(new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, user.contrasena, this.default_foto, this.default_status)).subscribe((data) =>
     {
       console.log(data);
       this.router.navigateByUrl('/home')

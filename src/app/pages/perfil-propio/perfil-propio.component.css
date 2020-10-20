@@ -41,33 +41,16 @@
     {
         color: grey;
     }
-    
-    button
-    {
-       
-        border-radius: 8px;
-        margin-left: 150px;
-        margin-top: 25px; 
-        background-color: black;
-    }
-    
-    
-    #usuario, #nivel, #followers, #following, #doctrinas
-    {
+    #usuario, #nivel, #followers, #following, #doctrinas{
         padding-top: 20px;
     }
-    
-    #botonSeguir
-    {
+    button{
         height: 40px;
         width: 120px;
-        border-radius: 8px;
-        margin-top: -90px; 
-        margin-left: 0px;
+        border-radius: 7px;
         background-color: black;
     }
     
-
 .encabezado{
   padding-left: 5%;
   display: flex;
@@ -92,13 +75,6 @@ mat-label{
   display: flex;
   flex-direction: column;
 }
-  
-.button-publish{
-        font-size: 25px;
-        height: 5%;
-        width: 25%;
-        padding: 2%;
-    }
   
 .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent{
         background: black;

@@ -7,35 +7,23 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
   private url = "http://localhost:3000/usuario"
+  public usuario:Usuario;
   constructor(private http: HttpClient) { }
-
-  // getUsuarios()
-  // {
-  //   return this.http.get(this.url)
-  // }
-
-  // getUsuario(id:number)
-  // {
-  //   return this.http.get(this.url + "/" + id)
-  // }
 
   postUsuario(nuevo_usuario: Usuario)
   {
     return this.http.post(this.url, nuevo_usuario)
   }
 
-  login(usuario:Usuario)
-  {
-
-    console.log(usuario);
-    
-    return this.http.post(this.url + "/login", usuario)
+  login(usuario_entrada:Usuario)
+  { 
+    return this.http.post(this.url + "/login", usuario_entrada)
   }
-  
-  // putUsuario(nuevo_usuario: Usuario)
-  // {
-  //   return this.http.put(this.url, nuevo_usuario)
-  // }
+
+  putUsuario(usuario_actualizado: Usuario)
+    {
+      return this.http.put(this.url, usuario_actualizado)
+    }
 
   // deleteUsuario(id:Number)
   // {

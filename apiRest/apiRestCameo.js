@@ -28,43 +28,11 @@ connection.connect(function(err,res)
     console.log("Conectado!");
 });
 
-// app.get("/usuario",
-//     function(request, response)
-//     {
-//         let sql = "SELECT * FROM usuario";
-//         connection.query(sql, function( err, result)
-//         {
-//             if (err)
-//             console.log(err);
-//             else
-//             {
-//                 response.send(result);
-//             }
-//         })
-//     }
-// );
-
-// app.get("/usuario/:id",
-//     function(request, response)
-//     {
-//         let sql = "SELECT * FROM usuario WHERE usuario_id = ?";
-//         connection.query(sql, [request.params.id], function( err, result)
-//         {
-//             if (err)
-//             console.log(err);
-//             else
-//             {
-//                 response.send(result);
-//             }
-//         })
-//     }
-// );
-
 app.post("/usuario",
     function(req, response)
     { console.log(req.body);
-        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto) VALUES (?, ?, ?, ?, ?, ?)";
-        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto], function( err, result)
+        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.satus], function( err, result)
         {
             if (err)
             console.log(err);
@@ -86,6 +54,22 @@ app.post("/usuario/login",
             console.log(err);
             else
             {
+                response.send(result);
+            }
+        })
+    }
+);
+
+app.put("/usuario",
+    function(req, response)
+    {
+        let array = [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.status]
+        let sql = "UPDATE usuario SET nombre = ?, apellido = ?, nombre_usuario = ?, , email = ?, contrasena = ?, foto = ?, status = ?";
+        connection.query(sql, array, function( err, result)
+        {
+            if (err)
+            console.log(err);
+            else{
                 response.send(result);
             }
         })
