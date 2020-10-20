@@ -131,8 +131,9 @@ h1{
   padding-top: 10%;
 }
 
-.mat-icon.notranslate.ng-tns-c112-1 material-icons{
+.mat-icon.notranslate.ng-tns-c112-1.material-icons{
   color: rgba(0,0,0,.54);
+  padding-right: 10%;
 }
 }
 /*Fin Escritorio*/

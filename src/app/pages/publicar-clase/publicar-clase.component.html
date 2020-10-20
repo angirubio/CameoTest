@@ -12,49 +12,86 @@
         
     <mat-card class="content-card-row">      
         <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="publicar_clase">
-        <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
-        <!-- <form class="example-form" >            
-            <mat-form-field class="example-full-width">
-              <mat-label>Título</mat-label>
-              <textarea matInput placeholder="Escribe tu clase..." formControlName="titulo"></textarea>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Precio</mat-label>
-                <textarea matInput placeholder="Pon un precio €"></textarea> -->
-                <!-- <input matInput placeholder="precio" value="€"> -->
-              <!-- </mat-form-field> -->
+       
                 <mat-label id="titulo-publicar">Subir Foto</mat-label>
               <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
                 <mat-icon> camera_alt </mat-icon>
               </button>
-          <!-- </form>           -->
     </mat-card>
     <mat-accordion class="example-headers-align">
-        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Título
+          </mat-panel-title>
+          <mat-panel-description>
+              Escribe el título de tu clase
+              <mat-icon> editar </mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <mat-form-field>
+          <mat-label>Título de clase</mat-label>
+          <input matInput #titulo>
+        </mat-form-field>
+    
+        <mat-form-field>
+          <mat-label>Breve descripción</mat-label>
+          <input matInput #descripcion>
+        </mat-form-field>
+        <mat-action-row>          
+          <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+        </mat-action-row>
+      </mat-expansion-panel>   
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Precio
+          </mat-panel-title>
+          <mat-panel-description>
+              Pon un precio a tu clase
+              <mat-icon> monetization_on</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <mat-form-field>
+          <mat-label>Escribe el precio</mat-label>
+          <input matInput #precio>
+        </mat-form-field>
+    
+        <!-- <mat-form-field>
+          <mat-label>Habilidad o Conocimiento</mat-label>
+          <input matInput>
+        </mat-form-field> -->
+         <mat-action-row>
+          <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+        </mat-action-row>
+      </mat-expansion-panel>    
+         <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
               Doctrina
             </mat-panel-title>
-            <!-- <mat-panel-description>
-                #Habilidades -->
+            <mat-panel-description>
+                #Habilidades
                 <mat-icon> wb_incandescent </mat-icon>
-            <!-- </mat-panel-description> -->
+            </mat-panel-description>
           </mat-expansion-panel-header>
       
           <mat-form-field>
             <mat-label>Tema Clase</mat-label>
-            <input matInput>
+            <input matInput #tema>
           </mat-form-field>
       
           <mat-form-field>
             <mat-label>Habilidad o Conocimiento</mat-label>
-            <input matInput>
+            <input matInput #habilidad>
           </mat-form-field>
           <mat-action-row>
             <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
           </mat-action-row>
         </mat-expansion-panel>      
-        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
              Fecha De Clase
@@ -67,21 +104,22 @@
       
           <mat-form-field appearance="fill">
             <mat-label>Elige una fecha</mat-label>
-            <input matInput type="datetime-local" placeholder="start date">
+            <input #fecha matInput [matDatepicker]="picker" placeholder="start date">
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          <mat-datepicker #picker></mat-datepicker>
+          <!-- <mat-datepicker #picker></mat-datepicker> -->
       
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Atras</button>
-            <button mat-button color="primary" (click)="nextStep()">Terminar</button>
+            <!-- <button mat-button color="primary" (click)="nextStep()">Terminar</button> -->
+            <button mat-button color="primary" (click)="terminar(titulo.value, descripcion.value, precio.value, tema.value, habilidad.value, fecha.value)">Terminar</button>
           </mat-action-row>
         </mat-expansion-panel>
-        <button mat-raised-button (click)="isEditable = !isEditable">
+        <!-- <button mat-raised-button (click)="isEditable = !isEditable">
             {{!isEditable ? 'Habilitar edición' : 'Deshabilitar edición'}}
-          </button>
+          </button> -->
           
-          <mat-horizontal-stepper linear #stepper>
+          <!-- <mat-horizontal-stepper linear #stepper>
             <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
               <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>Tipo Clase</ng-template>
@@ -99,7 +137,7 @@
                 <ng-template matStepLabel>Tipo contacto</ng-template>
                 <mat-form-field>
                   <mat-label>Ubicación</mat-label>
-                  <input matInput formControlName="secondCtrl" placeholder="Plataforma, Dirección"
+                  <input matInput formControlName="plataforma" placeholder="Plataforma, Dirección"
                          required>
                 </mat-form-field>
                 <div>
@@ -116,7 +154,7 @@
                 <button mat-button (click)="stepper.reset()">Borrar</button>
               </div>
             </mat-step>
-          </mat-horizontal-stepper>      
+          </mat-horizontal-stepper>   -->   
       </mat-accordion>
     <div class="secondInfoPublish">
         <form class="example-form">

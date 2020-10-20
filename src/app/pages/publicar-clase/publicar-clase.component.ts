@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Clases } from 'src/app/models/clases';
 
 @Component({
   selector: 'app-publicar-clase',
@@ -8,13 +9,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class PublicarClaseComponent implements OnInit {
 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  isEditable = false;  
+  // firstFormGroup: FormGroup;
+  // secondFormGroup: FormGroup;
+  // isEditable = false;  
   hide = true;
   step = 0;
 
-  constructor(private formBuilder: FormBuilder) {}
+  public clase: Clases = null;
+
+  constructor() {}
 
   setStep(index: number) {
     this.step = index;
@@ -28,13 +31,19 @@ export class PublicarClaseComponent implements OnInit {
     this.step--;
   }
 
+  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date ){
+    console.log(titulo, descripcion, precio, tema, habilidad, fecha);   
+    this.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha)
+  }
+
   ngOnInit(): void {
-      this.firstFormGroup = this.formBuilder.group({
-        tipoClase: ['', Validators.required]
-      });
-      this.secondFormGroup = this.formBuilder.group({
-        secondCtrl: ['', Validators.required]
-      });
+      // this.firstFormGroup = this.formBuilder.group({
+      //   titulo: ['', Validators.required],
+      //   tipoClase: ['', Validators.required],
+      // });
+      // this.secondFormGroup = this.formBuilder.group({
+      //   plataforma: ['', Validators.required]
+      // });
     }
   }
 
