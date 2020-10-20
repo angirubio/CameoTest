@@ -28,6 +28,25 @@ connection.connect(function(err,res)
     console.log("Conectado!");
 });
 
+app.post("/clases", (req, res) => {
+    let params = [
+      req.body.titulo,
+      req.body.interprete,
+      req.body.anyoPublicacion
+    ];
+    let sql =
+      "INSERT INTO discos (titulo, interprete, anyoPublicacion) VALUES (?,?,?)";
+    connection.query(sql, params, function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Disco creado correctamente!");
+        res.send(result);
+        console.log(result);
+      }
+    });
+  });
+
 // app.get("/usuario",
 //     function(request, response)
 //     {
