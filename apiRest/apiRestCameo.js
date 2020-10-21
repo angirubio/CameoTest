@@ -113,6 +113,24 @@ app.post("/clases", (req, res) => {
     });
   });
 
+  //Acceso a cameos
+
+  app.get("/usuario/cameos",
+    function(request, response)
+    {
+        let sql = "SELECT * FROM clases JOIN cameos ON(clases.clases_id = cameos.clase_id) JOIN usuario ON(cameos.usuario_id = usuario.usuario_id) WHERE cameos.usuario_id = ?";
+        connection.query(sql, [request.body.usuario_id], function( err, result)
+        {
+            if (err)
+            console.log(err);
+            else
+            {
+                response.send(result);
+            }
+        })
+    }
+);
+
 // app.delete("/usuario",
 //     function(req, response)
 //     {
