@@ -1,142 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
-<body> 
+  </head>
+  <body>
     <app-header></app-header>
     <div class="card">
-        <div class="card-body">
-            <h3>Registro</h3>
-            <form [formGroup]="myForm">
-              <div class="input-group">
-                <!-- <label>Nombre Usuario</label> -->
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input 
-                  type="text" 
-                  class="form-control" 
-                  formControlName="nombre"
-                  placeholder="Nombre"
-                  [ngClass]="{ 'is-invalid': !myForm.get('nombre').valid }">
-                <div *ngIf="!myForm.get('nombre').valid" class="invalid-feedback">
-                    El nombre debe tener max 30 caract
-                </div>
-              </div>
-            <div class="input-group">
-              <!-- <label>Apellido</label> -->
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input 
-                type="text" 
-                class="form-control" 
-                placeholder="apellido"  
-                formControlName="apellido"
-                [ngClass]="{ 'is-invalid': !myForm.get('apellido').valid}">
-              <div *ngIf="!myForm.get('apellido').valid" class="invalid-feedback">
-                  El apellido debe tener max 30 caract
-              </div>
+      <div class="card-body">
+        <h3>Registro</h3>
+        <form [formGroup]="myForm">
+          <div class="input-group">
+            <!-- <label>Nombre Usuario</label> -->
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="nombre"
+              placeholder="Nombre"
+              [ngClass]="{ 'is-invalid': !myForm.get('nombre').valid }"
+            />
+            <div *ngIf="!myForm.get('nombre').valid" class="invalid-feedback">
+              El nombre debe tener max 30 caract
+            </div>
+          </div>
+          <div class="input-group">
+            <!-- <label>Apellido</label> -->
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="apellido"
+              formControlName="apellido"
+              [ngClass]="{ 'is-invalid': !myForm.get('apellido').valid }"
+            />
+            <div *ngIf="!myForm.get('apellido').valid" class="invalid-feedback">
+              El apellido debe tener max 30 caract
+            </div>
           </div>
           <div class="input-group">
             <!-- <label>NickName</label> -->
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input 
-              type="text" 
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              type="text"
               class="form-control"
-              placeholder="nick de usuario" 
+              placeholder="nick de usuario"
               formControlName="nombre_usuario"
-              [ngClass]="{ 'is-invalid': !myForm.get('nombre_usuario').valid}">
-            <div *ngIf="!myForm.get('nombre_usuario').valid" class="invalid-feedback">
-                El nick de usuario debe tener min 4 caracteres y max 30
+              [ngClass]="{ 'is-invalid': !myForm.get('nombre_usuario').valid }"
+            />
+            <div
+              *ngIf="!myForm.get('nombre_usuario').valid"
+              class="invalid-feedback"
+            >
+              El nick de usuario debe tener min 4 caracteres y max 30
             </div>
-        </div>
+          </div>
           <div class="input-group">
             <!-- <label>Email</label> -->
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input 
-              type="email" 
-              class="form-control" 
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-envelope"></i
+            ></span>
+            <input
+              type="email"
+              class="form-control"
               placeholder="email"
               formControlName="email"
-              [ngClass]="{ 'is-invalid': !myForm.get('email').valid}">
+              [ngClass]="{ 'is-invalid': !myForm.get('email').valid }"
+            />
             <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
-                Debe introducir un email correcto.
+              Debe introducir un email correcto.
             </div>
-        </div>
-        <div class="input-group">
-          <!-- <label>Contraseña</label> -->
-          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <input 
-            type="contrasena"   
-            class="form-control" 
-            formControlName="contrasena"
-            placeholder="contraseña"
-            [ngClass]="{ 'is-invalid': !myForm.get('contrasena').valid}">
-          <div *ngIf="!myForm.get('contrasena').valid" class="invalid-feedback">
-              Debe introducir una clave min 8 caracteres y máximo 20.
           </div>
-      </div>
-      <!-- <div class="form-group">
-        <label>Nombre Usuario</label>
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" formControlName="nombre"
-        [ngClass]="{ 'is-invalid': !myForm.get('nombre').valid}">
-        <div *ngIf="!myForm.get('nombre').valid" class="invalid-feedback">
-            El nombre es necesario
-        </div>
-    </div> -->
+          <div class="input-group">
+            <!-- <label>Contraseña</label> -->
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-lock"></i
+            ></span>
+            <input
+              type="contrasena"
+              class="form-control"
+              formControlName="contrasena"
+              placeholder="contraseña"
+              [ngClass]="{ 'is-invalid': !myForm.get('contrasena').valid }"
+            />
+            <div
+              *ngIf="!myForm.get('contrasena').valid"
+              class="invalid-feedback">
+              Debe introducir una clave min 8 caracteres y máximo 20.
+            </div>
+            <div
+              *ngIf="!myForm.get('contrasena').valid && !myForm.get('confirmContrasena').valid"
+              class="invalid-feedback">              
+              La contraseña no esta bien.
+            </div>
+          </div>
 
-    <div class="input-group">
-      <button 
-        type="submit" 
-        (click)="insertarUsuario()" 
-        class="btn btn-danger"
-          >Registrarse</button>
+          <div class="input-group">
+            <button
+              type="submit"
+              (click)="insertarUsuario()"
+              class="btn btn-danger"
+            >
+              Registrarse
+            </button>
+          </div>
+        </form>
+        <div class="alreadyRegistered">
+          <a routerLink="/login">¿ Ya estas registrado ?</a>
+        </div>
+      </div>
     </div>
-      
-        
-                  <!-- <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="apellido" type="text" class="form-control" name="apellido" 
-                    placeholder="Apellido" formControlName="apellido" [ngClass]="{ 'is-invalid': !myForm.get('apellido').valid }">
-                    <div *ngIf="!myForm.get('apellido').valid" class="invalid-feedback">
-                      El apellido es necesario
-                  </div>
-                  </div> -->
-                <!-- <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input id="email" type="email" class="form-control" name="email" 
-                      placeholder="Email"formControlName="email" [ngClass]="{ 'is-invalid': !myForm.get('email').valid }">
-                    <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
-                        Debe introducir un email correcto.
-                    </div>
-                  </div> -->
-                  <!-- <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-copyright-mark"></i></span>
-                    <input id="nombreUsuario" type="text" class="form-control" name="nombreUsuario" placeholder="Apellido" 
-                    formControlName="apellido" [ngClass]="{ 'is-invalid': !myForm.get('apellido').valid }">
-                    <div *ngIf="!myForm.get('apellido').valid" class="invalid-feedback">
-                      El apellido es necesario
-                  </div>
-                  </div> -->
-                  <!-- <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" #contrasena>
-                  </div> -->
-                  <!-- <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-duplicate"></i></span>
-                    <input id="re-password" type="password" class="form-control" name="re-password" placeholder="Confirmar contraseña">
-                  </div>
-                  <button type="button" (click)="insertarUsuario(nombre.value,apellido.value,email.value,nombre_usuario.value,contrasena.value)" class="btn btn-danger">Registrarse</button> -->
-               </form>
-               <div class="alreadyRegistered">
-                   <a routerLink="/login">¿ Ya estas registrado ?</a>
-               </div>
-        </div>
-      </div>
-   <app-footer></app-footer>
-</body>
+    <app-footer></app-footer>
+  </body>
 </html>
-

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Clases } from 'src/app/models/clases';
 
 @Component({
   selector: 'app-publicar-clase',
@@ -8,14 +9,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class PublicarClaseComponent implements OnInit {
 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  isEditable = false;  
+  // firstFormGroup: FormGroup;
+  // secondFormGroup: FormGroup;
+  // isEditable = false;  
   hide = true;
   step = 0;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  public clase: Clases = null;
 
+  constructor() {}
+
+  // Botones para ir a siguiente
   setStep(index: number) {
     this.step = index;
   }
@@ -28,13 +32,20 @@ export class PublicarClaseComponent implements OnInit {
     this.step--;
   }
 
+  // Metodo que me crea un objeto de tipo clases
+  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string ){
+    console.log(titulo, descripcion, precio, tema, habilidad, fecha, plataforma);   
+    this.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha, plataforma)
+  }
+
   ngOnInit(): void {
-      this.firstFormGroup = this._formBuilder.group({
-        firstCtrl: ['', Validators.required]
-      });
-      this.secondFormGroup = this._formBuilder.group({
-        secondCtrl: ['', Validators.required]
-      });
+      // this.firstFormGroup = this.formBuilder.group({
+      //   titulo: ['', Validators.required],
+      //   tipoClase: ['', Validators.required],
+      // });
+      // this.secondFormGroup = this.formBuilder.group({
+      //   plataforma: ['', Validators.required]
+      // });
     }
   }
 
