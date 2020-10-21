@@ -5,16 +5,16 @@
     .header-active{
         display: flex;
         justify-content: flex-end;
-        padding-right: 12%;
+        margin-right: 12%;
         padding-top: 3%;
     }
     
     .mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base.mat-accent{
-        font-size: 22px; 
+        font-size: 125%; 
     }
     
     .mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base{
-        font-size: 22px;
+        font-size: 125%;
     }
     
     .mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base:hover{
@@ -22,7 +22,7 @@
     }
     
     .mat-focus-indicator.mat-button.mat-button-base.mat-basic{
-        font-size: 22px;
+        font-size: 125%;
     }
     
     .mat-focus-indicator.mat-button.mat-button-base.mat-basic:hover{
