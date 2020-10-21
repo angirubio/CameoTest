@@ -46,5 +46,13 @@
         background: rgb(245, 45, 88);
     }
 
+    body > div.publicaciones > div > div.col-md-8 > div > div > mat-card{
+        border-radius: 35px;
+    }
+
+    body > div.publicaciones > div > div.col-md-8 > div > div{
+        padding-top: 5%;
+    }
+
 }
 
