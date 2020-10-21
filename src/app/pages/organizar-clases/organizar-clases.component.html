@@ -25,7 +25,8 @@
         <div class="row">
             <div class="col-sm-8">
               <div class="card">
-                <div class="card-body">
+                <!-- comienzo div blanco -->
+                <div [ngClass]="claseCssPublicada ? 'classFalse' : 'classTrue'" class="card-body">
                   <h6>título de publicación</h6>
                   <h5><b><i>"Algebra de 1997"</i></b></h5>
                   <div class="datos">

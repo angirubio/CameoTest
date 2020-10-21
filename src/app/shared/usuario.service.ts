@@ -25,6 +25,11 @@ export class UsuarioService {
       return this.http.put(this.url, usuario_actualizado)
     }
 
+    postCameo(usuario_actualizado: Usuario)
+    {
+      return this.http.put(this.url + "/cameos", usuario_actualizado)
+    }
+
   // deleteUsuario(id:Number)
   // {
   //   const httpOptions = {

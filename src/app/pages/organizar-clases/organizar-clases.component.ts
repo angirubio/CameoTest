@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganizarClasesComponent implements OnInit {
 
-  constructor() { }
+  public claseCssPublicada: boolean;
+
+  constructor() {
+    this.claseCssPublicada = false;
+  }
+
+  public cambiarEstadoConfirmar():void
+  { 
+    this.claseCssPublicada = !this.claseCssPublicada
+    
+  }
+
+
 
   ngOnInit(): void {
   }

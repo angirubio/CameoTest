@@ -109,4 +109,54 @@ app.put("/usuario",
 //     }
 // );
 
+//ENDPOINT DE CAMEOS
+
+//OBTIENE TODOS LOS CAMEOS DEL USUARIO CON EL ID PASADO POR EL PARÁMETRO
+app.get("/usuario/cameos/:id",      
+    function (request, response)
+    {
+            let params = request.params.id;
+            let sql = "SELECT * FROM cameos WHERE usuario_id = ?";
+
+            connection.query(sql, params, function (err, result)
+            {
+                if (err)
+                    console.log(err);
+                else
+                {
+                    if(result == 0)
+                    {
+                        response.send("todavía no te has apuntado a ningún cameo");
+                    }
+                   
+                    else
+                    {
+                        console.log("Esta es la lista de tus cameos: ");
+                        console.log(result);
+                        response.send(result); 
+                    }
+                }
+            });
+    });
+
+//AÑADE UN NUEVO CAMEO A LA LISTA DE CAMEOS
+app.post("/usuario/cameos",
+function(request, response)
+{
+    let params = new Array (request.body.clase_id, request.body.usuario.id);
+    let sql = "INSERT INTO cameos (clase_id, usuario_id) VALUES (?, ?)";
+
+    connection.query(sql, params, function (err, result)
+    {
+        if (err)
+            console.log(err);
+
+        else     
+        {
+            console.log("Nuevo cameo añadido: ");
+            console.log(result);
+            response.send(JSON.stringify({ mensaje: "Nuevo cameo añadido con id: " + result.insertId}));
+        }   
+    });
+});
 app.listen(3000);

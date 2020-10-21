@@ -1,3 +1,15 @@
+.classTrue
+{
+    background-color: rgba(245, 45, 88, 0.89);
+    border-radius: 25px;
+}
+
+.classFalse
+{
+    background-color: white;
+    border-radius: 25px;
+}
+
 
 /* MEDIA QUERIES */
 
