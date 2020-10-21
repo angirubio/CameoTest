@@ -47,7 +47,7 @@ export class RegistroComponent implements OnInit {
 
   // Metodo que llama al servicio para crear el registro 
   insertUser(user:any)
-  { 
+  {
     this.apiService.postUsuario(new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, user.contrasena, this.default_foto, this.default_status)).subscribe((data) =>
     {
         this.apiService.login(new Usuario(0,user.nombre,user.apellido,user.nombre_usuario,user.email,user.contrasena,this.default_foto,this.default_status)).subscribe((data) =>
