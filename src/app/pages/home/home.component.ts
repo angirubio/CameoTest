@@ -15,13 +15,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.claseService.getClases().subscribe((data:Clases[])=>{
-
-
       this.clasesHome = data
-
-      console.log(this.clasesHome);    
-
+      console.log(this.clasesHome);  
     });
   }
-
 }
