@@ -11,6 +11,7 @@ export class ClasesService {
   public clase: Clases;
 
   private url = "http://localhost:3000/clases"
+  private url2 = "http://localhost:3000/home"
   constructor(private http: HttpClient) { }
 // public id:number;
   // getUsuarios()
@@ -28,6 +29,10 @@ export class ClasesService {
   postClase(nueva_clase: Clases)
   {
     return this.http.post(this.url, nueva_clase)
+  }
+
+  getClases(){
+    return this.http.get(this.url2)
   }
 
   // login(usuario:Usuario)

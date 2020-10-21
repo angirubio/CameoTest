@@ -197,4 +197,31 @@ function(request, response)
         }   
     });
 });
+
+
+// MOSTRAR DATOS DE PUBLICAR EN HOME DE CAMEOS
+
+app.get("/home", (req, res) => {
+    
+    let sql = "SELECT usuario.nombre_usuario, clases.titulo, clases.descripcion FROM cameos JOIN usuario ON (cameos.usuario_id = usuario.usuario_id) JOIN clases ON (cameos.clases_id = clases.clases_id) ";
+    connection.query(sql, function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Lista de CAMEOS encontrada!");
+        res.send(result);
+        console.log(result);
+      }
+    });
+  });
+
+// SELECT usuario.nombre_usuario, 
+// CLASES.titulo, CLASES.descripcion  
+//     FROM cameos JOIN usuario 
+//         ON (cameos.usuario_id = usuario.usuario_id) 
+//             JOIN CLASES 
+//                 ON (CLASES.clases_id = cameos.clases_id) 
+//                     WHERE cameos.cameo_id = 
+
+
 app.listen(3000);

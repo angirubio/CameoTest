@@ -8,7 +8,7 @@
 </head>
 <app-header-active></app-header-active>
 <body>
-    <div class="encabezado">
+    <div class="encabezado" >
         <div>
             <h1>Bienvenido a cameo!</h1>
             <h4>encuentra clases interesantes</h4>
@@ -42,16 +42,16 @@
               <div class="row space-16">&nbsp;</div>
               <div class="row">
                 <div class="col-sm-4">
-                    <mat-card class="example-card">
+                    <mat-card class="example-card" *ngFor="let clase of clasesHome">
                         <mat-card-header>
                           <div mat-card-avatar class="example-header-image"></div>
-                          <mat-card-title>Emmanuel</mat-card-title>
+                          <mat-card-title>{{clase.nombre_usuario}}</mat-card-title>
                           <mat-card-subtitle>clase disponible</mat-card-subtitle>
                         </mat-card-header>
                         <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="Photo Guitar">
                         <mat-card-content>
                           <p>
-                            Clase para que tu perro aprenda a traerte el periódico.
+                            {{clase.descripcion}}
                           </p>
                         </mat-card-content>
                         <mat-card-actions>
@@ -60,7 +60,7 @@
                         </mat-card-actions>
                       </mat-card>
                 </div>
-                <div class="col-sm-4">
+                <!-- <div class="col-sm-4">
                     <mat-card class="example-card">
                         <mat-card-header>
                           <div mat-card-avatar class="example-header-image"></div>
@@ -78,8 +78,8 @@
                           <button mat-button routerLink="/chat">Contactar</button>
                         </mat-card-actions>
                       </mat-card>
-                </div>
-                <div class="col-sm-4">
+                </div> -->
+                <!-- <div class="col-sm-4">
                     <mat-card class="example-card">
                         <mat-card-header>
                           <div mat-card-avatar class="example-header-image"></div>
@@ -97,10 +97,10 @@
                           <button mat-button routerLink="/chat">Contactar</button>
                         </mat-card-actions>
                       </mat-card>
-                </div>
+                </div> -->
               </div>
-              <div class="col-md-2">&nbsp;</div>
-              <div class="row">
+              <!-- <div class="col-md-2">&nbsp;</div> -->
+              <!-- <div class="row">
                 <div class="col-sm-4">
                     <mat-card class="example-card">
                         <mat-card-header>
@@ -158,8 +158,8 @@
                         </mat-card-actions>
                       </mat-card>
                 </div>
-              </div>
-              <div class="row">
+              </div> -->
+              <!-- <div class="row">
                 <div class="col-sm-4">
                     <mat-card class="example-card">
                         <mat-card-header>
@@ -178,8 +178,8 @@
                           <button mat-button routerLink="/chat">Contactar</button>
                         </mat-card-actions>
                       </mat-card>
-                </div>
-                <div class="col-sm-4">
+                </div> -->
+                <!-- <div class="col-sm-4">
                     <mat-card class="example-card">
                         <mat-card-header>
                           <div mat-card-avatar class="example-header-image"></div>
@@ -197,8 +197,8 @@
                           <button mat-button routerLink="/chat">Contactar</button>
                         </mat-card-actions>
                       </mat-card>
-                </div>
-                <div class="col-sm-4">
+                </div> -->
+                <!-- <div class="col-sm-4">
                     <mat-card class="example-card">
                         <mat-card-header>
                           <div mat-card-avatar class="example-header-image"></div>
@@ -216,8 +216,8 @@
                           <button mat-button routerLink="/chat">Contactar</button>
                         </mat-card-actions>
                       </mat-card>
-                </div>
-              </div>
+                </div> -->
+              <!-- </div> -->
               <div class="col-md-2">&nbsp;</div>
             </div>
           </div>
