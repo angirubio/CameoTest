@@ -7,8 +7,9 @@ export class Clases {
     public habilidad: string
     public fecha: Date
     public plataforma: string
+    public foto: string
 
-    constructor(clases_id?:number,titulo?:string,descripcion?:string,precio?:number,tema?:string,habilidad?:string, fecha?:Date, plataforma?:string)
+    constructor(clases_id?:number,titulo?:string,descripcion?:string,precio?:number,tema?:string,habilidad?:string, fecha?:Date, plataforma?:string, foto?:string)
     {
         this.clases_id = clases_id;
         this.titulo = titulo;
@@ -18,6 +19,7 @@ export class Clases {
         this.habilidad = habilidad;
         this.fecha = fecha;
         this.plataforma = plataforma;
+        this.foto = foto;
     }
 
 }
