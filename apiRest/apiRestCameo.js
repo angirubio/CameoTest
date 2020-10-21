@@ -46,7 +46,6 @@ app.post("/usuario",
     }
 );
 
-
 // LOGIN
 
 app.post("/usuario/login",
@@ -64,7 +63,6 @@ app.post("/usuario/login",
         })
     }
 );
-
 
 // ACTUALIZACION DE PERFIL
 
@@ -85,7 +83,6 @@ app.put("/usuario",
     }
 );
 
-
 // CREACION DE CLASES
 
 app.post("/clases", (req, res) => {
@@ -100,22 +97,54 @@ app.post("/clases", (req, res) => {
       req.body.foto,
       req.body.usuario_id
     ];
-    let sql =
-      "INSERT INTO CLASES (titulo, descripcion, precio, tema, habilidad, fecha, plataforma, foto, usuario_id) VALUES (?,?,?,?,?,?,?,?,?)";
+    let sql = "INSERT INTO clases (titulo, descripcion, precio, tema, habilidad, fecha, plataforma, foto, usuario_id) VALUES (?,?,?,?,?,?,?,?,?)";
     connection.query(sql, params, function (err, result) {
       if (err) {
         console.log(err);
       } else {
-        console.log("Clase creada correctamente!");
         res.send(result);
-        console.log(result);
       }
     });
   });
 
-  //Acceso a cameos
+//Get info de clase
 
-  app.get("/usuario/cameos",
+app.get("/clases/cameos",
+function(request, response)
+{
+    let sql = "SELECT * FROM clases  WHERE clases_id = ?";
+    connection.query(sql, [request.body.usuario_id], function( err, result)
+    {
+        if (err)
+        console.log(err);
+        else
+        {
+            response.send(result);
+        }
+    })
+}
+);
+
+//Añadir cameo
+
+app.post("/clases/cameos",
+function(req, res)
+{
+    let sql = "INSERT INTO cameos (clase_id, usuario_id) VALUES (?, ?)";
+
+    connection.query(sql, [req.body.clase_id, req.body.usuario_id], function (err, result){
+        if (err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }   
+    });
+});
+
+//Acceso a cameos
+
+  app.get("/clases/cameos",
     function(request, response)
     {
         let sql = "SELECT * FROM clases JOIN cameos ON(clases.clases_id = cameos.clase_id) JOIN usuario ON(cameos.usuario_id = usuario.usuario_id) WHERE cameos.usuario_id = ?";

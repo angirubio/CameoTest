@@ -13,24 +13,14 @@ export class ClasesService {
   private url = "http://localhost:3000/clases"
   private url2 = "http://localhost:3000/home"
   constructor(private http: HttpClient) { }
-// public id:number;
-  // getUsuarios()
-  // {
-  //   return this.http.get(this.url)
-  // }
-
-  // getUsuario(id:number)
-  // {
-  //   return this.http.get(this.url + "/" + id)
-  // }
 
   // CREANDO CLASES NUEVAS
-
   postClase(nueva_clase: Clases)
   {
     return this.http.post(this.url, nueva_clase)
   }
 
+<<<<<<< HEAD
   getClases(){
     return this.http.get(this.url2)
   }
@@ -54,4 +44,10 @@ export class ClasesService {
   //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: {id:id} };
   //   return this.http.delete(this.url, httpOptions);
   // }
+=======
+  postCameo(id,usuario)
+  {
+    return this.http.put(this.url + "/cameos", id,usuario)
+  }
+>>>>>>> 903309a5962a307a0364b4a034e726191dc5e69e
 }

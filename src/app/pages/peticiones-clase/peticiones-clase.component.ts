@@ -37,14 +37,6 @@ export class PeticionesClaseComponent implements OnInit {
     this.colorBoton = !this.colorBoton
   }
 
-
-  public cambiarEstadoCancelar():void
-  {
-    this.claseCssCancelar = !this.claseCssCancelar
-    this.textoBotonCancelado = !this.textoBotonCancelado
-    this.usuarioConfirmado = !this.usuarioConfirmado
-  }
-
   
   
 
