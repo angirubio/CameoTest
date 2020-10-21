@@ -28,11 +28,21 @@ connection.connect(function(err,res)
     console.log("Conectado!");
 });
 
+// REGISTRO DE USUARIOS
+
 app.post("/usuario",
     function(req, response)
     {
+<<<<<<< HEAD
         let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.status], function( err, result)
+||||||| ac61995
+        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.satus], function( err, result)
+=======
+        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.status], function( err, result)
+>>>>>>> 3cf6102b6c81c0dc15362d240740027343cb5b1d
         {
             if (err)
             console.log(err);
@@ -43,6 +53,9 @@ app.post("/usuario",
         })
     }
 );
+
+
+// LOGIN
 
 app.post("/usuario/login",
     function(req, response)
@@ -60,6 +73,9 @@ app.post("/usuario/login",
     }
 );
 
+
+// ACTUALIZACION DE PERFIL
+
 app.put("/usuario",
     function(req, response)
     {
@@ -76,6 +92,34 @@ app.put("/usuario",
         })
     }
 );
+
+
+// CREACION DE CLASES
+
+app.post("/clases", (req, res) => {
+    let params = [
+      req.body.titulo,
+      req.body.descripcion,
+      req.body.precio,
+      req.body.tema,
+      req.body.habilidad,
+      req.body.fecha,
+      req.body.plataforma,
+      req.body.foto,
+      req.body.usuario_id
+    ];
+    let sql =
+      "INSERT INTO CLASES (titulo, descripcion, precio, tema, habilidad, fecha, plataforma, foto, usuario_id) VALUES (?,?,?,?,?,?,?,?,?)";
+    connection.query(sql, params, function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Clase creada correctamente!");
+        res.send(result);
+        console.log(result);
+      }
+    });
+  });
 
 // app.put("/usuario",
 //     function(req, response)

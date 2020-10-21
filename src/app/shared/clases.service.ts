@@ -8,9 +8,11 @@ import { Clases } from '../models/clases';
 })
 export class ClasesService {
 
+  public clase: Clases;
+
   private url = "http://localhost:3000/clases"
   constructor(private http: HttpClient) { }
-
+// public id:number;
   // getUsuarios()
   // {
   //   return this.http.get(this.url)
@@ -23,9 +25,9 @@ export class ClasesService {
 
   // CREANDO CLASES NUEVAS
 
-  postClase(nuevo_clase: Clases)
+  postClase(nueva_clase: Clases)
   {
-    return this.http.post(this.url, nuevo_clase)
+    return this.http.post(this.url, nueva_clase)
   }
 
   // login(usuario:Usuario)

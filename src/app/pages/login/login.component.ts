@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
+import { ClasesService } from 'src/app/shared/clases.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private apiService:UsuarioService, private router: Router) { }
+  constructor(private apiService:UsuarioService, private router: Router, private claseService:ClasesService) { }
 
   loginUsuario(nombre_usuario:string, contrasena:string)
   { 
