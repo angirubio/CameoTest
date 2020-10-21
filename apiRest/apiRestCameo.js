@@ -46,7 +46,6 @@ app.post("/usuario",
     }
 );
 
-
 // LOGIN
 
 app.post("/usuario/login",
@@ -64,7 +63,6 @@ app.post("/usuario/login",
         })
     }
 );
-
 
 // ACTUALIZACION DE PERFIL
 
@@ -85,7 +83,6 @@ app.put("/usuario",
     }
 );
 
-
 // CREACION DE CLASES
 
 app.post("/clases", (req, res) => {
@@ -100,22 +97,54 @@ app.post("/clases", (req, res) => {
       req.body.foto,
       req.body.usuario_id
     ];
-    let sql =
-      "INSERT INTO CLASES (titulo, descripcion, precio, tema, habilidad, fecha, plataforma, foto, usuario_id) VALUES (?,?,?,?,?,?,?,?,?)";
+    let sql = "INSERT INTO clases (titulo, descripcion, precio, tema, habilidad, fecha, plataforma, foto, usuario_id) VALUES (?,?,?,?,?,?,?,?,?)";
     connection.query(sql, params, function (err, result) {
       if (err) {
         console.log(err);
       } else {
-        console.log("Clase creada correctamente!");
         res.send(result);
-        console.log(result);
       }
     });
   });
 
-  //Acceso a cameos
+//Get info de clase
 
-  app.get("/usuario/cameos",
+app.get("/clases/cameos",
+function(request, response)
+{
+    let sql = "SELECT * FROM clases  WHERE clases_id = ?";
+    connection.query(sql, [request.body.usuario_id], function( err, result)
+    {
+        if (err)
+        console.log(err);
+        else
+        {
+            response.send(result);
+        }
+    })
+}
+);
+
+//Añadir cameo
+
+app.post("/clases/cameos",
+function(req, res)
+{
+    let sql = "INSERT INTO cameos (clase_id, usuario_id) VALUES (?, ?)";
+
+    connection.query(sql, [req.body.clase_id, req.body.usuario_id], function (err, result){
+        if (err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }   
+    });
+});
+
+//Acceso a cameos
+
+  app.get("/clases/cameos",
     function(request, response)
     {
         let sql = "SELECT * FROM clases JOIN cameos ON(clases.clases_id = cameos.clase_id) JOIN usuario ON(cameos.usuario_id = usuario.usuario_id) WHERE cameos.usuario_id = ?";
@@ -147,54 +176,4 @@ app.post("/clases", (req, res) => {
 //     }
 // );
 
-//ENDPOINT DE CAMEOS
-
-//OBTIENE TODOS LOS CAMEOS DEL USUARIO CON EL ID PASADO POR EL PARÁMETRO
-app.get("/usuario/cameos/:id",      
-    function (request, response)
-    {
-            let params = request.params.id;
-            let sql = "SELECT * FROM cameos WHERE usuario_id = ?";
-
-            connection.query(sql, params, function (err, result)
-            {
-                if (err)
-                    console.log(err);
-                else
-                {
-                    if(result == 0)
-                    {
-                        response.send("todavía no te has apuntado a ningún cameo");
-                    }
-                   
-                    else
-                    {
-                        console.log("Esta es la lista de tus cameos: ");
-                        console.log(result);
-                        response.send(result); 
-                    }
-                }
-            });
-    });
-
-//AÑADE UN NUEVO CAMEO A LA LISTA DE CAMEOS
-app.post("/usuario/cameos",
-function(request, response)
-{
-    let params = new Array (request.body.clase_id, request.body.usuario.id);
-    let sql = "INSERT INTO cameos (clase_id, usuario_id) VALUES (?, ?)";
-
-    connection.query(sql, params, function (err, result)
-    {
-        if (err)
-            console.log(err);
-
-        else     
-        {
-            console.log("Nuevo cameo añadido: ");
-            console.log(result);
-            response.send(JSON.stringify({ mensaje: "Nuevo cameo añadido con id: " + result.insertId}));
-        }   
-    });
-});
 app.listen(3000);
