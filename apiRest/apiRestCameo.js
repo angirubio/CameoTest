@@ -33,16 +33,8 @@ connection.connect(function(err,res)
 app.post("/usuario",
     function(req, response)
     {
-<<<<<<< HEAD
-        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
         connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.status], function( err, result)
-||||||| ac61995
-        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.satus], function( err, result)
-=======
-        let sql = "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        connection.query(sql, [req.body.nombre, req.body.apellido, req.body.nombre_usuario, req.body.email, req.body.contrasena, req.body.foto, req.body.status], function( err, result)
->>>>>>> 3cf6102b6c81c0dc15362d240740027343cb5b1d
         {
             if (err)
             console.log(err);
@@ -120,23 +112,6 @@ app.post("/clases", (req, res) => {
       }
     });
   });
-
-// app.put("/usuario",
-//     function(req, response)
-//     {
-//         let array = [req.body.titulo, req.body.interprete, req.body.anyoPublicacion, req.body.usuario_id]
-//         let sql = "UPDATE usuario SET titulo = ?, interprete = ?, anyoPublicacion = ? WHERE usuario_id = ?";
-//         connection.query(sql, array, function( err, result)
-//         {
-//             if (err)
-//             console.log(err);
-//             else
-//             {
-//                 response.send(result);
-//             }
-//         })
-//     }
-// );
 
 // app.delete("/usuario",
 //     function(req, response)

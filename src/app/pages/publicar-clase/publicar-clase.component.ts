@@ -10,10 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './publicar-clase.component.html',
   styleUrls: ['./publicar-clase.component.css']
 })
-export class PublicarClaseComponent implements OnInit {
-  // firstFormGroup: FormGroup;
-  // secondFormGroup: FormGroup;
-  // isEditable = false;  
+export class PublicarClaseComponent implements OnInit { 
   hide = true;
   step = 0;
 
@@ -36,32 +33,17 @@ export class PublicarClaseComponent implements OnInit {
   }
 
   // Metodo que me crea un objeto de tipo clases
-  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string){
-    
-    this.claseService.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha, plataforma,this.default_foto_clase,this.id)
-    console.log(this.claseService.clase);
-    
-    this.claseService.postClase(this.claseService.clase).subscribe((data) =>
+  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string)
   {
-    this.claseService.clase = data[0];
-    console.log(data);
-    this.router.navigateByUrl('/organizar-clases')
-  });
+    this.claseService.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha, plataforma,this.default_foto_clase,this.id)
+    this.claseService.postClase(this.claseService.clase).subscribe((data) =>
+    {
+      this.claseService.clase = data[0];
+      this.router.navigateByUrl('/organizar-clases')
+    });
   }
 
-  // Metodo para publicar clase
-
-  
-
-  ngOnInit(): void {
-      // this.firstFormGroup = this.formBuilder.group({
-      //   titulo: ['', Validators.required],
-      //   tipoClase: ['', Validators.required],
-      // });
-      // this.secondFormGroup = this.formBuilder.group({
-      //   plataforma: ['', Validators.required]
-      // });
-    }
+  ngOnInit(): void { }
   }
 
 
