@@ -244,6 +244,20 @@ app.get("/home", (req, res) => {
     });
   });
 
+  app.get("/home/publicacion", (req, res) => {
+    let sql = "SELECT usuario.nombre_usuario, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.clases_id = ?";
+    connection.query(sql, [req.body.clases_id], function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Lista de CAMEOS encontrada!");
+        res.send(result);
+        console.log(result);
+      }
+    });
+  });
+  
+
 // SELECT usuario.nombre_usuario, 
 // CLASES.titulo, CLASES.descripcion  
 //     FROM cameos JOIN usuario 
