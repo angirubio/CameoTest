@@ -7,17 +7,11 @@
 </div>
 
 <mat-card class="main-content-card">
-    <button mat-raised-button color="accent" class="button-publish" (click)="terminar(titulo.value, descripcion.value, precio.value, tema.value, habilidad.value, fecha.value, plataforma.value)">Publicar Clase</button>
+    <button mat-raised-button color="accent" class="button-publish" (click)="terminar(titulo.value, descripcion.value, precio.value, tema.value, habilidad.value, fecha.value, plataforma.value, foto.value)">Publicar Clase</button>
     <mat-card-content class="content-column">
-        
     <mat-card class="content-card-row">      
         <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="publicar_clase">
-       
-                <mat-label id="titulo-publicar">Subir Foto</mat-label>
-              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-                <mat-icon> camera_alt </mat-icon>
-              </button>
-    </mat-card>
+      </mat-card>
     <mat-accordion class="example-headers-align">
       <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
         <mat-expansion-panel-header>
@@ -29,12 +23,10 @@
               <mat-icon> editar </mat-icon>
           </mat-panel-description>
         </mat-expansion-panel-header>
-    
         <mat-form-field>
           <mat-label>Título de clase</mat-label>
           <input matInput #titulo>
         </mat-form-field>
-    
         <mat-form-field>
           <mat-label>Breve descripción</mat-label>
           <input matInput #descripcion>
@@ -127,19 +119,31 @@
             <mat-label>Online, presencial</mat-label>
             <input matInput #plataforma>
           </mat-form-field>
-      
-          <!-- <mat-form-field appearance="fill">
-            <mat-label>Escribe una fecha y una hora</mat-label>
-            <input #fecha matInput type="datetime-local" placeholder="Escribe una fecha y una hora">
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field> -->
-          <!-- <mat-datepicker #picker></mat-datepicker> -->
-      
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Atras</button>
             <button mat-button color="primary" (click)="setStep(5)">Terminar</button>
           </mat-action-row>
         </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Foto
+            </mat-panel-title>
+            <mat-panel-description>
+              URL de la foto
+                <mat-icon>camera_enhance</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <mat-label>Escribe la URL de la foto</mat-label>
+            <input matInput #foto>
+          </mat-form-field>
+           <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Atras</button>
+            <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+          </mat-action-row>
+        </mat-expansion-panel> 
       </mat-accordion>
     <!-- <div class="secondInfoPublish">
         <form class="example-form">

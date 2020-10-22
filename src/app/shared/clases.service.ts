@@ -27,8 +27,8 @@ export class ClasesService {
     return this.http.get(this.url2 + "/publicacion", clases_id);
   }
   
-  postCameo(clase_id,usuario_id)
+  postCameo(clases_id,usuario_id)
   {
-    return this.http.put(this.url + "/cameos", clase_id,usuario_id)
+    return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "usuario_id" : usuario_id})
   }
 }

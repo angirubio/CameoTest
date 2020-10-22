@@ -15,7 +15,7 @@ export class PublicarClaseComponent implements OnInit {
   step = 0;
   
 
-  public default_foto_clase:string = "https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b";
+  public default_foto_clase:string = "https://res.cloudinary.com/rebelwalls/image/upload/b_black,c_fill,f_auto,fl_progressive,h_533,q_auto,w_800/v1428566112/article/R11191_image1";
   public id:number = this.apiService.usuario.usuario_id;
   constructor(private apiService:UsuarioService, private claseService:ClasesService, private router: Router,) {
   }
@@ -35,9 +35,12 @@ export class PublicarClaseComponent implements OnInit {
 
 
   // Metodo que me crea un objeto de tipo clases
-  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string)
+  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string, foto:string)
   {
-    this.claseService.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha, plataforma,this.default_foto_clase,this.id)
+    if (foto == ""){
+      this.default_foto_clase = foto;
+    }
+    this.claseService.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha, plataforma,foto,this.id)
     this.claseService.postClase(this.claseService.clase).subscribe((data) =>
     {
       this.claseService.clase = data[0];

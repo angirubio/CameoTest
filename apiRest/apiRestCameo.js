@@ -3,12 +3,8 @@ const bodyParser = require('body-parser');
 const { request } = require("http");
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 let cors = require('cors')
-app.use(cors())
-
 let mysql = require("mysql");
 let connection = mysql.createConnection
 (
@@ -29,6 +25,10 @@ connection.connect(function(err,res)
 });
 
 // REGISTRO DE USUARIOS
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors())
 
 app.post("/usuario",
     function(req, response)
@@ -130,9 +130,8 @@ function(request, response)
 app.post("/clases/cameos",
 function(req, res)
 {
-    let sql = "INSERT INTO cameos (clase_id, usuario_id) VALUES (?, ?)";
-
-    connection.query(sql, [req.body.clase_id, req.body.usuario_id], function (err, result){
+    let sql = "INSERT INTO cameos (clases_id, usuario_id) VALUES (?, ?)";
+    connection.query(sql, [req.body.clases_id, req.body.usuario_id], function (err, result){
         if (err){
             console.log(err);
         }
