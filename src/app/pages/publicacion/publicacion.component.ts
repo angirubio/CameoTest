@@ -37,8 +37,9 @@ export class PublicacionComponent implements OnInit {
     console.log(this.clasePublicacion);
     this.claseService.postCameo(this.clasePublicacion.clases_id,this.usuario.usuario_id).subscribe((data) =>
     {
+      // this.claseService.clase = data[0]
       console.log(data);
-      this.router.navigateByUrl('/home')
+      this.router.navigateByUrl('/mis-cameos')
     })
   }
 
