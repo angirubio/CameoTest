@@ -131,21 +131,24 @@
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Mi titulo</mat-card-title>
-        <mat-card-subtitle>Mi subtitulo</mat-card-subtitle>
+        <mat-card-title>Tema: {{clasePublicacion.titulo}}</mat-card-title>
+        <mat-card-subtitle><strong>Fecha: </strong>{{clasePublicacion.fecha | date: 'short'}}</mat-card-subtitle>
+        <mat-card-subtitle><h4>{{clasePublicacion.habilidad}}</h4></mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="Photo Guitar">
       <mat-card-content>
-        <p>
-          descripcion
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <!-- <button mat-button>Ver</button> -->
-        <button mat-raised-button color="accent" routerLink="/chat">APUNTARSE!</button>
-        <!-- <button mat-button routerLink="/chat" color="primary">Contactar</button> -->
-      </mat-card-actions>
+        <h5>Descripción: </h5><p>{{clasePublicacion.descripcion}}</p>
+      </mat-card-content> 
+      <mat-card-content>
+        <h6>
+          Precio: {{clasePublicacion.precio}}€
+        </h6>
+      </mat-card-content> 
+      <mat-card-content>
+        <h5>Modalidad: </h5><p>{{clasePublicacion.plataforma}}</p>
+      </mat-card-content> 
     </mat-card>
+    <button mat-raised-button color="accent" (click)="apuntarse()">APUNTARSE!</button>
   </div>
 </div>
 

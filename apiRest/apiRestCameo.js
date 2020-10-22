@@ -210,7 +210,7 @@ app.post("/clases/cameos",
 function(request, response)
 {
     let params = new Array (request.body.clase_id, request.body.usuario.id);
-    let sql = "INSERT INTO cameos (clase_id, usuario_id) VALUES (?, ?)";
+    let sql = "INSERT INTO cameos (clases_id, usuario_id) VALUES (?, ?)";
 
     connection.query(sql, params, function (err, result)
     {

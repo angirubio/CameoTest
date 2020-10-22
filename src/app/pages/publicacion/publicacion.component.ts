@@ -42,6 +42,7 @@ export class PublicacionComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    console.log(this.clasePublicacion);
     
   }
 }

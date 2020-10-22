@@ -23,19 +23,37 @@
       grid-template-columns: 30rem;
       grid-gap: 10px;
       padding-left: 20px;
-      padding: 5% 0 3% 33%;
+      margin: 0 0 0 33%;
     
     }
 
     .mat-focus-indicator.mat-raised-button.mat-button-base.mat-accent{
       width: 100%;
-      margin-bottom: 6%;
-      background: black;
-      padding: 2%;
+      margin-top: 5%;
+      background: rgb(245, 45, 88);
+      padding: 1%;
     }
 
     .mat-focus-indicator.mat-raised-button.mat-button-base.mat-accent:hover{
-      background: rgb(245, 45, 88);
+      background: black;
+    }
+
+    .mat-card.mat-focus-indicator.example-card{
+      border-radius: 40px;
+      padding-bottom: 15%;
+    }
+
+    /* .mat-card-header-text{
+      text-align: center;
+    } */
+
+    .mat-card-header{
+      /* padding-left: 10%; */
+      display: block;
+    }
+
+    .mat-card-content{
+      padding-left: 3%;
     }
 
 }
