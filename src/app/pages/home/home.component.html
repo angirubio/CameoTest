@@ -37,11 +37,11 @@
 
     <div class="publicaciones">
           <div class="grid">
-            <mat-card class="example-card" *ngFor="let clase of clasesHome">
+            <mat-card class="example-card" *ngFor="let clase of clasesHome; let i = index">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>{{clase.nombre_usuario}}</mat-card-title>
-                <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                <mat-card-subtitle>{{clase.clases_id}}</mat-card-subtitle>
               </mat-card-header>
               <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="Photo Guitar">
               <mat-card-content>
@@ -50,7 +50,7 @@
                 </p>
               </mat-card-content>
               <mat-card-actions>
-                <button mat-button routerLink="/publicacion">Ver</button>
+                <button mat-button  (click)="ver(i)">Ver</button>
                 <button mat-button routerLink="/chat">Contactar</button>
               </mat-card-actions>
             </mat-card>

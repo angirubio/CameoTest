@@ -17,7 +17,11 @@ export class PublicacionComponent implements OnInit {
   hide = true;
   step = 0;
   public usuario:Usuario = this.apiService.usuario;
-  constructor(private _formBuilder: FormBuilder, private apiService:UsuarioService, private router: Router, private claseService:ClasesService) { }
+  public clasePublicacion:Clases;
+  constructor(private _formBuilder: FormBuilder, private apiService:UsuarioService, private router: Router, private claseService:ClasesService)
+  {
+    this.clasePublicacion = this.claseService.clase;
+  }
   setStep(index: number) {
     this.step = index;
   }
@@ -27,14 +31,17 @@ export class PublicacionComponent implements OnInit {
   prevStep() {
     this.step--;
   }
-  // apuntarse()
-  // {
-  //   this.apiService.postCameo(clase.id,this.usuario.usuario_id).subscribe((data) =>
-  //   {
-  //     this.apiService.usuario = data[0]
-  //     this.router.navigateByUrl('/home')
-  //   })
-  // }
+  
+  apuntarse()
+  {
+    console.log(this.clasePublicacion);
+    this.claseService.postCameo(this.clasePublicacion.clases_id,this.usuario.usuario_id).subscribe((data) =>
+    {
+      console.log(data);
+      this.router.navigateByUrl('/home')
+    })
+  }
+
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]

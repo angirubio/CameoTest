@@ -2,11 +2,128 @@
 <div class="encabezado">
   <div>
       <h1>datos de la clase</h1>
+      <p>{{clasePublicacion.titulo}}</p>
   </div>
 </div>
 
-<!-- <button mat-raised-button color="accent" class="button-publish" click="apuntarse()">Apuntarse</button>
-
-<p>{{clase.titulo}}</p> -->
+<mat-card class="main-content-card">
+    <button mat-raised-button color="accent" class="button-publish" (click)="apuntarse()">Apuntarse</button>
+    <mat-card-content class="content-column">
+        
+    <mat-card class="content-card-row">      
+        <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="publicar_clase">
+        <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+        <form class="example-form">            
+            <mat-form-field class="example-full-width">
+              <mat-label>Título</mat-label>
+              <input matInput placeholder="precio" value="Aprende lo que sea...">
+              <!-- <textarea matInput placeholder="Escribe título de clase..."></textarea> -->
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="precio" value="10€">
+              </mat-form-field>
+                <!-- <mat-label>Subir Foto</mat-label>
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon> camera_alt </mat-icon>
+              </button> -->
+          </form>          
+    </mat-card>
+    <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Doctrina
+            </mat-panel-title>
+            <mat-panel-description>
+                <!-- <input matInput placeholder="Doctrina" value="Hacer el pino!"> -->
+                #SerMasFlexible
+                <mat-icon> wb_incandescent </mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <!-- <input matInput placeholder="Habilidad" value="Hacer el pino!"> -->
+          <mat-form-field>
+            <mat-label>Tema Clase</mat-label>
+            <input matInput placeholder="Doctrina" value="Hacer el pino!">
+          </mat-form-field>
+      
+          <!-- <mat-form-field> -->
+            <!-- <mat-label>Habilidad o Conocimiento</mat-label> -->
+            <!-- <input matInput placeholder="Doctrina" value="Hacer el pino!"> -->
+          <!-- </mat-form-field> -->
+          <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+          </mat-action-row>
+        </mat-expansion-panel>      
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             Fecha De Clase
+            </mat-panel-title>
+            <mat-panel-description>
+              Información Clase
+              <mat-icon>date_range</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Elige una fecha</mat-label>
+            <input matInput type="datetime-local" placeholder="start date">
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+      
+          <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Atras</button>
+            <button mat-button color="primary" (click)="nextStep()">Terminar</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+        <button mat-raised-button (click)="isEditable = !isEditable">
+            {{!isEditable ? 'Habilitar edición' : 'Deshabilitar edición'}}
+          </button>
+          
+          <mat-horizontal-stepper linear #stepper>
+            <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Tipo Clase</ng-template>
+                <mat-form-field>
+                  <mat-label>Tipo</mat-label>
+                  <input matInput formControlName="firstCtrl" placeholder="Online, Presencial" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Tipo contacto</ng-template>
+                <mat-form-field>
+                  <mat-label>Ubicación</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder="Plataforma, Dirección"
+                         required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious color="danger">Atras</button>
+                  <button mat-button matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Terminado</ng-template>
+              <p>Datos completos!</p>
+              <div>
+                <button mat-button matStepperPrevious>Atras</button>
+                <button mat-button (click)="stepper.reset()">Borrar</button>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>      
+      </mat-accordion>
+    <div class="secondInfoPublish">
+        <form class="example-form">
+      </form>
+    </div>
+</mat-card-content>
+</mat-card>
 
 <app-footer></app-footer>
