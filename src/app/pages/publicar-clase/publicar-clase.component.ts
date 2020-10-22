@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class PublicarClaseComponent implements OnInit { 
   hide = true;
   step = 0;
+  
 
   public default_foto_clase:string = "https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b";
   public id:number = this.apiService.usuario.usuario_id;
@@ -31,6 +32,7 @@ export class PublicarClaseComponent implements OnInit {
   prevStep() {
     this.step--;
   }
+
 
   // Metodo que me crea un objeto de tipo clases
   terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string)

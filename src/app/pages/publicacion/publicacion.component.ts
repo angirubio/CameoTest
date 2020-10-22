@@ -19,6 +19,7 @@ export class PublicacionComponent implements OnInit {
   step = 0;
   public usuario:Usuario = this.apiService.usuario;
   
+  
   constructor(private _formBuilder: FormBuilder, private apiService:UsuarioService, private router: Router, private claseService:ClasesService) { }
 
   setStep(index: number) {
@@ -33,14 +34,10 @@ export class PublicacionComponent implements OnInit {
     this.step--;
   }
 
-  // apuntarse()
-  // {
-  //   this.apiService.postCameo(clase.id,this.usuario.usuario_id).subscribe((data) =>
-  //   {
-  //     this.apiService.usuario = data[0]
-  //     this.router.navigateByUrl('/home')
-  //   })
-  // }
+
+
+
+  
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
