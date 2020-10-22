@@ -12,8 +12,8 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
   styleUrls: ['./publicacion.component.css']
 })
 export class PublicacionComponent implements OnInit {
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  // firstFormGroup: FormGroup;
+  // secondFormGroup: FormGroup;
   isEditable = false;  
   hide = true;
   step = 0;
@@ -32,20 +32,15 @@ export class PublicacionComponent implements OnInit {
 
   prevStep() {
     this.step--;
-  }
-
-
-
-
-  
+  }  
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+    // this.firstFormGroup = this._formBuilder.group({
+    //   firstCtrl: ['', Validators.required]
+    // });
+    // this.secondFormGroup = this._formBuilder.group({
+    //   secondCtrl: ['', Validators.required]
+    // });
   }
 
 }

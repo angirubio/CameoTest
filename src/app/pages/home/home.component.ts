@@ -13,10 +13,6 @@ export class HomeComponent implements OnInit {
   public clasesHome: Clases[]
   constructor(private claseService:ClasesService, private router: Router) { }
 
-  // publicacion(i:number){
-  //   i += this.claseService.indice; 
-  // }
-
   ver(i:string)
   {
     this.claseService.clase = this.clasesHome[i];

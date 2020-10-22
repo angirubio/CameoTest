@@ -9,7 +9,6 @@ import { Clases } from '../models/clases';
 export class ClasesService {
 
   public clase: Clases;
-  public indice:number = 1;
   private url = "http://localhost:3000/clases"
   private url2 = "http://localhost:3000/home"
   constructor(private http: HttpClient) { }
