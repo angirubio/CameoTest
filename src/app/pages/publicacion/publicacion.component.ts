@@ -30,9 +30,6 @@ export class PublicacionComponent implements OnInit {
   }
   prevStep() {
     this.step--;
-<<<<<<< HEAD
-  }  
-=======
   }
   
   apuntarse()
@@ -44,7 +41,6 @@ export class PublicacionComponent implements OnInit {
       this.router.navigateByUrl('/home')
     })
   }
->>>>>>> ec13d517e5f17a6fb1ce7feed589091e2c7879e4
 
   ngOnInit(): void {
     // this.firstFormGroup = this._formBuilder.group({
