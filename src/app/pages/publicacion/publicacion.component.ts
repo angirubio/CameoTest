@@ -31,7 +31,6 @@ export class PublicacionComponent implements OnInit {
   prevStep() {
     this.step--;
   }
-  
   apuntarse()
   {
     console.log(this.clasePublicacion);
@@ -42,7 +41,6 @@ export class PublicacionComponent implements OnInit {
       this.router.navigateByUrl('/mis-cameos')
     })
   }
-
   ngOnInit(): void {
     // this.firstFormGroup = this._formBuilder.group({
     //   firstCtrl: ['', Validators.required]
