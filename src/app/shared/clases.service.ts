@@ -26,24 +26,9 @@ export class ClasesService {
   showClase(clases_id){
     return this.http.get(this.url2 + "/publicacion", clases_id);
   }
-
-  // login(usuario:Usuario)
-  // {
-
-  //   console.log(usuario);
-    
-  //   return this.http.post(this.url + "/login", usuario)
-  // }
   
-  // putUsuario(nuevo_usuario: Usuario)
-  // {
-  //   return this.http.put(this.url, nuevo_usuario)
-  // }
-
-  // deleteUsuario(id:Number)
-  // {
-  //   const httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: {id:id} };
-  //   return this.http.delete(this.url, httpOptions);
-  // }
+  postCameo(clase_id,usuario_id)
+  {
+    return this.http.put(this.url + "/cameos", clase_id,usuario_id)
+  }
 }

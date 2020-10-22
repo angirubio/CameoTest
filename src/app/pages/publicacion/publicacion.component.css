@@ -1,5 +1,4 @@
 /* MEDIA QUERIES */
-
 /*Escritorio*/
 @media (min-width: 1199.98px) {
   .main-content-card{
@@ -25,12 +24,10 @@ h1{
 .example-full-width {
   width: 100%;
 }
-
   .content-column{
       display: flex;
       flex-direction: column;
   }
-
   .button-publish{
     justify-content: center;
     font-size: 28px;
@@ -38,58 +35,52 @@ h1{
     width: 100%;
     padding: 2% 4% 2% 4%;
   }
-
   .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent{
       background: rgb(245, 45, 88);
       margin-top: 33%;
       margin-right: 30px;
       /* padding-right: 17%; */
   }
-
   .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent:hover{
     background: black;
     color: white;
   }
-
   .mat-card.mat-focus-indicator.content-card-row{
       display: flex;
       flex-direction: row;
       margin-right: 64%;
       /* margin-bottom: 25%; */
   }
-
   .mat-card-image{
-    height: 117%;
-    width: 135%;
+    height: 150px;
+    width: 150p;
   }
-
+  .mat-card-content{
+    width: 500px;
+    height: 500px;
+  }
   .mat-card.mat-focus-indicator.main-content-card{
     padding-right: 5%;
     padding-bottom: 5%;
     padding-top: 5%;
   }
-
   .content-column{
     border: 2px solid rgb(245, 45, 88);
   }
-
   .content-card-row{
       height: 50%;
   }
-
   .example-form.ng-untouched.ng-pristine.ng-valid{
     margin-left: 60%;
     font-size: 135%;
     margin-top: 25%;
     /* margin-top: 22%; */
   }
-
   .mat-focus-indicator.mat-mini-fab.mat-button-base.mat-primary{
     margin-left: 20%;
     margin-top: 10%;
     background: black;
   }
-
   .secondInfoPublish{
     display: flex;
     flex-direction: row-reverse;
@@ -97,29 +88,23 @@ h1{
     margin-bottom: 15%;
     margin-top: 2%;
   }
-
   .mat-form-field.example-full-width.ng-tns-c69-2.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder{
     margin-bottom: 5%;
     margin-top: 5%;
     font-size: 115%;
   }
-
 .example-headers-align .mat-expansion-panel-header-title,
 .example-headers-align .mat-expansion-panel-header-description {
   flex-basis: 0;
 }
-
 .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
   align-items: center;
 }
-
 .example-headers-align .mat-form-field + .mat-form-field {
   margin-left: 8px;
 }
-
 .mat-accordion.example-headers-align{
     margin-top: 8%;
 }
 }
-

@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   ver(i:string)
   {
     this.claseService.clase = this.clasesHome[i];
-    console.log(this.claseService.clase);
-    
     this.router.navigateByUrl('/publicacion');
   }
 

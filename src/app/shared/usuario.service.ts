@@ -22,15 +22,8 @@ export class UsuarioService {
 
   putUsuario(usuario_actualizado:Usuario)
   {
-    
     return this.http.put(this.url, usuario_actualizado)
-    
   }
-
-    postCameo(clase_id,usuario_id)
-    {
-      return this.http.put(this.url + "/cameos", clase_id,usuario_id)
-    }
 
   // deleteUsuario(id:Number)
   // {

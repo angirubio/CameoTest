@@ -5,7 +5,6 @@ import { Usuario } from 'src/app/models/usuario';
 import { Clases } from 'src/app/models/clases';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { UsuarioService } from 'src/app/shared/usuario.service';
-
 @Component({
   selector: 'app-publicacion',
   templateUrl: './publicacion.component.html',
@@ -18,21 +17,34 @@ export class PublicacionComponent implements OnInit {
   hide = true;
   step = 0;
   public usuario:Usuario = this.apiService.usuario;
-  
-  
-  constructor(private _formBuilder: FormBuilder, private apiService:UsuarioService, private router: Router, private claseService:ClasesService) { }
-
+  public clasePublicacion:Clases;
+  constructor(private _formBuilder: FormBuilder, private apiService:UsuarioService, private router: Router, private claseService:ClasesService)
+  {
+    this.clasePublicacion = this.claseService.clase;
+  }
   setStep(index: number) {
     this.step = index;
   }
-
   nextStep() {
     this.step++;
   }
-
   prevStep() {
     this.step--;
+<<<<<<< HEAD
   }  
+=======
+  }
+  
+  apuntarse()
+  {
+    console.log(this.clasePublicacion);
+    this.claseService.postCameo(this.clasePublicacion.clases_id,this.usuario.usuario_id).subscribe((data) =>
+    {
+      console.log(data);
+      this.router.navigateByUrl('/home')
+    })
+  }
+>>>>>>> ec13d517e5f17a6fb1ce7feed589091e2c7879e4
 
   ngOnInit(): void {
     // this.firstFormGroup = this._formBuilder.group({
@@ -42,5 +54,4 @@ export class PublicacionComponent implements OnInit {
     //   secondCtrl: ['', Validators.required]
     // });
   }
-
 }
