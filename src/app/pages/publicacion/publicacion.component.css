@@ -15,7 +15,7 @@
 h1{
   font-size: 72px;
 }
-.main-content-card{
+/* .main-content-card{
   margin: 1% 15% 5% 15%;
   display: flex;
   flex-direction: row;
@@ -27,8 +27,8 @@ h1{
   .content-column{
       display: flex;
       flex-direction: column;
-  }
-  .button-publish{
+  } */
+  /* .button-publish{
     justify-content: center;
     font-size: 28px;
     height: 5%;
@@ -39,9 +39,9 @@ h1{
       background: rgb(245, 45, 88);
       margin-top: 33%;
       margin-right: 30px;
-      /* padding-right: 17%; */
-  }
-  .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent:hover{
+      padding-right: 17%;
+   } */
+  /* .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent:hover{
     background: black;
     color: white;
   }
@@ -49,9 +49,9 @@ h1{
       display: flex;
       flex-direction: row;
       margin-right: 64%;
-      /* margin-bottom: 25%; */
-  }
-  .mat-card-image{
+      margin-bottom: 25%;
+  } */
+  /* .mat-card-image{
     height: 150px;
     width: 150p;
   }
@@ -63,8 +63,8 @@ h1{
     padding-right: 5%;
     padding-bottom: 5%;
     padding-top: 5%;
-  }
-  .content-column{
+  } */
+  /* .content-column{
     border: 2px solid rgb(245, 45, 88);
   }
   .content-card-row{
@@ -74,21 +74,21 @@ h1{
     margin-left: 60%;
     font-size: 135%;
     margin-top: 25%;
-    /* margin-top: 22%; */
-  }
-  .mat-focus-indicator.mat-mini-fab.mat-button-base.mat-primary{
+    margin-top: 22%;
+  } */
+  /* .mat-focus-indicator.mat-mini-fab.mat-button-base.mat-primary{
     margin-left: 20%;
     margin-top: 10%;
     background: black;
-  }
-  .secondInfoPublish{
+  } */
+  /* .secondInfoPublish{
     display: flex;
     flex-direction: row-reverse;
     padding-right: 65%;
     margin-bottom: 15%;
     margin-top: 2%;
-  }
-  .mat-form-field.example-full-width.ng-tns-c69-2.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder{
+  } */
+  /* .mat-form-field.example-full-width.ng-tns-c69-2.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder{
     margin-bottom: 5%;
     margin-top: 5%;
     font-size: 115%;
@@ -96,15 +96,26 @@ h1{
 .example-headers-align .mat-expansion-panel-header-title,
 .example-headers-align .mat-expansion-panel-header-description {
   flex-basis: 0;
-}
-.example-headers-align .mat-expansion-panel-header-description {
+} */
+/* .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
   align-items: center;
-}
-.example-headers-align .mat-form-field + .mat-form-field {
+} */
+/* .example-headers-align .mat-form-field + .mat-form-field {
   margin-left: 8px;
-}
-.mat-accordion.example-headers-align{
+} */
+/* .mat-accordion.example-headers-align{
     margin-top: 8%;
+} */
+
+ /* GRID */
+ .grid {
+  margin-left: 6%;
+  display: grid;
+  grid-template-columns: 400px repeat(1, 400px) 400px;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-rows: 10fr 1fr;
+ 
 }
+
 }
