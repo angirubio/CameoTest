@@ -5,7 +5,6 @@ import { Usuario } from 'src/app/models/usuario';
 import { Clases } from 'src/app/models/clases';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { UsuarioService } from 'src/app/shared/usuario.service';
-
 @Component({
   selector: 'app-publicacion',
   templateUrl: './publicacion.component.html',
@@ -18,21 +17,16 @@ export class PublicacionComponent implements OnInit {
   hide = true;
   step = 0;
   public usuario:Usuario = this.apiService.usuario;
-  
   constructor(private _formBuilder: FormBuilder, private apiService:UsuarioService, private router: Router, private claseService:ClasesService) { }
-
   setStep(index: number) {
     this.step = index;
   }
-
   nextStep() {
     this.step++;
   }
-
   prevStep() {
     this.step--;
   }
-
   // apuntarse()
   // {
   //   this.apiService.postCameo(clase.id,this.usuario.usuario_id).subscribe((data) =>
@@ -41,7 +35,6 @@ export class PublicacionComponent implements OnInit {
   //     this.router.navigateByUrl('/home')
   //   })
   // }
-
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -50,5 +43,4 @@ export class PublicacionComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
-
 }

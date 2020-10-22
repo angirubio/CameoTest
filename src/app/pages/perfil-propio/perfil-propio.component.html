@@ -8,13 +8,7 @@
 
 <div id="metaContainer">
     <div id="containerFoto">
-        <img src="https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b">
-        <div id="#seguir" >
-            <mat-label>Subir Foto</mat-label>
-            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-              <mat-icon> camera_alt </mat-icon>
-            </button>
-        </div>
+        <img src="{{usuario.foto}}">
     </div>
     <div id="container">
         <div>
@@ -30,7 +24,12 @@
             </mat-form-field>
         </div>
         <div>
-            <button type="button" (click)="actualizar(nombre_usuario.value,status.value)" class="btn btn-dark">Actualizar</button>
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="URL de la foto" #foto></textarea>
+            </mat-form-field>
+        </div>
+        <div>
+            <button type="button" (click)="actualizarBasicos(nombre_usuario.value,status.value,foto.value)" class="btn btn-dark">Actualizar</button>
         </div>
     </div>
 </div>
@@ -59,7 +58,7 @@
             <mat-label><h5>{{usuario.contrasena}}</h5></mat-label>
             <textarea matInput placeholder="¿Quieres cambiar la contraseña?" #contrasena></textarea>
         </mat-form-field>
-        <button type="button" (click)="actualizar2(nombre.value,apellido.value,email.value,contrasena.value)" class="btn btn-dark">Actualizar</button>
+        <button type="button" (click)="actualizarCuenta(nombre.value,apellido.value,email.value,contrasena.value)" class="btn btn-dark">Actualizar</button>
     </div>
 </div>
 
