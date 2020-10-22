@@ -232,7 +232,7 @@ function(request, response)
 
 app.get("/home", (req, res) => {
     
-    let sql = "SELECT usuario.nombre_usuario, clases.titulo, clases.descripcion FROM CLASES JOIN usuario ON (CLASES.usuario_id = usuario.usuario_id) ";
+    let sql = "SELECT usuario.nombre_usuario, CLASES.clases_id, clases.titulo, clases.descripcion, CLASES.precio, CLASES.tema, CLASES.habilidad, CLASES.fecha, CLASES.plataforma, CLASES.foto FROM CLASES JOIN usuario ON (CLASES.usuario_id = usuario.usuario_id) ";
     connection.query(sql, function (err, result) {
       if (err) {
         console.log(err);
