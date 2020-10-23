@@ -46,7 +46,7 @@ app.post("/usuario",
     }
 );
 
-// Login
+// LOGIN
 
 app.post("/usuario/login",
     function(req, response)
@@ -64,7 +64,7 @@ app.post("/usuario/login",
     }
 );
 
-// Actualización del perfil
+// ACTUALIZACION DE PERFIL
 
 app.put("/usuario",
     function(req, response)
@@ -107,23 +107,21 @@ app.post("/clases", (req, res) => {
     });
   });
 
-//Get info de clase
+// MOSTRAR CLASES EN HOME
 
-app.get("/clases/cameos",
-function(request, response)
-{
-    let sql = "SELECT * FROM clases  WHERE clases_id = ?";
-    connection.query(sql, [request.body.usuario_id], function( err, result)
-    {
-        if (err)
+app.get("/home", (req, res) => {
+    
+    let sql = "SELECT usuario.nombre_usuario, CLASES.clases_id, clases.titulo, clases.descripcion, CLASES.precio, CLASES.tema, CLASES.habilidad, CLASES.fecha, CLASES.plataforma, CLASES.foto FROM CLASES JOIN usuario ON (CLASES.usuario_id = usuario.usuario_id) ";
+    connection.query(sql, function (err, result) {
+      if (err) {
         console.log(err);
-        else
-        {
-            response.send(result);
-        }
-    })
-}
-);
+      } else {
+        console.log("Lista de CAMEOS encontrada!");
+        res.send(result);
+        console.log(result);
+      }
+    });
+  });
 
 //Añadir cameo
 
