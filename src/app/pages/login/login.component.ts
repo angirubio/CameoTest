@@ -15,10 +15,22 @@ export class LoginComponent implements OnInit {
 
   loginUsuario(nombre_usuario:string, contrasena:string)
   { 
-    this.apiService.login(new Usuario(0,null,null,nombre_usuario,null,contrasena,null)).subscribe((data) =>
+    this.apiService.login(new Usuario(0,null,null,nombre_usuario,null,contrasena,null)).subscribe((data: Usuario []) =>
     {
-      this.apiService.usuario = data[0]
-      this.router.navigateByUrl('/home')
+      if (!nombre_usuario || !contrasena)
+      {
+        alert("Debes completar todos los campos")
+      }
+      // console.log(data)
+      else if (data.length == 0)
+      {    
+        alert("usuario o contraseña erróneo")
+      }
+      else 
+      {
+        this.apiService.usuario = data[0]
+        this.router.navigateByUrl('/home')
+      }
     })
   }
 
