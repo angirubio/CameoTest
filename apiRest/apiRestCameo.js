@@ -46,7 +46,7 @@ app.post("/usuario",
     }
 );
 
-// LOGIN
+// Login
 
 app.post("/usuario/login",
     function(req, response)
@@ -64,7 +64,7 @@ app.post("/usuario/login",
     }
 );
 
-// ACTUALIZACION DE PERFIL
+// Actualización del perfil
 
 app.put("/usuario",
     function(req, response)

@@ -1,5 +1,5 @@
 <app-header-active></app-header-active>
-<div class="encabezado">
+<!-- <div class="encabezado">
   <div>
       <h1>datos de la clase</h1>
       <p>{{clasePublicacion.titulo}}</p>
@@ -12,21 +12,21 @@
         
     <mat-card class="content-card-row">      
         <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="publicar_clase">
-        <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
         <form class="example-form">            
             <mat-form-field class="example-full-width">
               <mat-label>Título</mat-label>
               <input matInput placeholder="precio" value="Aprende lo que sea...">
-              <!-- <textarea matInput placeholder="Escribe título de clase..."></textarea> -->
+              <textarea matInput placeholder="Escribe título de clase..."></textarea>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Precio</mat-label>
                 <input matInput placeholder="precio" value="10€">
               </mat-form-field>
-                <!-- <mat-label>Subir Foto</mat-label>
+                <mat-label>Subir Foto</mat-label>
               <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
                 <mat-icon> camera_alt </mat-icon>
-              </button> -->
+              </button>
           </form>          
     </mat-card>
     <mat-accordion class="example-headers-align">
@@ -36,21 +36,21 @@
               Doctrina
             </mat-panel-title>
             <mat-panel-description>
-                <!-- <input matInput placeholder="Doctrina" value="Hacer el pino!"> -->
+                <input matInput placeholder="Doctrina" value="Hacer el pino!">
                 #SerMasFlexible
                 <mat-icon> wb_incandescent </mat-icon>
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <!-- <input matInput placeholder="Habilidad" value="Hacer el pino!"> -->
+          <input matInput placeholder="Habilidad" value="Hacer el pino!">
           <mat-form-field>
             <mat-label>Tema Clase</mat-label>
             <input matInput placeholder="Doctrina" value="Hacer el pino!">
           </mat-form-field>
       
-          <!-- <mat-form-field> -->
-            <!-- <mat-label>Habilidad o Conocimiento</mat-label> -->
-            <!-- <input matInput placeholder="Doctrina" value="Hacer el pino!"> -->
-          <!-- </mat-form-field> -->
+          <mat-form-field>
+            <mat-label>Habilidad o Conocimiento</mat-label>
+            <input matInput placeholder="Doctrina" value="Hacer el pino!">
+          </mat-form-field>
           <mat-action-row>
             <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
           </mat-action-row>
@@ -124,6 +124,32 @@
       </form>
     </div>
 </mat-card-content>
-</mat-card>
+</mat-card> -->
+
+<div class="publicaciones">
+  <div class="grid">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Tema: {{clasePublicacion.titulo}}</mat-card-title>
+        <mat-card-subtitle><strong>Fecha: </strong>{{clasePublicacion.fecha | date: 'short'}}</mat-card-subtitle>
+        <mat-card-subtitle><h5>{{clasePublicacion.habilidad}}</h5></mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="Photo Guitar">
+      <mat-card-content>
+        <h6>Descripción: </h6><p>{{clasePublicacion.descripcion}}</p>
+      </mat-card-content> 
+      <mat-card-content>
+        <h6>
+          Precio: {{clasePublicacion.precio}}€
+        </h6>
+      </mat-card-content> 
+      <mat-card-content>
+        <h6>Modalidad: </h6><p>{{clasePublicacion.plataforma}}</p>
+      </mat-card-content> 
+    </mat-card>
+    <button mat-raised-button color="accent" (click)="apuntarse()">APUNTARSE!</button>
+  </div>
+</div>
 
 <app-footer></app-footer>
