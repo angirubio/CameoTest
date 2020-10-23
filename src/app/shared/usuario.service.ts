@@ -10,26 +10,19 @@ export class UsuarioService {
   public usuario:Usuario;
   constructor(private http: HttpClient) { }
 
-  postUsuario(nuevo_usuario:Usuario)
-  {
-    return this.http.post(this.url, nuevo_usuario)
-  }
+    postUsuario(nuevo_usuario:Usuario)
+    {
+      return this.http.post(this.url, nuevo_usuario)
+    }
 
-  login(usuario_entrada:Usuario)
-  { 
-    return this.http.post(this.url + "/login", usuario_entrada)
-  }
+    login(usuario_entrada:Usuario)
+    { 
+      return this.http.post(this.url + "/login", usuario_entrada)
+    }
 
-  putUsuario(usuario_actualizado:Usuario)
-  {
-    return this.http.put(this.url, usuario_actualizado)
-  }
-
-  // deleteUsuario(id:Number)
-  // {
-  //   const httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: {id:id} };
-  //   return this.http.delete(this.url, httpOptions);
-  // }
+    putUsuario(usuario_actualizado:Usuario)
+    {
+      return this.http.put(this.url, usuario_actualizado)
+    }
 
 }

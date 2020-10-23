@@ -26,7 +26,7 @@ app.use(cors());
 
 app.post("/usuario", function (req, response) {
   let sql =
-    "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, foto, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, fotousuario, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
   connection.query(
     sql,
     [
@@ -35,7 +35,7 @@ app.post("/usuario", function (req, response) {
       req.body.nombre_usuario,
       req.body.email,
       req.body.contrasena,
-      req.body.foto,
+      req.body.fotousuario,
       req.body.status,
     ],
     function (err, result) {
@@ -73,12 +73,12 @@ app.put("/usuario", function (req, response) {
     req.body.nombre_usuario,
     req.body.email,
     req.body.contrasena,
-    req.body.foto,
+    req.body.fotousuario,
     req.body.status,
     req.body.usuario_id,
   ];
   let sql =
-    "UPDATE usuario SET nombre = ?, apellido = ?, nombre_usuario = ?, email = ?, contrasena = ?, foto = ?, status = ? WHERE usuario_id = ?";
+    "UPDATE usuario SET nombre = ?, apellido = ?, nombre_usuario = ?, email = ?, contrasena = ?, fotousuario = ?, status = ? WHERE usuario_id = ?";
   connection.query(sql, array, function (err, result) {
     if (err) console.log(err);
     else {
@@ -117,7 +117,7 @@ app.post("/clases", (req, res) => {
 
 app.get("/home", (req, res) => {
   let sql =
-    "SELECT usuario.nombre_usuario, CLASES.clases_id, clases.titulo, clases.descripcion, CLASES.precio, CLASES.tema, CLASES.habilidad, CLASES.fecha, CLASES.plataforma, CLASES.foto FROM CLASES JOIN usuario ON (CLASES.usuario_id = usuario.usuario_id) ";
+    "SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) ";
   connection.query(sql, function (err, result) {
     if (err) {
       console.log(err);
@@ -129,7 +129,7 @@ app.get("/home", (req, res) => {
   });
 });
 
-//Mostrar clases en Organizar Clases
+// Mostrar clases en Organizar Clases
 
 app.get("/clases", function (request, response) {
   console.log(request.query);

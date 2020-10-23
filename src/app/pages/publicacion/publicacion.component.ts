@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { Clases } from 'src/app/models/clases';
@@ -11,14 +10,12 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
   styleUrls: ['./publicacion.component.css']
 })
 export class PublicacionComponent implements OnInit {
-  // firstFormGroup: FormGroup;
-  // secondFormGroup: FormGroup;
   isEditable = false;  
   hide = true;
   step = 0;
   public usuario:Usuario = this.apiService.usuario;
   public clasePublicacion:Clases;
-  constructor(private _formBuilder: FormBuilder, private apiService:UsuarioService, private router: Router, private claseService:ClasesService)
+  constructor( private apiService:UsuarioService, private router: Router, private claseService:ClasesService )
   {
     this.clasePublicacion = this.claseService.clase;
   }
@@ -36,13 +33,11 @@ export class PublicacionComponent implements OnInit {
     console.log(this.clasePublicacion);
     this.claseService.postCameo(this.clasePublicacion.clases_id,this.usuario.usuario_id).subscribe((data) =>
     {
-      // this.claseService.clase = data[0]
       console.log(data);
       this.router.navigateByUrl('/mis-cameos')
     })
   }
   ngOnInit(): void {
-    console.log(this.clasePublicacion);
-    
+    console.log(this.clasePublicacion);    
   }
 }

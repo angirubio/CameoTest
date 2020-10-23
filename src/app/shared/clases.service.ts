@@ -16,7 +16,7 @@ export class ClasesService {
   // CREANDO CLASES NUEVAS
   postClase(nueva_clase: Clases)
   {
-    return this.http.post(this.url, nueva_clase)
+    return this.http.post(this.url, nueva_clase);
   }
 
   getClases(){
@@ -25,7 +25,7 @@ export class ClasesService {
   
   postCameo(clases_id,usuario_id)
   {
-    return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "usuario_id" : usuario_id})
+    return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "usuario_id" : usuario_id});
   }
   
   organizarClases(usuario_id)

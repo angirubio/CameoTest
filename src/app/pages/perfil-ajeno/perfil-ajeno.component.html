@@ -2,14 +2,16 @@
 
 <div class="encabezado">
   <div>
-      <h1>perfil</h1>
+      <h1>{{usuario.nombre_usuario}}</h1>
   </div>
 </div>
+
+
 
 <div id="metaContainer">
 
     <div id="containerFoto">
-        <img src="https://i.pinimg.com/originals/fa/34/07/fa3407bbfc876fd7e1019238c5b6984f.jpg">
+        <img src="{{usuario.fotousuario}}" >
         <div id="#seguir" >
             <button type="button" id="botonSeguir" class="btn btn-dark">Seguir</button>
         </div> 
@@ -19,29 +21,29 @@
     <div id="container">
         <div id="usuario">
             <h6>usuario</h6>
-            <h4>Roberta</h4>
+            <h4>{{usuario.nombre}}</h4>
         </div>
     
         <div id="nivel">
             <h6>nivel</h6>
-            <h4>mediocre</h4>
+            <h4>{{usuario.status}}</h4>
         </div>
     
-        <div id="followers">
+        <!-- <div id="followers">
             <h6>followers</h6>
             <h4>4</h4>
-        </div>
+        </div> -->
     
     
-        <div id="following">
+        <!-- <div id="following">
             <h6>folowing</h6>
             <h4>0</h4>
-        </div>
+        </div> -->
     
         
         <div id="doctrinas">
             <h6>doctrinas</h6>
-            <h4>#reveladoDeFotos #hacerJabon <br> </h4>
+            <h4>{{usuario.habilidad}}<br> </h4>
         </div>
 
     </div>
@@ -68,8 +70,8 @@
               <mat-card class="example-card">
                   <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>Emmanuel</mat-card-title>
-                    <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                    <mat-card-title>{{usuario.nombre_usuario}}</mat-card-title>
+                    <mat-card-subtitle>{{usuario.fecha}}</mat-card-subtitle>
                   </mat-card-header>
                   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                   <mat-card-content>
@@ -87,13 +89,13 @@
               <mat-card class="example-card">
                   <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>Emmanuel</mat-card-title>
-                    <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                    <mat-card-title>{{usuario.nombre}}</mat-card-title>
+                    <mat-card-subtitle>{{usuario.fecha}}</mat-card-subtitle>
                   </mat-card-header>
                   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                   <mat-card-content>
                     <p>
-                      Clase para que tu perro aprenda a traerte el periódico.
+                      {{usuario.descripcion}}
                     </p>
                   </mat-card-content>
                   <mat-card-actions>
@@ -106,13 +108,13 @@
               <mat-card class="example-card">
                   <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>Emmanuel</mat-card-title>
-                    <mat-card-subtitle>clase disponible</mat-card-subtitle>
+                    <mat-card-title>{{usuario.nombre}}</mat-card-title>
+                    <mat-card-subtitle>{{usuario.fecha}}</mat-card-subtitle>
                   </mat-card-header>
                   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                   <mat-card-content>
                     <p>
-                      Clase para que tu perro aprenda a traerte el periódico.
+                      {{usuario.descripcion}}
                     </p>
                   </mat-card-content>
                   <mat-card-actions>
