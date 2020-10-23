@@ -1,9 +1,8 @@
 .classTrue
 {
-    background-color: rgba(245, 45, 88, 0.89);
+    background-color: #a8a8a894;
     border-radius: 25px;
 }
-
 .classFalse
 {
     background-color: white;
@@ -57,12 +56,20 @@
         height: 100%;
         border: 2px solid black;
         border-radius: 25px;
+        padding-bottom: 15px;
     }
     .datos{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         padding-top: 1%;
+    }
+
+    .btn-dark {
+        color: #fff;
+        background-color: #343A40;
+        border-color: #343A40;
+        margin-left: 750px;
     }
 
 }
