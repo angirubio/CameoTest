@@ -133,11 +133,11 @@
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Tema: {{clasePublicacion.titulo}}</mat-card-title>
         <mat-card-subtitle><strong>Fecha: </strong>{{clasePublicacion.fecha | date: 'short'}}</mat-card-subtitle>
-        <mat-card-subtitle><h4>{{clasePublicacion.habilidad}}</h4></mat-card-subtitle>
+        <mat-card-subtitle><h5>{{clasePublicacion.habilidad}}</h5></mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="Photo Guitar">
       <mat-card-content>
-        <h5>Descripción: </h5><p>{{clasePublicacion.descripcion}}</p>
+        <h6>Descripción: </h6><p>{{clasePublicacion.descripcion}}</p>
       </mat-card-content> 
       <mat-card-content>
         <h6>
@@ -145,7 +145,7 @@
         </h6>
       </mat-card-content> 
       <mat-card-content>
-        <h5>Modalidad: </h5><p>{{clasePublicacion.plataforma}}</p>
+        <h6>Modalidad: </h6><p>{{clasePublicacion.plataforma}}</p>
       </mat-card-content> 
     </mat-card>
     <button mat-raised-button color="accent" (click)="apuntarse()">APUNTARSE!</button>
