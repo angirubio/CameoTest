@@ -22,13 +22,19 @@ export class ClasesService {
   getClases(){
     return this.http.get(this.url2)
   }
-
-  showClase(clases_id){
-    return this.http.get(this.url2 + "/publicacion", clases_id);
-  }
   
   postCameo(clases_id,usuario_id)
   {
     return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "usuario_id" : usuario_id})
+  }
+  
+  organizarClases(usuario_id)
+  {
+    return this.http.get(this.url + "?usuario_id=" + usuario_id);
+  }
+
+  filtrarBusqueda(titulo)
+  {
+    return this.http.get(this.url + "/buscar" + "?titulo=" + titulo);
   }
 }

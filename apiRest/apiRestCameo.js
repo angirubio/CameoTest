@@ -46,7 +46,7 @@ app.post("/usuario",
     }
 );
 
-// LOGIN
+// Login
 
 app.post("/usuario/login",
     function(req, response)
@@ -64,7 +64,7 @@ app.post("/usuario/login",
     }
 );
 
-// ACTUALIZACION DE PERFIL
+// Actualizacion de perfil
 
 app.put("/usuario",
     function(req, response)
@@ -123,6 +123,25 @@ app.get("/home", (req, res) => {
     });
   });
 
+  //Mostrar clases en Organizar Clases
+
+  app.get("/clases",
+    function(request, response)
+    {
+        console.log(request.query)
+        let sql = "SELECT * FROM clases WHERE clases.usuario_id = ?";
+        connection.query(sql, [request.query.usuario_id], function( err, result)
+        {
+            if (err)
+            console.log(err);
+            else
+            {
+                response.send(result);
+            }
+        })
+    }
+);
+
 //Añadir cameo
 
 app.post("/clases/cameos",
@@ -172,5 +191,29 @@ function(req, res)
 //         })
 //     }
 // );
+
+//Filtrar búsquedas
+
+app.get("/clases/buscar",
+    function(req, response)
+    {
+        let sql = "SELECT * FROM clases WHERE titulo LIKE '%" + req.query.titulo + "%'";
+        console.log(sql);
+
+        
+        connection.query(sql, function( err, result)
+        {
+            if (err)
+            console.log(err);
+            else{
+                response.send(result);
+                
+            }
+        })
+    }
+);
+
+// Funciona:
+// SELECT * FROM clases WHERE clases.titulo LIKE '%petanca%'
 
 app.listen(3000);

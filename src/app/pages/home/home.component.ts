@@ -13,6 +13,15 @@ export class HomeComponent implements OnInit {
   public clasesHome: Clases[]
   constructor(private claseService:ClasesService, private router: Router) { }
 
+  buscar(titulo:string)
+  {
+    this.claseService.filtrarBusqueda(titulo).subscribe((data:Clases[])=>{
+      console.log(data)
+      this.clasesHome = data;
+      this.router.navigateByUrl('/home')
+    });
+  }
+
   ver(i:string)
   {
     this.claseService.clase = this.clasesHome[i];
@@ -23,7 +32,6 @@ export class HomeComponent implements OnInit {
     this.claseService.getClases().subscribe((data:Clases[])=>{
       this.clasesHome = data;
       this.router.navigateByUrl('/home')
-      // console.log(this.clasesHome);  
     });
   }
 }
