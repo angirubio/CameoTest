@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { ClasesService } from 'src/app/shared/clases.service';
+import { Clases } from 'src/app/models/clases';
 
 
 @Component({
@@ -13,6 +14,8 @@ export class PerfilAjenoComponent implements OnInit {
   public cameosHidden: boolean;
   public clasesHidden: boolean;
   public usuario;
+  public clasesHome: Clases;
+  clases: Clases[];
 
   constructor(public dialog: MatDialog, private claseService: ClasesService)
   {
@@ -22,6 +25,7 @@ export class PerfilAjenoComponent implements OnInit {
     // Guardo en el objeto usuario toda la informacion desde mi servicio que tiene en el get 
     // que me guarda todos los datos del objeto
     this.usuario = this.claseService.clase;
+    // this.clases = this.claseService.clases;
   }
 
   hideCameos(){
@@ -33,10 +37,8 @@ export class PerfilAjenoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     // Prueba para ver que esta funcionado el objeto creado...
-    console.log(this.usuario, "hola");
-    
+    console.log(this.usuario, "hola");  
   }
 
 }

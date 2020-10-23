@@ -9,6 +9,7 @@ import { Clases } from '../models/clases';
 export class ClasesService {
 
   public clase: Clases;
+  public clases: Clases[];
   private url = "http://localhost:3000/clases"
   private url2 = "http://localhost:3000/home"
   constructor(private http: HttpClient) { }
