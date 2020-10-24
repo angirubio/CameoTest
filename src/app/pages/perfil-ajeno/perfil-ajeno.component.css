@@ -96,6 +96,14 @@ img
         background-size: cover;
     }
 
+   .mat-expansion-panel-header-description.ng-tns-c112-10{
+       padding-left: 6%;
+   }
+
+   .mat-expansion-panel-header-description.ng-tns-c112{
+    padding-left: 6%;
+   }
+
 }
 
 

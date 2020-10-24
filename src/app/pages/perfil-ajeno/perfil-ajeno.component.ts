@@ -14,8 +14,8 @@ export class PerfilAjenoComponent implements OnInit {
   public cameosHidden: boolean;
   public clasesHidden: boolean;
   public usuario;
+  public claseUsuario: Clases[];
   public clasesHome: Clases;
-  clases: Clases[];
 
   constructor(public dialog: MatDialog, private claseService: ClasesService)
   {
@@ -26,6 +26,8 @@ export class PerfilAjenoComponent implements OnInit {
     // que me guarda todos los datos del objeto
     this.usuario = this.claseService.clase;
     // this.clases = this.claseService.clases;
+
+    // this.claseUsuario = this.claseService.clases;
   }
 
   hideCameos(){
@@ -38,7 +40,12 @@ export class PerfilAjenoComponent implements OnInit {
 
   ngOnInit(): void {
     // Prueba para ver que esta funcionado el objeto creado...
-    console.log(this.usuario, "hola");  
+    console.log(this.usuario, "hola"); 
+    // console.log(this.claseService.clases, "aqui estoy");
+     this.claseService.organizarClases(this.usuario.usuario_id).subscribe((data:Clases[]) => {
+       console.log(data, "nuevo");
+       this.claseUsuario = data;
+     })
   }
 
 }

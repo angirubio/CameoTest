@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   public usuariosHome: Usuario[];
   constructor(private claseService:ClasesService, private apiService: UsuarioService, private router: Router) { }
 
+// BUSQUEDA DE FILTRADO POR TITULO
+
   buscar(titulo:string)
   {
     this.claseService.filtrarBusqueda(titulo).subscribe((data:Clases[])=>{
@@ -37,6 +39,7 @@ export class HomeComponent implements OnInit {
   {
     console.log(this.apiService.usuario);    
     this.claseService.clase = this.clasesHome[i];
+    this.claseService.clases = this.clasesHome[i];
     this.router.navigateByUrl('/usuario');
   }
   
