@@ -112,6 +112,10 @@ img
     padding-left: 6%;
    }
 
+   .mat-expansion-panel-header-description.ng-tns-c112-10{
+    padding-left: 6%;
+   }
+
    .mat-expansion-panel-body {
     padding: 0 24px 16px;
    }
