@@ -49,13 +49,13 @@
           <div class="row space-16">&nbsp;</div>
           <div class="row">
             <div class="col-sm-4">
-                <mat-card class="example-card" *ngFor="let clases of claseUsuario">
+                <mat-card class="example-card" *ngFor="let clases of claseUsuario;">
                     <mat-card-header>
                       <div mat-card-avatar class="example-header-image"></div>
                       <mat-card-title>{{clases.nombre_usuario}}</mat-card-title>
                       <mat-card-subtitle>{{clases.fecha | date: 'short'}}</mat-card-subtitle>
                     </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                    <img mat-card-image src="{{usuario.foto}}" alt="Photo">
                     <mat-card-content>
                       <p>
                         {{clases.descripcion}}
