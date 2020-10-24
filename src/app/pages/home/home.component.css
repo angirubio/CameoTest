@@ -88,7 +88,7 @@
       }
 
       body > div.publicaciones > div.grid > mat-card > mat-card-actions{
-        text-align: center;
+        text-align: right;
         padding-bottom: 3%;
       }
 
