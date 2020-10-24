@@ -171,6 +171,15 @@ app.get("/clases/cameos", function (request, response) {
   });
 });
 
+// MOSTRAR DESDE PERFIL CAMEOS REALIZADOS
+app.get("/clases/miscameos", (req, res) => {
+    let sql = "SELECT * FROM cameos JOIN CLASES ON(cameos.clases_id = clases.clases_id) JOIN usuario ON (CLASES.usuario_id = usuario.usuario_id) WHERE usuario.usuario_id = ?";
+    connection.query(sql, [req.query.usuario_id], function (err, result) {
+        if (err) console.log(err);        
+             else res.send(result);          
+    });
+})
+
 // app.delete("/usuario",
 //     function(req, response)
 //     {
