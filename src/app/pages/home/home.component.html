@@ -43,7 +43,7 @@
                 <mat-card-title>{{clase.nombre_usuario}}</mat-card-title>
                 <mat-card-subtitle>{{clase.fecha | date: 'short'}}</mat-card-subtitle>
               </mat-card-header>
-              <img mat-card-image src="https://t1.uc.ltmcdn.com/images/9/3/1/img_como_tocar_la_guitarra_como_un_profesional_2139_orig.jpg" alt="Photo Guitar">
+              <img mat-card-image src="{{clase.foto}}" alt="Photo">
               <mat-card-content>
                 <p>
                   {{clase.descripcion}}
