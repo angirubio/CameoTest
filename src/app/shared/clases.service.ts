@@ -28,6 +28,11 @@ export class ClasesService {
   {
     return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "usuario_id" : usuario_id});
   }
+
+  // UNIR MIS CAMEOS DESDE MI PERFIL
+  misCameos(usuario_id){
+    return this.http.get(this.url + "/miscameos" + "?usuario_id="+usuario_id)
+  }  
   
   organizarClases(usuario_id)
   {

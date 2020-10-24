@@ -95,7 +95,7 @@
     <!-- MIRAR LOS CAMEOS HECHOS DEL USUARIO -->
 
       <mat-panel-title>
-          <h3>mira sus cameos</h3>
+          <h3>mira sus cameos realizados</h3>
       </mat-panel-title>
       <mat-panel-description>
         <mat-icon>reorder</mat-icon>
@@ -107,11 +107,12 @@
           <div class="row space-16">&nbsp;</div>
           <div class="row">
             <div class="col-sm-4">
-                <mat-card class="example-card">
+                <mat-card class="example-card" *ngFor="let cameo of misCameos">
                     <mat-card-header>
                       <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>{{usuario.nombre_usuario}}</mat-card-title>
-                      <mat-card-subtitle>{{usuario.fecha | date: 'short'}}</mat-card-subtitle>
+                      <mat-card-title>{{cameo.titulo}}</mat-card-title>
+                      <mat-card-subtitle>{{cameo.tema}}</mat-card-subtitle>
+                      <mat-card-subtitle>{{cameo.fecha | date: 'short'}}</mat-card-subtitle>
                     </mat-card-header>
                     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                     <mat-card-content>
@@ -125,7 +126,7 @@
                     </mat-card-actions>
                   </mat-card>
             </div>
-            <div class="col-sm-4">
+            <!-- <div class="col-sm-4">
                 <mat-card class="example-card">
                     <mat-card-header>
                       <div mat-card-avatar class="example-header-image"></div>
@@ -143,8 +144,8 @@
                       <button mat-button>Contactar</button>
                     </mat-card-actions>
                   </mat-card>
-            </div>
-            <div class="col-sm-4">
+            </div> -->
+            <!-- <div class="col-sm-4">
                 <mat-card class="example-card">
                     <mat-card-header>
                       <div mat-card-avatar class="example-header-image"></div>
@@ -162,14 +163,14 @@
                       <button mat-button>Contactar</button>
                     </mat-card-actions>
                   </mat-card>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-2">&nbsp;</div>
         </div>
       </div>
   </mat-expansion-panel>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-2">&nbsp;</div>
     <div class="col-md-8">
       <div class="row space-16">&nbsp;</div>
@@ -234,7 +235,7 @@
       </div>
       <div class="col-md-2">&nbsp;</div>
     </div>
-  </div>
+  </div> -->
 
 </div>
 
