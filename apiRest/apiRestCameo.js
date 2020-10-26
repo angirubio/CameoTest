@@ -52,16 +52,12 @@ app.post("/usuario", function (req, response) {
 app.post("/usuario/login", function (req, response) {
   let sql =
     "SELECT * FROM usuario WHERE (usuario.nombre_usuario = ? AND usuario.contrasena = ?)";
-  connection.query(
-    sql,
-    [req.body.nombre_usuario, req.body.contrasena],
-    function (err, result) {
-      if (err) console.log(err);
-      else {
-        response.send(result);
-      }
+  connection.query(sql, [req.body.nombre_usuario, req.body.contrasena], function (err, result) {
+    if (err) console.log(err);
+    else {
+      response.send(result);
     }
-  );
+  });
 });
 
 // Actualizacion de perfil
@@ -207,6 +203,20 @@ app.get("/clases/buscar", function (req, response) {
     if (err) console.log(err);
     else {
       response.send(result);
+    }
+  });
+});
+
+//Chat
+
+app.post("/chat", (req, res) => {
+  let sql =
+    "INSERT INTO chat (usuario_id, receptor_id, mensaje) VALUES (?,?,?)";
+  connection.query(sql, [req.body.usuario_id, req.body.receptor_id, req.body.mensaje], function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
     }
   });
 });
