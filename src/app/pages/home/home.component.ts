@@ -22,8 +22,16 @@ export class HomeComponent implements OnInit {
   {
     this.claseService.filtrarBusqueda(titulo).subscribe((data:Clases[])=>{
       console.log(data)
-      this.clasesHome = data;
-      this.router.navigateByUrl('/home')
+      if (data.length === 0)
+      {
+        alert("Upsss! No hay ninguna coincidencia con tu búsqueda. Prueba a buscar otra cosa!")
+      }
+
+      else{
+        this.clasesHome = data;
+        this.router.navigateByUrl('/home')
+      }
+      
     });
   }
 
