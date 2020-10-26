@@ -117,7 +117,7 @@ app.post("/clases", (req, res) => {
 
 app.get("/home", (req, res) => {
   let sql =
-    "SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) ";
+    "(SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='presencial' ORDER BY clases.fecha DESC LIMIT 6) UNION ALL (SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='online' ORDER BY clases.fecha DESC LIMIT 6)";
   connection.query(sql, function (err, result) {
     if (err) {
       console.log(err);
@@ -133,7 +133,7 @@ app.get("/home", (req, res) => {
 
 app.get("/clases", function (request, response) {
   console.log(request.query);
-  let sql = "SELECT * FROM clases WHERE clases.usuario_id = ?";
+  let sql = "SELECT * FROM clases WHERE clases.usuario_id = ? ORDER BY clases.fecha DESC";
   connection.query(sql, [request.query.usuario_id], function (err, result) {
     if (err) console.log(err);
     else {

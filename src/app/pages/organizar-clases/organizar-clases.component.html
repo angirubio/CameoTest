@@ -15,7 +15,8 @@
             <div class="col-sm-8">
               <div [ngClass]="claseCssPublicada ? 'classFalse' : 'classTrue'" class="card" *ngFor="let clase of clasesGestionar; let i = index">
                 <div class="card-body">
-                  <button class="btn btn-dark"(click)="cambiarEstadoClase(i)">{{estaPublicada ? 'Publicada' : 'Oculta' }}</button>
+                  <div class="grid">
+                  <button class="btn btn-dark"(click)="cambiarEstadoClase()">{{estaPublicada ? 'Publicada' : 'Oculta' }}</button>
                   <h6>{{clase.tema}}</h6>
                   <h6><b><i>{{clase.doctrina}}</i></b></h6>
                   <h4><b><i>{{clase.titulo}}</i></b></h4>
@@ -31,6 +32,7 @@
                       <h5><b><i>{{clase.precio}}</i></b></h5>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
               <br>
