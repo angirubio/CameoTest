@@ -8,6 +8,7 @@ import { Usuario } from '../models/usuario';
 export class UsuarioService {
   private url = "http://localhost:3000/usuario"
   public usuario:Usuario;
+  public receptor:Usuario;
   constructor(private http: HttpClient) { }
 
     postUsuario(nuevo_usuario:Usuario)

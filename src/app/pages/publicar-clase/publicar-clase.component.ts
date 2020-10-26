@@ -17,8 +17,7 @@ export class PublicarClaseComponent implements OnInit {
 
   public default_foto_clase:string = "https://res.cloudinary.com/rebelwalls/image/upload/b_black,c_fill,f_auto,fl_progressive,h_533,q_auto,w_800/v1428566112/article/R11191_image1";
   public id:number = this.apiService.usuario.usuario_id;
-  constructor(private apiService:UsuarioService, private claseService:ClasesService, private router: Router,) {
-  }
+  constructor(private apiService:UsuarioService, private claseService:ClasesService, private router: Router) { }
 
   // Botones para ir a siguiente
   setStep(index: number) {
@@ -35,7 +34,7 @@ export class PublicarClaseComponent implements OnInit {
 
 
   // Metodo que me crea un objeto de tipo clases
-  terminar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string, foto:string)
+  publicar(titulo: string, descripcion: string, precio: number, tema: string, habilidad: string, fecha: Date, plataforma: string, foto:string)
   {
     if (foto == ""){
       this.default_foto_clase = foto;
