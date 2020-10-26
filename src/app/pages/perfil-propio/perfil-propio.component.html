@@ -8,7 +8,7 @@
 
 <div id="metaContainer">
     <div id="containerFoto">
-        <img src="{{usuario.foto}}">
+        <img src="{{usuario.fotousuario}}">
     </div>
     <div id="container">
         <div>
@@ -25,11 +25,11 @@
         </div>
         <div>
             <mat-form-field class="example-full-width">
-                <textarea matInput placeholder="URL de la foto" #foto></textarea>
+                <textarea matInput placeholder="URL de la foto" #fotousuario></textarea>
             </mat-form-field>
         </div>
         <div>
-            <button type="button" (click)="actualizarBasicos(nombre_usuario.value,status.value,foto.value)" class="btn btn-dark">Actualizar</button>
+            <button type="button" (click)="actualizarBasicos(nombre_usuario.value,status.value,fotousuario.value)" class="btn btn-dark">Actualizar</button>
         </div>
     </div>
 </div>

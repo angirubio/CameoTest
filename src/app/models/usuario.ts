@@ -5,10 +5,10 @@ export class Usuario {
     public nombre_usuario:string
     public email:string
     public contrasena:string
-    public foto:string
+    public fotousuario:string
     public status:string
 
-    constructor(usuario_id?:number,nombre?:string,apellido?:string,nombre_usuario?:string,email?:string,contrasena?:string,foto?:string,status?:string)
+    constructor(usuario_id?:number,nombre?:string,apellido?:string,nombre_usuario?:string,email?:string,contrasena?:string,fotousuario?:string,status?:string)
     {
         this.usuario_id = usuario_id;
         this.nombre = nombre;
@@ -16,7 +16,7 @@ export class Usuario {
         this.nombre_usuario = nombre_usuario;
         this.email = email;
         this.contrasena = contrasena;
-        this.foto = foto;
+        this.fotousuario = fotousuario;
         this.status = status;
     }
 }

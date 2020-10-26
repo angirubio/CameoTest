@@ -173,7 +173,7 @@ app.get("/clases/cameos", function (request, response) {
 
 // MOSTRAR DESDE PERFIL CAMEOS REALIZADOS
 app.get("/clases/miscameos", (req, res) => {
-    let sql = "SELECT * FROM cameos JOIN CLASES ON(cameos.clases_id = clases.clases_id) JOIN usuario ON (CLASES.usuario_id = usuario.usuario_id) WHERE usuario.usuario_id = ?";
+    let sql = "SELECT * FROM cameos JOIN clases ON(cameos.clases_id = clases.clases_id) JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE usuario.usuario_id = ?";
     connection.query(sql, [req.query.usuario_id], function (err, result) {
         if (err) console.log(err);        
              else res.send(result);          
@@ -210,8 +210,5 @@ app.get("/clases/buscar", function (req, response) {
     }
   });
 });
-
-// Funciona:
-// SELECT * FROM clases WHERE clases.titulo LIKE '%petanca%'
 
 app.listen(3000);

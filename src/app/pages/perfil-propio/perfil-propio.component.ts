@@ -15,7 +15,7 @@ export class PerfilPropioComponent implements OnInit {
 
   constructor(private apiService:UsuarioService, private router: Router) {}
 
-  actualizarBasicos(nombre_usuario:string,status:string,foto:string)
+  actualizarBasicos(nombre_usuario:string,status:string,fotousuario:string)
   { 
     if (nombre_usuario == "") {
       nombre_usuario = this.usuario.nombre_usuario
@@ -27,10 +27,10 @@ export class PerfilPropioComponent implements OnInit {
     } else{
       this.usuario.status = status
     }
-    if (foto == "") {
-      foto = this.usuario.foto
+    if (fotousuario == "") {
+      fotousuario = this.usuario.fotousuario
     } else{
-      this.usuario.foto = foto
+      this.usuario.fotousuario = fotousuario
     }
     
     this.apiService.putUsuario(this.usuario).subscribe((data) =>
