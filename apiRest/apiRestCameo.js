@@ -221,4 +221,40 @@ app.post("/chat", (req, res) => {
   });
 });
 
+app.get("/chat/conversacion", (req, res) => {
+  let sql =
+    "SELECT mensaje FROM chat WHERE usuario_id = ? AND receptor_id = ?";
+  connection.query(sql, [req.query.usuario_id, req.query.receptor_id], function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.get("/chat/recibidos", (req, res) => {
+  let sql =
+    "SELECT mensaje FROM chat WHERE usuario_id = ? AND receptor_id = ?";
+  connection.query(sql, [req.query.usuario_id, req.query.receptor_id], function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.get("/chat/usuarios", (req, res) => {
+  let sql =
+    "SELECT DISTINCT usuario.nombre_usuario, usuario.fotousuario FROM usuario JOIN chat ON (usuario.usuario_id = chat.receptor_id) WHERE chat.usuario_id = ?";
+  connection.query(sql, [req.query.usuario_id], function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 app.listen(3000);

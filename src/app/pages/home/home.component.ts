@@ -4,6 +4,7 @@ import { ClasesService } from 'src/app/shared/clases.service';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
+import { ChatService } from 'src/app/shared/chat.service';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +15,13 @@ export class HomeComponent implements OnInit {
 
   public clasesHome: Clases[];
   public usuariosHome: Usuario[];
-  constructor(private claseService:ClasesService, private apiService: UsuarioService, private router: Router) { }
+  constructor(private claseService:ClasesService, private apiService: UsuarioService, private router: Router, private chatService:ChatService, ) { }
 
 // BUSQUEDA DE FILTRADO POR TITULO
 
   buscar(titulo:string)
   {
     this.claseService.filtrarBusqueda(titulo).subscribe((data:Clases[])=>{
-      console.log(data)
       if (data.length === 0)
       {
         alert("Upsss! No hay ninguna coincidencia con tu búsqueda. Prueba a buscar otra cosa!")
@@ -44,13 +44,15 @@ export class HomeComponent implements OnInit {
 // METODO QUE RECOGE EL INDICE DE LA TARJETA DE HOME
 
   verPerfil(i:string)
-  {
-    console.log(this.apiService.usuario);    
+  {   
     this.claseService.clase = this.clasesHome[i];
-    this.claseService.clases = this.clasesHome[i];
     this.router.navigateByUrl('/usuario');
   }
   
+  abrirChat(i:string){
+    this.apiService.receptor = this.clasesHome[i];
+    this.router.navigateByUrl('/chat');
+  }
 
   ngOnInit(): void {
     this.claseService.getClases().subscribe((data:Clases[])=>{

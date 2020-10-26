@@ -7,6 +7,7 @@ import { Chat } from '../models/chat';
 })
 export class ChatService {
 
+  public conversacion: Chat[];
   public chat: Chat;
   private url = "http://localhost:3000/chat"
 
@@ -15,5 +16,17 @@ export class ChatService {
   postMensaje(mensaje: Chat)
   {
     return this.http.post(this.url, mensaje);
+  }
+
+  getMensajesEnviados(emisor,receptor){
+    return this.http.get(this.url+"/conversacion"+"?usuario_id="+emisor+"&receptor_id="+receptor)
+  }
+
+  getMensajesRecibidos(emisor,receptor){
+    return this.http.get(this.url+"/conversacion"+"?usuario_id="+emisor+"&receptor_id="+receptor)
+  }
+
+  getUsuarios(emisor){
+    return this.http.get(this.url+"/usuarios"+"?usuario_id="+emisor)
   }
 }
