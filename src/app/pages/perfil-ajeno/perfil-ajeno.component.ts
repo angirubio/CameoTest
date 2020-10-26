@@ -15,7 +15,7 @@ export class PerfilAjenoComponent implements OnInit {
   public clasesHidden: boolean;
   public usuario;
   public claseUsuario: Clases[];
-  public clasesHome: Clases;
+  // public clasesHome: Clases;
   public misCameos: any[];
 
   constructor(public dialog: MatDialog, private claseService: ClasesService)
