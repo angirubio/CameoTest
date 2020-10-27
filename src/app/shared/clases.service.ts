@@ -30,9 +30,19 @@ export class ClasesService {
   }
 
   // UNIR MIS CAMEOS DESDE MI PERFIL
+<<<<<<< HEAD
   misCameos(solicitante_id:number){
     return this.http.get(this.url + "/miscameos" + "?solicitante_id="+solicitante_id)
   }  
+=======
+  misCameos(usuario_id){
+    return this.http.get(this.url + "/miscameos" + "?usuario_id="+usuario_id)
+  }
+  
+  infoCameos(usuario_id){
+    return this.http.get(this.url + "/infocameos" + "?usuario_id="+usuario_id)
+  }
+>>>>>>> b45c93181c69d6b5a9a2d961666102453ce09ed6
   
   organizarClases(usuario_id)
   {

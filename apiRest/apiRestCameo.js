@@ -113,8 +113,7 @@ app.post("/clases", (req, res) => {
 // MOSTRAR CLASES EN HOME
 
 app.get("/home", (req, res) => {
-  let sql =
-    "(SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='presencial' ORDER BY clases.fecha DESC LIMIT 6) UNION ALL (SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='online' ORDER BY clases.fecha DESC LIMIT 6)";
+  let sql = "(SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='presencial' ORDER BY clases.fecha DESC LIMIT 6) UNION ALL (SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='online' ORDER BY clases.fecha DESC LIMIT 6)";
   connection.query(sql, function (err, result) {
     if (err) {
       console.log(err);
@@ -226,7 +225,7 @@ app.post("/chat", (req, res) => {
 });
 
 app.get("/chat/conversacion", (req, res) => {
-  let sql ="SELECT mensaje FROM chat WHERE usuario_id = ? AND receptor_id = ? OR receptor_id = ? AND usuario_id = ? ORDER BY mensaje_id";
+  let sql ="SELECT mensaje, chat.usuario_id FROM chat WHERE usuario_id = ? AND receptor_id = ? OR receptor_id = ? AND usuario_id = ? ORDER BY mensaje_id";
   connection.query(sql, [req.query.usuario_id, req.query.receptor_id, req.query.usuario_id, req.query.receptor_id], function (err, result) {
     if (err) {
       console.log(err);
@@ -237,9 +236,8 @@ app.get("/chat/conversacion", (req, res) => {
 });
 
 app.get("/chat/usuarios", (req, res) => {
-  let sql =
-    "SELECT DISTINCT usuario.usuario_id, usuario.nombre_usuario, usuario.fotousuario FROM usuario JOIN chat ON (usuario.usuario_id = chat.receptor_id) WHERE chat.usuario_id = ? OR chat.receptor_id = ?";
-  connection.query(sql, [req.query.usuario_id, req.query.receptor_id], function (err, result) {
+  let sql = "SELECT DISTINCT usuario.usuario_id, usuario.nombre_usuario, usuario.fotousuario FROM usuario JOIN chat ON (usuario.usuario_id = chat.receptor_id) WHERE chat.usuario_id = ? OR chat.receptor_id = ?";
+  connection.query(sql, [req.query.usuario_id, req.query.usuario_id], function (err, result) {
     if (err) {
       console.log(err);
     } else {

@@ -22,7 +22,7 @@ export class ChatService {
     return this.http.get(this.url+"/conversacion"+"?usuario_id="+emisor+"&receptor_id="+receptor)
   }
 
-  getUsuarios(emisor,receptor){
-    return this.http.get(this.url+"/usuarios"+"?usuario_id="+emisor+"&receptor_id="+receptor)
+  getUsuarios(usuario){
+    return this.http.get(this.url+"/usuarios"+"?usuario_id="+usuario)
   }
 }
