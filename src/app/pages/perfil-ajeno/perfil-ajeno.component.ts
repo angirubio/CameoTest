@@ -51,8 +51,8 @@ export class PerfilAjenoComponent implements OnInit {
 
      // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS REALIZADOS
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {
-        console.log(data, "desde cameos");
-        this.misCameos = data;
+       this.misCameos = data;
+       console.log(data, "desde cameos");
      });
   }
 

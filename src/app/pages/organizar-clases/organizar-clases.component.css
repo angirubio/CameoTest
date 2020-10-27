@@ -72,5 +72,21 @@
         margin-left: 750px;
     }
 
+    /* GRID */
+    /* .grid {
+        margin-left: 6%;
+        display: grid; */
+        /* grid-template-columns: 400px repeat(1, 400px) 400px; */
+        /* grid-template-rows: 1fr 6fr;
+        grid-template-columns: 3fr 4fr 200px repeat(2, 13.1rem) 1fr; */
+        /* grid-template-columns: 1fr 1fr; */
+        /* grid-template-rows: 1fr 1fr;
+       
+      } */
+
+      body > div.grid > div > mat-card{
+        margin-bottom: 15%;
+      }
+
 }
 
