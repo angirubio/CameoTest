@@ -196,7 +196,7 @@ app.get("/clases/miscameos", (req, res) => {
 
 app.get("/clases/buscar", function (req, response) {
   let sql =
-    "SELECT * FROM clases WHERE titulo LIKE '%" + req.query.titulo + "%'";
+    "SELECT * FROM clases WHERE titulo LIKE '%" + req.query.titulo + "%' OR descripcion LIKE '%" + req.query.titulo + "%' OR tema LIKE '%" + req.query.titulo + "%' OR habilidad LIKE '%" + req.query.titulo + "%'";
   console.log(sql);
 
   connection.query(sql, function (err, result) {
@@ -222,21 +222,8 @@ app.post("/chat", (req, res) => {
 });
 
 app.get("/chat/conversacion", (req, res) => {
-  let sql =
-    "SELECT mensaje FROM chat WHERE usuario_id = ? AND receptor_id = ?";
-  connection.query(sql, [req.query.usuario_id, req.query.receptor_id], function (err, result) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-app.get("/chat/recibidos", (req, res) => {
-  let sql =
-    "SELECT mensaje FROM chat WHERE usuario_id = ? AND receptor_id = ?";
-  connection.query(sql, [req.query.usuario_id, req.query.receptor_id], function (err, result) {
+  let sql ="SELECT mensaje FROM chat WHERE usuario_id = ? AND receptor_id = ? OR receptor_id = ? AND usuario_id = ? ORDER BY mensaje_id";
+  connection.query(sql, [req.query.usuario_id, req.query.receptor_id, req.query.usuario_id, req.query.receptor_id], function (err, result) {
     if (err) {
       console.log(err);
     } else {
@@ -247,8 +234,8 @@ app.get("/chat/recibidos", (req, res) => {
 
 app.get("/chat/usuarios", (req, res) => {
   let sql =
-    "SELECT DISTINCT usuario.nombre_usuario, usuario.fotousuario FROM usuario JOIN chat ON (usuario.usuario_id = chat.receptor_id) WHERE chat.usuario_id = ?";
-  connection.query(sql, [req.query.usuario_id], function (err, result) {
+    "SELECT DISTINCT usuario.usuario_id, usuario.nombre_usuario, usuario.fotousuario FROM usuario JOIN chat ON (usuario.usuario_id = chat.receptor_id) WHERE chat.usuario_id = ? OR chat.receptor_id = ?";
+  connection.query(sql, [req.query.usuario_id, req.query.receptor_id], function (err, result) {
     if (err) {
       console.log(err);
     } else {

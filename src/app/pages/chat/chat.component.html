@@ -55,16 +55,16 @@
 							<span id="action_menu_btn"><mat-icon>delete</mat-icon></span>
 						</div>
 						<div class="card-body msg_card_body" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-							<div class="d-flex justify-content-start mb-4" *ngFor="let recibido of recibidos">
+							<div class="d-flex justify-content-start mb-4" [ngClass]="{'msg_cotainer': emisor != 'emisor', 'msg_cotainer_send': emisor == 'emisor'}" *ngFor="let mensaje of conver">
 								<div class="msg_cotainer">
-									{{recibido.mensaje}}
+									{{mensaje.mensaje}}
 								</div>
 							</div>
-							<div class="d-flex justify-content-end mb-4" *ngFor="let enviado of enviados">
+							<!-- <div class="d-flex justify-content-end mb-4">
 								<div class="msg_cotainer_send">
-									{{enviado.mensaje}}
+									{{mensaje.mensaje}}
 								</div>
-							</div>
+							</div> -->
 						</div>
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="Escribe algo..." aria-describedby="button-addon2" #mensaje>                    

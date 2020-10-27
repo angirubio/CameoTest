@@ -12,43 +12,40 @@ import { Chat } from '../../models/chat';
 })
 export class ChatComponent implements OnInit {
 
-  public enviados:Chat[];
-  public recibidos:Chat[];
-  public mandado:Chat;
+  public conver:Chat[];
   public usuarios:Usuario[]
+  public emisor:Usuario;
   public receptor:Usuario;
   constructor(private apiService:UsuarioService, private chatService:ChatService, private router: Router) {
+    this.emisor = this.apiService.usuario;
     this.receptor = this.apiService.receptor;
   }
 
   abrir(i:number){
     this.receptor = this.usuarios[i];
-    this.router.navigateByUrl('/chat');
+    this.chatService.getConversacion(this.emisor.usuario_id,this.receptor.usuario_id).subscribe((data:Chat[])=>{
+      this.conver = data;
+      this.router.navigateByUrl('/chat')
+    });
   }
 
   enviar(mensaje: string)
   {
-    this.chatService.chat = new Chat(0, this.apiService.usuario.usuario_id, this.apiService.receptor.usuario_id, mensaje)
+    this.conver.push(new Chat(0, this.emisor.usuario_id, this.receptor.usuario_id, mensaje))
+    this.chatService.chat = new Chat(0, this.emisor.usuario_id, this.receptor.usuario_id, mensaje)
     this.chatService.postMensaje(this.chatService.chat).subscribe((data) =>
     {
-      this.chatService.getMensajesEnviados(this.apiService.usuario.usuario_id,this.apiService.receptor.usuario_id).subscribe((data:Chat[])=>{
-        this.enviados = data;
-        this.router.navigateByUrl('/chat')
-      });
+      console.log(data);
     });
   }
 
   ngOnInit(): void {
-    this.chatService.getUsuarios(this.apiService.usuario.usuario_id).subscribe((data:Usuario[])=>{
+    this.chatService.getUsuarios(this.emisor.usuario_id,this.emisor.usuario_id).subscribe((data:Usuario[])=>{
       this.usuarios = data;
       this.router.navigateByUrl('/chat')
     });
-    this.chatService.getMensajesEnviados(this.apiService.usuario.usuario_id,this.apiService.receptor.usuario_id).subscribe((data:Chat[])=>{
-      this.enviados = data;
-      this.router.navigateByUrl('/chat')
-    });
-    this.chatService.getMensajesRecibidos(this.apiService.receptor.usuario_id,this.apiService.usuario.usuario_id).subscribe((data:Chat[])=>{
-      this.recibidos = data;
+    this.chatService.getConversacion(this.emisor.usuario_id,this.receptor.usuario_id).subscribe((data:Chat[])=>{
+      this.conver = data;
       this.router.navigateByUrl('/chat')
     });
   }

@@ -18,15 +18,11 @@ export class ChatService {
     return this.http.post(this.url, mensaje);
   }
 
-  getMensajesEnviados(emisor,receptor){
+  getConversacion(emisor,receptor){
     return this.http.get(this.url+"/conversacion"+"?usuario_id="+emisor+"&receptor_id="+receptor)
   }
 
-  getMensajesRecibidos(emisor,receptor){
-    return this.http.get(this.url+"/conversacion"+"?usuario_id="+emisor+"&receptor_id="+receptor)
-  }
-
-  getUsuarios(emisor){
-    return this.http.get(this.url+"/usuarios"+"?usuario_id="+emisor)
+  getUsuarios(emisor,receptor){
+    return this.http.get(this.url+"/usuarios"+"?usuario_id="+emisor+"&receptor_id="+receptor)
   }
 }
