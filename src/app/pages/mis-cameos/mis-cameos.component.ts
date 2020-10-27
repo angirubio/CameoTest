@@ -11,7 +11,7 @@ export class MisCameosComponent implements OnInit {
   usuario: any;
 
   constructor(private claseService: ClasesService) {
-    this.usuario = this.claseService.clase;
+    this.usuario = this.claseService.clases;
    }
 
   ngOnInit(): void {

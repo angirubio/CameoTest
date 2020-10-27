@@ -28,7 +28,7 @@ export class PerfilAjenoComponent implements OnInit {
     this.usuario = this.claseService.clase;
     // this.clases = this.claseService.clases;
 
-    // this.claseUsuario = this.claseService.clases;
+    this.claseUsuario = this.claseService.clases;
   }
 
   hideCameos(){
