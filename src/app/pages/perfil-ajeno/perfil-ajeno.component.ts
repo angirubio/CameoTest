@@ -15,7 +15,6 @@ export class PerfilAjenoComponent implements OnInit {
   public clasesHidden: boolean;
   public usuario;
   public claseUsuario: Clases[];
-  // public clasesHome: Clases;
   public misCameos: any[];
 
   constructor(public dialog: MatDialog, private claseService: ClasesService)
@@ -39,20 +38,14 @@ export class PerfilAjenoComponent implements OnInit {
     this.clasesHidden = true;
   }
 
-  ngOnInit(): void {
-    // Prueba para ver que esta funcionado el objeto creado...
-    console.log(this.usuario, "hola"); 
-
-    // CREANDO DESDE SERVICIO LA VISTA DE LAS CLASES
+  ngOnInit(): void {// CREANDO DESDE SERVICIO LA VISTA DE LAS CLASES
      this.claseService.organizarClases(this.usuario.usuario_id).subscribe((data:Clases[]) => {
-       console.log(data, "nuevo");
        this.claseUsuario = data;
      });
 
      // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS REALIZADOS
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {
        this.misCameos = data;
-       console.log(data, "desde cameos");
      });
   }
 

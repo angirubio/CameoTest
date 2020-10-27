@@ -58,7 +58,7 @@
                 <button mat-mini-fab color="accent" (click)="ver(i)">Ver</button>
                   <!-- Boton que lanza el evento de mostrar el perfil y todos los cameos que se ha apuntado este usuario -->
                 <button mat-raised-button color="accent" routerLink="/usuario" (click)="verPerfil(i)">Ver Perfil</button>
-                <button mat-mini-fab color="accent"routerLink="/chat"><mat-icon> contact_mail</mat-icon></button>
+                <button mat-mini-fab color="accent"routerLink="/chat" (click)="abrirChat(i)"><mat-icon> contact_mail</mat-icon></button>
               </mat-card-actions>
             </mat-card>
           </div>

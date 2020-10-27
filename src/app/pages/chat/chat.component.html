@@ -27,44 +27,14 @@
                         </div>
 					</div>
 					<div class="card-body contacts_body">
-						<div class="contacts">
+						<div class="contacts" *ngFor="let usuario of usuarios; let i = index">
 						<li class="active">
 							<div class="d-flex bd-highlight">
 								<div class="img_cont">
-									<img src="https://i.pinimg.com/originals/fa/34/07/fa3407bbfc876fd7e1019238c5b6984f.jpg" class="rounded-circle user_img">
+									<img src="{{usuario.fotousuario}}" class="rounded-circle user_img" (click)="abrir(i)">
 								</div>
 								<div class="user_info">
-									<span>Roberta</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img src="https://i.insider.com/599df54ed03020539f56bbe1?width=1100&format=jpeg&auto=webp" class="rounded-circle user_img">
-								</div>
-								<div class="user_info">
-									<span>Javiero</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img src="https://vignette.wikia.nocookie.net/disney/images/3/32/Profile_-_Rafiki.jpeg/revision/latest?cb=20190314055144" class="rounded-circle user_img">
-								</div>
-								<div class="user_info">
-									<span>Rafiki</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img src="https://pbs.twimg.com/profile_images/1269917942105374721/o1-GxwPx.png" class="rounded-circle user_img">
-								</div>
-								<div class="user_info">
-									<span>Luis</span>
+									<span>{{usuario.nombre_usuario}}</span>
 								</div>
 							</div>
 						</li>
@@ -76,45 +46,30 @@
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight">
 								<div class="img_cont">
-									<img routerLink="/usuario" src="https://i.pinimg.com/originals/fa/34/07/fa3407bbfc876fd7e1019238c5b6984f.jpg" class="rounded-circle user_img">
+									<img routerLink="/usuario" src="{{receptor.fotousuario}}" class="rounded-circle user_img">
 								</div>
 								<div class="user_info">
-									<span>Roberta</span>
+									<span>{{receptor.nombre_usuario}}</span>
 								</div>
 							</div>
 							<span id="action_menu_btn"><mat-icon>delete</mat-icon></span>
 						</div>
-						<div class="card-body msg_card_body">
-							<div class="d-flex justify-content-start mb-4">
+						<div class="card-body msg_card_body" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+							<div class="d-flex justify-content-start mb-4" [ngClass]="{'msg_cotainer': emisor != 'emisor', 'msg_cotainer_send': emisor == 'emisor'}" *ngFor="let mensaje of conver">
 								<div class="msg_cotainer">
-									Hola tía qué tal fue la pesca?
+									{{mensaje.mensaje}}
 								</div>
 							</div>
-							<div class="d-flex justify-content-end mb-4">
+							<!-- <div class="d-flex justify-content-end mb-4">
 								<div class="msg_cotainer_send">
-									Muy bien
+									{{mensaje.mensaje}}
 								</div>
-							</div>
-							<div class="d-flex justify-content-end mb-4">
-								<div class="msg_cotainer_send">
-									Qué divertido fue!
-								</div>
-							</div>
-							<div class="d-flex justify-content-start mb-4">
-								<div class="msg_cotainer">
-									Me la recomiendas??
-								</div>
-							</div>
-							<div class="d-flex justify-content-start mb-4">
-								<div class="msg_cotainer">
-									Estoy pensando en ir con la Noe jajaja
-								</div>
-							</div>
+							</div> -->
 						</div>
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Escribe algo..." aria-describedby="button-addon2">                    
+                  <input type="text" class="form-control" placeholder="Escribe algo..." aria-describedby="button-addon2" #mensaje>                    
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="enviar(mensaje.value)">Enviar</button>
                 </div>
 						</div>
 					</div>
