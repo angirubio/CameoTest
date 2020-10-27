@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 import { Usuario } from 'src/app/models/usuario';
+import { Clases } from 'src/app/models/clases';
 
 @Component({
   selector: 'app-mis-cameos',
@@ -19,6 +20,7 @@ export class MisCameosComponent implements OnInit {
   ngOnInit(): void {
      // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {
+       console.log(this.usuario.usuario_id);       
       this.cameos = data;
       console.log(data, "desde mis cameos");
     });

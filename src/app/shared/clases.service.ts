@@ -24,19 +24,23 @@ export class ClasesService {
     return this.http.get(this.url2)
   }
   
-  postCameo(clases_id,usuario_id)
+  postCameo(clases_id,solicitante_id)
   {
-    return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "usuario_id" : usuario_id});
+    return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "solicitante_id" : solicitante_id});
   }
 
   // UNIR MIS CAMEOS DESDE MI PERFIL
-  misCameos(usuario_id){
-    return this.http.get(this.url + "/miscameos" + "?usuario_id="+usuario_id)
+  misCameos(solicitante_id:number){
+    return this.http.get(this.url + "/miscameos" + "?solicitante_id="+solicitante_id)
   }  
   
   organizarClases(usuario_id)
   {
     return this.http.get(this.url + "?usuario_id=" + usuario_id);
+  }
+
+  solicitudes(usuario_id){
+    return this.http.get(this.url + "/solicitudes?usuario_id="+usuario_id)
   }
 
   filtrarBusqueda(titulo)

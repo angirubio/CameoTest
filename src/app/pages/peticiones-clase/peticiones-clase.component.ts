@@ -19,7 +19,7 @@ export class PeticionesClaseComponent implements OnInit {
   public claseCssCancelar: boolean;
   public textoBotonCancelado: boolean;
   public usuarioConfirmado: boolean;
-  usuario: Usuario;
+  public usuario: Usuario;
   public peticiones: Clases[];
 
 
@@ -49,11 +49,21 @@ export class PeticionesClaseComponent implements OnInit {
 
 
   ngOnInit(): void {
-       // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS
-       this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: Clases[]) => {
-        this.peticiones = data;
-        console.log(data, "desde mis peticiones");
-      });
-    }
+    this.claseService.solicitudes(this.apiService.usuario.usuario_id).subscribe((data:Clases[])=>{
+      console.log(data)
+      console.log(this.apiService.usuario.usuario_id);
+      
+      this.peticiones = data;
+      // this.claseService.solicitudes(this.apiService.usuario.usuario_id).subscribe((data:Clases[])=>{
+      //   console.log(data)
+      //   this.peticiones = data;
+      //   this.router.navigateByUrl('/organizar-clases')
+      // }); 
+
+    })
+  }
 
 }
+
+
+

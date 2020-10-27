@@ -9,15 +9,15 @@
     </div>
     
 
-    <div class="publicaciones">
+    <div class="publicaciones" *ngFor="let apuntarse of peticiones">
 
       <div class="container">
         <div class="carta">
-            <img routerLink="/user" src="https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b" class="card-img-top" alt="">
-            <p style="margin-top: 5px;"><b>yon</b></p><p style="color:#A8A8A8;margin-top: -20px;">{{usuarioApuntado ? 'confirmado!' : 'se ha apuntado!'}}</p>
+            <img routerLink="/user" src="{{apuntarse.fotousuario}}" class="card-img-top" alt="">
+            <p style="margin-top: 5px;"><b>{{apuntarse.nombre_usuario}}</b></p><p style="color:#A8A8A8;margin-top: -20px;">{{usuarioApuntado ? 'confirmado!' : 'se ha apuntado!'}}</p>
         </div>
         <div class="row">
-            <div class="col-sm-8" *ngFor="let apuntarse of peticiones">
+            <div class="col-sm-8">
               <div [ngClass]="claseCssConfirmar ? 'classTrue' : 'classFalse'" class="card">
                 <!-- comienzo del div blanco -->
                 <div class ="card-body">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="datosPrecio">
                       <p>Precio</p>
-                      <p><b>{{apuntarse.precio}}€</b></p>
+                      <p><b>{{apuntarse.precio}}</b></p>
                     </div>
                   </div>
                 </div>
