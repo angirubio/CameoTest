@@ -168,18 +168,6 @@ app.get("/clases/miscameos", function (request, response) {
   });
 });
 
-// En pruebas
-
-app.get("/clases/cameos", function (request, response) {
-  let sql =
-    "SELECT * FROM clases JOIN cameos ON(clases.clases_id = cameos.clases_id) JOIN usuario ON(cameos.usuario_id = usuario.usuario_id) WHERE cameos.usuario_id = ?";
-  connection.query(sql, [request.query.usuario_id], function (err, result) {
-    if (err) console.log(err);
-    else {
-      response.send(result);
-    }
-  });
-});
 
 app.get("/clases/solicitudes", function (request, response) {
   let sql =
