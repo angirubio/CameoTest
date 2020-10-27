@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClasesService } from 'src/app/shared/clases.service';
+import { UsuarioService } from 'src/app/shared/usuario.service';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-mis-cameos',
@@ -8,10 +10,10 @@ import { ClasesService } from 'src/app/shared/clases.service';
 })
 export class MisCameosComponent implements OnInit {
   cameos: any[];
-  usuario: any;
+  usuario: Usuario;
 
-  constructor(private claseService: ClasesService) {
-    this.usuario = this.claseService.clases;
+  constructor(private claseService: ClasesService, private apiService:UsuarioService) {
+    this.usuario = this.apiService.usuario;
    }
 
   ngOnInit(): void {
