@@ -17,7 +17,7 @@ export class MisCameosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-     // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS REALIZADOS
+     // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {
       this.cameos = data;
       console.log(data, "desde mis cameos");
