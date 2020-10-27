@@ -17,14 +17,14 @@
             <p style="margin-top: 5px;"><b>yon</b></p><p style="color:#A8A8A8;margin-top: -20px;">{{usuarioApuntado ? 'confirmado!' : 'se ha apuntado!'}}</p>
         </div>
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8" *ngFor="let apuntarse of peticiones">
               <div [ngClass]="claseCssConfirmar ? 'classTrue' : 'classFalse'" class="card">
                 <!-- comienzo del div blanco -->
                 <div class ="card-body">
                     <div class="datosArriba">
                         <div class="datosIzq">
                             <h6>título de publicación</h6>
-                            <h5><b><i>"Cocina de cita express"</i></b></h5>
+                            <h5><b><i>{{apuntarse.titulo}}</i></b></h5>
                         </div>
                         <div class="datosDrch">
                             <button id=#cambiarEstado class="btn btn-dark"(click)="cambiarEstadoConfirmar()"><b>{{textoBotonConfirmado ? 'Cancelar' : 'Confirmar'}}</b></button>
@@ -34,7 +34,7 @@
                   <div class="datos">
                     <div class="datosDia">
                       <p>Día</p>
-                      <p><b>Miércoles 14, Oct 2020</b></p>
+                      <p><b>{{apuntarse.fecha | date: 'short' }}</b></p>
                     </div>
                     <div class="datosHora">
                       <p>Hora</p>
@@ -42,11 +42,11 @@
                     </div>
                     <div class="datosUbicacion">
                       <p>Ubicación</p>
-                      <p><b>A domicilio (Madrid)</b></p>
+                      <p><b>{{apuntarse.plataforma}}</b></p>
                     </div>
                     <div class="datosPrecio">
                       <p>Precio</p>
-                      <p><b>10€</b></p>
+                      <p><b>{{apuntarse.precio}}€</b></p>
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ClasesService } from 'src/app/shared/clases.service';
+import { Clases } from 'src/app/models/clases';
+import { Usuario } from 'src/app/models/usuario';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-peticiones-clase',
@@ -15,10 +19,12 @@ export class PeticionesClaseComponent implements OnInit {
   public claseCssCancelar: boolean;
   public textoBotonCancelado: boolean;
   public usuarioConfirmado: boolean;
+  usuario: Usuario;
+  public peticiones: Clases[];
 
 
 
-  constructor() {
+  constructor(private claseService: ClasesService, private apiService:UsuarioService) {
     this.claseCssConfirmar = false;
     this.textoBotonConfirmado = false;
     this.usuarioApuntado = false;
@@ -27,6 +33,7 @@ export class PeticionesClaseComponent implements OnInit {
     this.claseCssCancelar = false;
     this.textoBotonCancelado = false;
     this.usuarioConfirmado = false;
+    this.usuario = this.apiService.usuario;
   }
 
   public cambiarEstadoConfirmar():void
@@ -42,6 +49,11 @@ export class PeticionesClaseComponent implements OnInit {
 
 
   ngOnInit(): void {
-  }
+       // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS
+       this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: Clases[]) => {
+        this.peticiones = data;
+        console.log(data, "desde mis peticiones");
+      });
+    }
 
 }
