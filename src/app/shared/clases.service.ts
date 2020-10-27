@@ -30,9 +30,12 @@ export class ClasesService {
   }
 
   // UNIR MIS CAMEOS DESDE MI PERFIL
-  misCameos(usuario_id){
-    return this.http.get(this.url + "/miscameos" + "?usuario_id="+usuario_id)
-  }
+  misCameos(solicitante_id:number){
+    return this.http.get(this.url + "/miscameos" + "?solicitante_id="+solicitante_id)
+  }  
+  // misCameos(usuario_id){
+  //   return this.http.get(this.url + "/miscameos" + "?usuario_id="+usuario_id)
+  // }
   
   infoCameos(usuario_id){
     return this.http.get(this.url + "/infocameos" + "?usuario_id="+usuario_id)
