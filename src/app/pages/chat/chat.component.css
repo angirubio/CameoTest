@@ -219,6 +219,7 @@ margin-top: auto;
 margin-bottom: auto;
 margin-left: 10px;
 border-radius: 4px;
+text-align: left;
 background-color:rgb(245, 45, 88);
 padding: 10px;
 position: relative;
@@ -228,7 +229,8 @@ margin-top: auto;
 margin-bottom: auto;
 margin-right: 10px;
 border-radius: 4px;
-background-color: #A8A8A8;
+text-align: right;
+background-color: white;
 padding: 10px;
 position: relative;
 }

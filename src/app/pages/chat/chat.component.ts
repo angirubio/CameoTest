@@ -40,14 +40,12 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.chatService.getUsuarios(this.emisor.usuario_id,this.emisor.usuario_id).subscribe((data:Usuario[])=>{
+    this.chatService.getUsuarios(this.emisor.usuario_id).subscribe((data:Usuario[])=>{
       this.usuarios = data;
-      this.router.navigateByUrl('/chat')
-    });
-    this.chatService.getConversacion(this.emisor.usuario_id,this.receptor.usuario_id).subscribe((data:Chat[])=>{
-      this.conver = data;
-      this.router.navigateByUrl('/chat')
+      this.receptor = this.usuarios[0];
+      this.chatService.getConversacion(this.emisor.usuario_id,this.receptor.usuario_id).subscribe((data:Chat[])=>{
+        this.conver = data;
+      });
     });
   }
-
 }

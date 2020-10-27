@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-header-active',
@@ -9,7 +11,7 @@ export class HeaderActiveComponent implements OnInit {
   
   // selected = 'option2';
 
-  constructor() { }
+  constructor(private apiService:UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
   }

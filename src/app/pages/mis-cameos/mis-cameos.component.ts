@@ -20,8 +20,12 @@ export class MisCameosComponent implements OnInit {
      // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {
       this.cameos = data;
-      console.log(data, "desde mis cameos");
+      console.log(this.cameos);
+      
     });
+    // this.claseService.infoCameos(this.cameos).subscribe((data: any[]) => {
+    //   this.cameos = data;
+    // });
   }
 
 }

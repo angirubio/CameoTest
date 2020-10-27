@@ -55,8 +55,8 @@
 							<span id="action_menu_btn"><mat-icon>delete</mat-icon></span>
 						</div>
 						<div class="card-body msg_card_body" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-							<div class="d-flex justify-content-start mb-4" [ngClass]="{'msg_cotainer': emisor != 'emisor', 'msg_cotainer_send': emisor == 'emisor'}" *ngFor="let mensaje of conver">
-								<div class="msg_cotainer">
+							<div *ngFor="let mensaje of conver">
+								<div [ngClass]="mensaje.usuario_id == emisor.usuario_id ? 'msg_cotainer_send' : 'msg_cotainer'">
 									{{mensaje.mensaje}}
 								</div>
 							</div>
