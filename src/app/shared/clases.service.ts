@@ -30,11 +30,6 @@ export class ClasesService {
   }
 
   // UNIR MIS CAMEOS DESDE MI PERFIL
-<<<<<<< HEAD
-  misCameos(solicitante_id:number){
-    return this.http.get(this.url + "/miscameos" + "?solicitante_id="+solicitante_id)
-  }  
-=======
   misCameos(usuario_id){
     return this.http.get(this.url + "/miscameos" + "?usuario_id="+usuario_id)
   }
@@ -42,7 +37,6 @@ export class ClasesService {
   infoCameos(usuario_id){
     return this.http.get(this.url + "/infocameos" + "?usuario_id="+usuario_id)
   }
->>>>>>> b45c93181c69d6b5a9a2d961666102453ce09ed6
   
   organizarClases(usuario_id)
   {
@@ -56,5 +50,12 @@ export class ClasesService {
   filtrarBusqueda(titulo)
   {
     return this.http.get(this.url + "/buscar" + "?titulo=" + titulo);
+  }
+
+  
+  // Cambiar estado clase: publicada u oculta
+  putClaseVisible(clase_actualizada:Clases)
+  {
+    return this.http.put(this.url, clase_actualizada)
   }
 }

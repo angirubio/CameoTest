@@ -9,14 +9,19 @@
     <div class="publicaciones">
         <div class="container" *ngFor="let clase of clasesGestionar; let i = index">
           <div class="carta">
-              <img src="https://images.theconversation.com/files/284017/original/file-20190715-173366-vircaw.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop" class="card-img-top" alt="...">
+              <img src="{{clase.foto}}"class="card-img-top" alt="...">
           </div>
           <div class="row">
               <div class="col-sm-8">
-                <div [ngClass]="claseCssPublicada ? 'classFalse' : 'classTrue'" class="card" >
+                <div [ngClass]="clase.publicada == false ? 'classFalse' : 'classTrue'" class="card" >
                   <div class="card-body">
                     <div class="grid">
-                    <button class="btn btn-dark"(click)="cambiarEstadoClase()">{{estaPublicada ? 'Publicada' : 'Oculta' }}</button>
+                      <div *ngIf="clase.publicada == true">
+                        <button class="btn btn-dark"(click)="cambiarEstadoClase(i)">Publicada</button>
+                      </div>
+                      <div *ngIf="clase.publicada == false">
+                        <button class="btn btn-dark"(click)="cambiarEstadoClase(i)">Oculta</button>
+                      </div>
                     <h6>{{clase.tema}}</h6>
                     <h6><b><i>{{clase.doctrina}}</i></b></h6>
                     <h4><b><i>{{clase.titulo}}</i></b></h4>

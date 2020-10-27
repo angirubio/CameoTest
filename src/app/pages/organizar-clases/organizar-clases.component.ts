@@ -10,19 +10,14 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
   styleUrls: ['./organizar-clases.component.css']
 })
 export class OrganizarClasesComponent implements OnInit {
-  public claseCssPublicada: boolean;
-  public estaPublicada: boolean;
   public clasesGestionar: Clases[]
+  public clase:Clases = this.claseService.clase;
   
-  constructor(private apiService:UsuarioService, private router: Router, private claseService:ClasesService) {
-    this.claseCssPublicada = false;
-    this.estaPublicada = false; 
-  }
+  constructor(private apiService:UsuarioService, private router: Router, private claseService:ClasesService) { }
 
   public cambiarEstadoClase(i:number):void
   {
-    this.claseCssPublicada[i] = !this.claseCssPublicada[i]
-    this.estaPublicada[i] = !this.estaPublicada[i]
+    this.clasesGestionar[i].publicada = !this.clasesGestionar[i].publicada
   }
 
   ver(i:string)

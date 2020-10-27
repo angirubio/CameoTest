@@ -246,4 +246,30 @@ app.get("/chat/usuarios", (req, res) => {
   });
 });
 
+
+//Actualización estado clases 
+app.put("/clases", function (req, response) {
+  let array = [
+      req.body.titulo,
+      req.body.descripcion,
+      req.body.precio,
+      req.body.tema,
+      req.body.habilidad,
+      req.body.fecha,
+      req.body.plataforma,
+      req.body.foto,
+      req.body.usuario_id,
+      req.body.publicada
+  ];
+  let sql =
+    "UPDATE clases SET titulo = ?, descripcion = ?, precio = ?, tema = ?, habilidad = ?, fecha = ?, plataforma = ?. foto = ?, publicada = ? WHERE usuario_id = ?";
+  connection.query(sql, array, function (err, result) {
+    if (err) console.log(err);
+    else {
+      response.send(result);
+      console.log(array);
+    }
+  });
+});
+
 app.listen(3000);
