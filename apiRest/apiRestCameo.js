@@ -97,9 +97,10 @@ app.post("/clases", (req, res) => {
     req.body.plataforma,
     req.body.foto,
     req.body.usuario_id,
+    req.body.publicada
   ];
   let sql =
-    "INSERT INTO clases (titulo, descripcion, precio, tema, habilidad, fecha, plataforma, foto, usuario_id) VALUES (?,?,?,?,?,?,?,?,?)";
+    "INSERT INTO clases (titulo, descripcion, precio, tema, habilidad, fecha, plataforma, foto, usuario_id, publicada) VALUES (?,?,?,?,?,?,?,?,?,?)";
   connection.query(sql, params, function (err, result) {
     if (err) {
       console.log(err);
