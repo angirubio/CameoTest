@@ -157,9 +157,9 @@ app.post("/clases/cameos", function (req, res) {
 
 //Acceso a cameos
 
-app.get("/clases/cameos", function (request, response) {
+app.get("/clases/miscameos", function (request, response) {
   let sql =
-    "SELECT * FROM clases JOIN cameos ON(clases.clases_id = cameos.clase_id) JOIN usuario ON(cameos.usuario_id = usuario.usuario_id) WHERE cameos.usuario_id = ?";
+    "SELECT * FROM clases JOIN cameos ON(clases.clases_id = cameos.clases_id) JOIN usuario ON(cameos.usuario_id = usuario.usuario_id) WHERE cameos.usuario_id = ?";
   connection.query(sql, [request.query.usuario_id], function (err, result) {
     if (err) console.log(err);
     else {
@@ -168,14 +168,14 @@ app.get("/clases/cameos", function (request, response) {
   });
 });
 
-// MOSTRAR DESDE PERFIL CAMEOS REALIZADOS
-app.get("/clases/miscameos", (req, res) => {
-    let sql = "SELECT * FROM cameos JOIN clases ON(cameos.clases_id = clases.clases_id) JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE usuario.usuario_id = ?";
-    connection.query(sql, [req.query.usuario_id], function (err, result) {
-        if (err) console.log(err);        
-             else res.send(result);          
-    });
-})
+// // MOSTRAR DESDE PERFIL CAMEOS REALIZADOS
+// app.get("/clases/miscameos", (req, res) => {
+//     let sql = "SELECT * FROM cameos JOIN clases ON(cameos.clases_id = clases.clases_id) JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE usuario.usuario_id = ?";
+//     connection.query(sql, [req.query.usuario_id], function (err, result) {
+//         if (err) console.log(err);        
+//              else res.send(result);          
+//     });
+// })
 
 // app.delete("/usuario",
 //     function(req, response)
