@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 import { Usuario } from 'src/app/models/usuario';
-import { Clases } from 'src/app/models/clases';
 
 @Component({
   selector: 'app-mis-cameos',

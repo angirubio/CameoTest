@@ -51,16 +51,10 @@ export class PeticionesClaseComponent implements OnInit {
   ngOnInit(): void {
     this.claseService.solicitudes(this.apiService.usuario.usuario_id).subscribe((data:Clases[])=>{
       console.log(data)
-      console.log(this.apiService.usuario.usuario_id);
-      
+      console.log(this.apiService.usuario.usuario_id);      
       this.peticiones = data;
-      // this.claseService.solicitudes(this.apiService.usuario.usuario_id).subscribe((data:Clases[])=>{
-      //   console.log(data)
-      //   this.peticiones = data;
-      //   this.router.navigateByUrl('/organizar-clases')
-      // }); 
-
-    })
+      console.log(data);      
+    });
   }
 
 }
