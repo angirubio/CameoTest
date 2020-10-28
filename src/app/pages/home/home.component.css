@@ -92,11 +92,6 @@
         padding-bottom: 3%;
       }
 
-      .mat-focus-indicator.mat-raised-button.mat-button-base.cdk-focused.cdk-mouse-focused:hover{
-        background: black;
-        color: white;
-      }
-
       .mat-card-content{
         font-weight: 300;
         display: block;
@@ -109,6 +104,11 @@
 
       .mat-focus-indicator.mat-raised-button.mat-button-base{
         font-weight: 400;
+    }
+
+    .mat-focus-indicator.mat-raised-button.mat-button-base:hover{
+        background: black;
+        color: white;
     }
       
 }

@@ -55,6 +55,11 @@
     #containerFoto > img{
         height: 100%;
     }
+
+    .mat-focus-indicator.mat-raised-button.mat-button-base:hover{
+        background: black;
+        color: white;
+    }
     
     #containerFoto
     {
