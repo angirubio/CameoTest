@@ -25,8 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/usuario", function (req, response) {
-  let sql =
-    "INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, fotousuario, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+  let sql ="INSERT INTO usuario (nombre, apellido, nombre_usuario, email, contrasena, fotousuario, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
   connection.query(
     sql,
     [
@@ -79,7 +78,6 @@ app.put("/usuario", function (req, response) {
     if (err) console.log(err);
     else {
       response.send(result);
-      console.log(array);
     }
   });
 });
@@ -113,14 +111,12 @@ app.post("/clases", (req, res) => {
 // MOSTRAR CLASES EN HOME
 
 app.get("/home", (req, res) => {
-  let sql = "(SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='presencial' ORDER BY clases.fecha DESC LIMIT 6) UNION ALL (SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='online' ORDER BY clases.fecha DESC LIMIT 6)";
+  let sql = "(SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='presencial' AND clases.publicada=True ORDER BY clases.fecha DESC LIMIT 6) UNION ALL (SELECT usuario.usuario_id, usuario.nombre, usuario.apellido, usuario.nombre_usuario, usuario.email, usuario.fotousuario, usuario.status, clases.clases_id, clases.titulo, clases.descripcion, clases.precio, clases.tema, clases.habilidad, clases.fecha, clases.plataforma, clases.foto FROM clases JOIN usuario ON (clases.usuario_id = usuario.usuario_id) WHERE clases.plataforma='online' AND clases.publicada=True ORDER BY clases.fecha DESC LIMIT 6)";
   connection.query(sql, function (err, result) {
     if (err) {
       console.log(err);
     } else {
-      console.log("Lista de CAMEOS encontrada!");
       res.send(result);
-      console.log(result);
     }
   });
 });
@@ -138,11 +134,23 @@ app.get("/clases", function (request, response) {
   });
 });
 
+// Actualizar estado de la clase
+
+app.put("/clases", function (req, response) {
+  let sql ="UPDATE clases SET publicada = ? WHERE clases_id = ?";
+  connection.query(sql, [req.body.publicada, req.body.clases_id], function (err, result) {
+    if (err) console.log(err);
+    else {
+      response.send(result);
+    }
+  });
+});
+
 //Añadir cameo
 
 app.post("/clases/cameos", function (req, res) {
-  let sql = "INSERT INTO cameos (clases_id, solicitante_id) VALUES (?, ?)";
-  connection.query(sql, [req.body.clases_id, req.body.solicitante_id], function (
+  let sql = "INSERT INTO cameos (clases_id, solicitante_id, aceptada) VALUES (?, ?, ?)";
+  connection.query(sql, [req.body.clases_id, req.body.solicitante_id, req.body.aceptada], function (
     err,
     result
   ) {
@@ -167,7 +175,6 @@ app.get("/clases/miscameos", function (request, response) {
   });
 });
 
-
 app.get("/clases/solicitudes", function (request, response) {
   let sql =
     "SELECT * FROM clases JOIN cameos ON(clases.clases_id = cameos.clases_id) JOIN usuario ON(cameos.solicitante_id = usuario.usuario_id) WHERE clases.usuario_id = ?";
@@ -179,21 +186,17 @@ app.get("/clases/solicitudes", function (request, response) {
   });
 });
 
-// app.delete("/usuario",
-//     function(req, response)
-//     {
-//         let sql = "DELETE FROM usuario WHERE usuario_id = ?";
-//         connection.query(sql, [req.body.id], function( err, result)
-//         {
-//             if (err)
-//             console.log(err);
-//             else
-//             {
-//                 response.send(result);
-//             }
-//         })
-//     }
-// );
+// Confirmar o cancelar un cameo
+
+app.put("/clases/solicitudes", function (req, response) {
+  let sql ="UPDATE cameos JOIN clases ON(cameos.clases_id = clases.clases_id) SET aceptada = ? WHERE cameos.clases_id = ? AND cameos.solicitante_id = ?";
+  connection.query(sql, [req.body.aceptada, req.body.clases_id, req.body.solicitante_id], function (err, result) {
+    if (err) console.log(err);
+    else {
+      response.send(result);
+    }
+  });
+});
 
 //Filtrar búsquedas
 
@@ -246,30 +249,22 @@ app.get("/chat/usuarios", (req, res) => {
   });
 });
 
+// Eliminar conversación
 
-//Actualización estado clases 
-app.put("/clases", function (req, response) {
-  let array = [
-      req.body.titulo,
-      req.body.descripcion,
-      req.body.precio,
-      req.body.tema,
-      req.body.habilidad,
-      req.body.fecha,
-      req.body.plataforma,
-      req.body.foto,
-      req.body.usuario_id,
-      req.body.publicada
-  ];
-  let sql =
-    "UPDATE clases SET titulo = ?, descripcion = ?, precio = ?, tema = ?, habilidad = ?, fecha = ?, plataforma = ?. foto = ?, publicada = ? WHERE usuario_id = ?";
-  connection.query(sql, array, function (err, result) {
-    if (err) console.log(err);
-    else {
-      response.send(result);
-      console.log(array);
+app.delete("/chat",
+    function(req, response)
+    {
+        let sql = "DELETE FROM chat WHERE usuario_id = ? AND receptor_id = ? OR receptor_id = ? AND usuario_id = ?";
+        connection.query(sql, [req.body.usuario_id, req.body.receptor_id, req.body.usuario_id, req.body.receptor_id], function( err, result)
+        {
+            if (err)
+            console.log(err);
+            else
+            {
+                response.send(result);
+            }
+        })
     }
-  });
-});
+);
 
 app.listen(3000);
