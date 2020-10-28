@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { Clases } from 'src/app/models/clases';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class PerfilAjenoComponent implements OnInit {
   public claseUsuario: Clases[];
   public misCameos: any[];
 
-  constructor(public dialog: MatDialog, private claseService: ClasesService)
+  constructor(public dialog: MatDialog, private claseService: ClasesService, private router: Router )
   {
     this.cameosHidden = false;
     this.clasesHidden = false;
@@ -36,6 +37,12 @@ export class PerfilAjenoComponent implements OnInit {
   
   hideClases(){
     this.clasesHidden = true;
+  }
+
+
+  verClase(i:string){ // METODO PARA REDIRIGIR EL USUARIO A LAS CLASES
+    this.claseService.clase = this.claseUsuario[i];
+    this.router.navigateByUrl('/publicacion')
   }
 
   ngOnInit(): void {// CREANDO DESDE SERVICIO LA VISTA DE LAS CLASES

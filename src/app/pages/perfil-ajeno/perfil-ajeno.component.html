@@ -43,7 +43,7 @@
     </mat-expansion-panel-header>
     <!-- <div class="test"> -->
     <div class="grid">
-      <mat-card class="example-card" *ngFor="let clases of claseUsuario;">
+      <mat-card class="example-card" *ngFor="let clases of claseUsuario; let i = index">
         <mat-card-header>
           <mat-card-title>{{clases.titulo}}</mat-card-title>
           <mat-card-subtitle>{{clases.tema}}</mat-card-subtitle>         
@@ -56,7 +56,7 @@
           </p>
           <mat-card-subtitle>{{clases.fecha | date: 'short'}}</mat-card-subtitle>
           <mat-card-actions>
-            <button mat-raised-button routerLink="/perfil">Ver</button>
+            <button mat-raised-button (click)="verClase(i)">Ver</button>
           </mat-card-actions>
         </mat-card-content>       
       </mat-card>
