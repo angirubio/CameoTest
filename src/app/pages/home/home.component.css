@@ -92,15 +92,24 @@
         padding-bottom: 3%;
       }
 
-      /* .grid{
-        display: grid;
-        grid-template-columns: 100px repeat(2, 50px) 200px;
-        grid-template-rows: repeat(2, 50px 100px);
-            } */
-     
+      .mat-card-content{
+        font-weight: 300;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-     
+      .mat-focus-indicator.mat-raised-button.mat-button-base{
+        font-weight: 400;
+    }
 
-
+    .mat-focus-indicator.mat-raised-button.mat-button-base:hover{
+        background: black;
+        color: white;
+    }
+      
 }
 

@@ -41,6 +41,8 @@ export class PerfilAjenoComponent implements OnInit {
   ngOnInit(): void {// CREANDO DESDE SERVICIO LA VISTA DE LAS CLASES
      this.claseService.organizarClases(this.usuario.usuario_id).subscribe((data:Clases[]) => {
        this.claseUsuario = data;
+       console.log(data);
+       
      });
 
      // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS REALIZADOS
