@@ -102,6 +102,16 @@
         text-overflow: ellipsis;
       }
 
+      .mat-card-title{
+        font-weight: 300;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
       .mat-focus-indicator.mat-raised-button.mat-button-base{
         font-weight: 400;
     }
