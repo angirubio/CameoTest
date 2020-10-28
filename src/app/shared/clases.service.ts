@@ -29,7 +29,6 @@ export class ClasesService {
     return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "solicitante_id" : solicitante_id});
   }
 
-  // UNIR MIS CAMEOS DESDE MI PERFIL
   misCameos(solicitante_id:number){
     return this.http.get(this.url + "/miscameos" + "?solicitante_id="+solicitante_id)
   }  
