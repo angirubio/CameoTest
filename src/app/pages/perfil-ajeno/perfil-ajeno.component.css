@@ -1,9 +1,6 @@
 
 /* MEDIA QUERIES */
 
-
-
-
 /*Escritorio*/
 @media (min-width: 1199.98px) {
 
@@ -54,6 +51,9 @@
     {
         max-width: 330px;
         max-height: 430px;
+    }
+    #containerFoto > img{
+        height: 100%;
     }
     
     #containerFoto
