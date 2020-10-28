@@ -11,52 +11,34 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class PeticionesClaseComponent implements OnInit {
 
-  public claseCssConfirmar: boolean;
-  public textoBotonConfirmado: boolean;
-  public usuarioApuntado: boolean;
-  public colorBoton: boolean;
-
-  public claseCssCancelar: boolean;
-  public textoBotonCancelado: boolean;
-  public usuarioConfirmado: boolean;
   public usuario: Usuario;
-  public peticiones: Clases[];
-
-
+  public peticiones: any[];
 
   constructor(private claseService: ClasesService, private apiService:UsuarioService) {
-    this.claseCssConfirmar = false;
-    this.textoBotonConfirmado = false;
-    this.usuarioApuntado = false;
-    this.colorBoton = false;
-
-    this.claseCssCancelar = false;
-    this.textoBotonCancelado = false;
-    this.usuarioConfirmado = false;
+  
     this.usuario = this.apiService.usuario;
   }
 
-  public cambiarEstadoConfirmar():void
+  public cambiarEstadoConfirmar(i:number):void
   {
-    this.claseCssConfirmar = !this.claseCssConfirmar
-    this.textoBotonConfirmado = !this.textoBotonConfirmado
-    this.usuarioApuntado = !this.usuarioApuntado
-    this.colorBoton = !this.colorBoton
+    if (this.peticiones[i].aceptada == true) {
+      this.claseService.putEstadoCameos(false,this.peticiones[i].clases_id,this.peticiones[i].solicitante_id).subscribe((data) =>
+      {
+        this.peticiones[i].aceptada = !this.peticiones[i].aceptada
+      })
+    } else{
+      this.claseService.putEstadoCameos(true,this.peticiones[i].clases_id,this.peticiones[i].solicitante_id).subscribe((data) =>
+      {
+        this.peticiones[i].aceptada = !this.peticiones[i].aceptada
+      })
+    }
   }
-
-  
-  
-
 
   ngOnInit(): void {
-    this.claseService.solicitudes(this.apiService.usuario.usuario_id).subscribe((data:Clases[])=>{
-      console.log(data)
-      console.log(this.apiService.usuario.usuario_id);      
+    this.claseService.solicitudes(this.apiService.usuario.usuario_id).subscribe((data:any[])=>{  
       this.peticiones = data;
-      console.log(data);      
     });
   }
-
 }
 
 

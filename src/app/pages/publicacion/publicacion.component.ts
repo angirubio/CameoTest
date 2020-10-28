@@ -15,6 +15,7 @@ export class PublicacionComponent implements OnInit {
   step = 0;
   public usuario:Usuario = this.apiService.usuario;
   public clasePublicacion:Clases;
+  public aceptacion = false;
   constructor( private apiService:UsuarioService, private router: Router, private claseService:ClasesService )
   {
     this.clasePublicacion = this.claseService.clase;
@@ -31,13 +32,10 @@ export class PublicacionComponent implements OnInit {
   apuntarse()
   {
     console.log(this.clasePublicacion);
-    this.claseService.postCameo(this.clasePublicacion.clases_id,this.usuario.usuario_id).subscribe((data) =>
+    this.claseService.postCameo(this.clasePublicacion.clases_id,this.usuario.usuario_id,this.aceptacion).subscribe((data) =>
     {
-      console.log(data);
       this.router.navigateByUrl('/mis-cameos')
     })
   }
-  ngOnInit(): void {
-    console.log(this.clasePublicacion);    
-  }
+  ngOnInit(): void { }
 }

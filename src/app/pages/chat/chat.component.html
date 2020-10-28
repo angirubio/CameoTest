@@ -52,7 +52,7 @@
 									<span>{{receptor.nombre_usuario}}</span>
 								</div>
 							</div>
-							<span id="action_menu_btn"><mat-icon>delete</mat-icon></span>
+							<span id="action_menu_btn"><mat-icon (click)="eliminarConver()">delete</mat-icon></span>
 						</div>
 						<div class="card-body msg_card_body" #scrollMe [scrollTop]="scrollMe.scrollHeight">
 							<div *ngFor="let mensaje of conver">

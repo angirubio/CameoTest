@@ -1,86 +1,60 @@
 <app-header-active></app-header-active>
 
 <body>
-  <div class="encabezado">
-    <div>
-      <h1>aceptar solicitudes</h1>
+
+    <div class="encabezado">
+        <div>
+            <h1>aceptar solicitudes</h1>
+        </div>
     </div>
-  </div>
-  <div class="publicaciones" *ngFor="let apuntarse of peticiones">
-    <div class="container">
-      <div class="carta">
-        <img
-          routerLink="/usuario"
-          src="{{ apuntarse.fotousuario }}"
-          class="card-img-top"
-          alt=""
-        />
-        <p style="margin-top: 5px">
-          <b>{{ apuntarse.nombre_usuario }}</b>
-        </p>
-        <p style="color: #a8a8a8; margin-top: -20px">
-          {{ usuarioApuntado ? "confirmado!" : "se ha apuntado!" }}
-        </p>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div
-            [ngClass]="claseCssConfirmar ? 'classTrue' : 'classFalse'"
-            class="card"
-          >
-            <!-- comienzo del div blanco -->
-            <div class="card-body">
-              <div class="datosArriba">
-                <div class="datosIzq">
-                  <h6>título de publicación</h6>
-                  <h5>
-                    <b
-                      ><i>{{ apuntarse.titulo }}</i></b
-                    >
-                  </h5>
-                </div>
-                <div class="datosDrch">
-                  <button
-                    id="#cambiarEstado"
-                    class="btn btn-dark"
-                    (click)="cambiarEstadoConfirmar()"
-                  >
-                    <b>{{ textoBotonConfirmado ? "Cancelar" : "Confirmar" }}</b>
-                  </button>
-                  <button class="btn btn-dark" routerLink="/chat">
-                    <b>Contactar</b>
-                  </button>
-                </div>
-              </div>
-              <div class="datos">
-                <div class="datosDia">
-                  <p>Día</p>
-                  <p>
-                    <b>{{ apuntarse.fecha | date: "short" }}</b>
-                  </p>
-                </div>
-                <div class="datosHora">
-                  <p>Hora</p>
-                  <p><b>17.00 - 18.00</b></p>
-                </div>
-                <div class="datosUbicacion">
-                  <p>Ubicación</p>
-                  <p>
-                    <b>{{ apuntarse.plataforma }}</b>
-                  </p>
-                </div>
-                <div class="datosPrecio">
-                  <p>Precio</p>
-                  <p>
-                    <b>{{ apuntarse.precio }}€</b>
-                  </p>
+    
+
+    <div class="publicaciones" *ngFor="let peticion of peticiones; let i = index">
+
+      <div class="container" >
+        <div class="carta">
+            <img routerLink="/usuario" src="{{peticion.fotousuario}}" class="card-img-top" alt="">
+            <p style="margin-top: 5px;"><b>{{peticion.nombre_usuario}}</b></p><p style="color:#A8A8A8;margin-top: -20px;">{{peticion.aceptada ? 'confirmado!' : 'se ha apuntado!'}}</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+              <div [ngClass]="peticion.aceptada ? 'classTrue' : 'classFalse'" class="card">
+                <!-- comienzo del div blanco -->
+                <div class ="card-body">
+                    <div class="datosArriba">
+                        <div class="datosIzq">
+                            <h6>título de publicación</h6>
+                            <h5><b><i>{{peticion.titulo}}</i></b></h5>
+                        </div>
+                        <div class="datosDrch">
+                            <button id=#cambiarEstado class="btn btn-dark" (click)="cambiarEstadoConfirmar(i)"><b>{{peticion.aceptada ? 'Cancelar' : 'Confirmar'}}</b></button>
+                            <button class="btn btn-dark" routerLink="/chat"><b>Contactar</b></button>
+                        </div>
+                    </div>
+                  <div class="datos">
+                    <div class="datosDia">
+                      <p>Día</p>
+                      <p><b>{{peticion.fecha | date: 'short' }}</b></p>
+                    </div>
+                    <div class="datosHora">
+                      <p>Hora</p>
+                      <p><b>17.00 - 18.00</b></p>
+                    </div>
+                    <div class="datosUbicacion">
+                      <p>Ubicación</p>
+                      <p><b>{{peticion.plataforma}}</b></p>
+                    </div>
+                    <div class="datosPrecio">
+                      <p>Precio</p>
+                      <p><b>{{peticion.precio}}€</b></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
+
 </body>
 <app-footer></app-footer>

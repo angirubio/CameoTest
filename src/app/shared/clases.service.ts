@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Clases } from '../models/clases';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +13,6 @@ export class ClasesService {
   private url2 = "http://localhost:3000/home"
   constructor(private http: HttpClient) { }
 
-  // CREANDO CLASES NUEVAS
   postClase(nueva_clase: Clases)
   {
     return this.http.post(this.url, nueva_clase);
@@ -24,17 +22,15 @@ export class ClasesService {
     return this.http.get(this.url2)
   }
   
-  postCameo(clases_id,solicitante_id)
+  postCameo(clases_id,solicitante_id,aceptada)
   {
-    return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "solicitante_id" : solicitante_id});
+    return this.http.post(this.url + "/cameos", {"clases_id":clases_id, "solicitante_id" : solicitante_id, "aceptada" : aceptada});
   }
 
+  // UNIR MIS CAMEOS DESDE MI PERFIL
   misCameos(solicitante_id:number){
     return this.http.get(this.url + "/miscameos" + "?solicitante_id="+solicitante_id)
-  }  
-  // misCameos(usuario_id){
-  //   return this.http.get(this.url + "/miscameos" + "?usuario_id="+usuario_id)
-  // }
+  }
   
   infoCameos(usuario_id){
     return this.http.get(this.url + "/infocameos" + "?usuario_id="+usuario_id)
@@ -53,10 +49,14 @@ export class ClasesService {
   {
     return this.http.get(this.url + "/buscar" + "?titulo=" + titulo);
   }
-  
-  // Cambiar estado clase: publicada u oculta
-  putClaseVisible(clase_actualizada:Clases)
+
+  putEstadoClases(publicada,clases_id)
   {
-    return this.http.put(this.url, clase_actualizada)
+    return this.http.put(this.url, {"publicada":publicada, "clases_id" : clases_id})
+  }
+
+  putEstadoCameos(aceptada,clases_id,solicitante_id)
+  {
+    return this.http.put(this.url + "/solicitudes", {"aceptada":aceptada, "clases_id":clases_id, "solicitante_id":solicitante_id})
   }
 }

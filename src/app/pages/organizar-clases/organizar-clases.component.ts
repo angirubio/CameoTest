@@ -17,7 +17,17 @@ export class OrganizarClasesComponent implements OnInit {
 
   public cambiarEstadoClase(i:number):void
   {
-    this.clasesGestionar[i].publicada = !this.clasesGestionar[i].publicada
+    if (this.clasesGestionar[i].publicada == true) {
+      this.claseService.putEstadoClases(false,this.clasesGestionar[i].clases_id).subscribe((data) =>
+      {
+        this.clasesGestionar[i].publicada = !this.clasesGestionar[i].publicada
+      })
+    } else{
+      this.claseService.putEstadoClases(true,this.clasesGestionar[i].clases_id).subscribe((data) =>
+      {
+        this.clasesGestionar[i].publicada = !this.clasesGestionar[i].publicada
+      })
+    }
   }
 
   ver(i:string)

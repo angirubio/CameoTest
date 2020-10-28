@@ -12,6 +12,7 @@ import { Chat } from '../../models/chat';
 })
 export class ChatComponent implements OnInit {
 
+  public indice : number;
   public conver:Chat[];
   public usuarios:Usuario[]
   public emisor:Usuario;
@@ -23,6 +24,7 @@ export class ChatComponent implements OnInit {
 
   abrir(i:number){
     this.receptor = this.usuarios[i];
+    this.indice = i;
     this.chatService.getConversacion(this.emisor.usuario_id,this.receptor.usuario_id).subscribe((data:Chat[])=>{
       this.conver = data;
       this.router.navigateByUrl('/chat')
@@ -37,6 +39,15 @@ export class ChatComponent implements OnInit {
     {
       console.log(data);
     });
+  }
+
+  eliminarConver()
+  { 
+    this.chatService.deleteChat(this.emisor.usuario_id,this.receptor.usuario_id).subscribe((data) =>
+    {
+      this.usuarios.splice(this.indice,1);
+      console.log(data);
+    })
   }
 
   ngOnInit(): void {

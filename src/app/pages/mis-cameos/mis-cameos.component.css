@@ -61,6 +61,12 @@
     .datosIzq{
         padding-right: 20%;
     }
+    .classTrue{
+        background-color: rgba(245, 45, 88, 0.89);
+    }
+    .classFalse{
+        background-color: white;
+    }
 
 }
 

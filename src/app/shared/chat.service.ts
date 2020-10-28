@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Chat } from '../models/chat';
 
@@ -24,5 +24,12 @@ export class ChatService {
 
   getUsuarios(usuario){
     return this.http.get(this.url+"/usuarios"+"?usuario_id="+usuario)
+  }
+
+  deleteChat(usuario_id,receptor_id)
+  {
+    const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: {"usuario_id":usuario_id, "receptor_id":receptor_id}};
+    return this.http.delete(this.url, httpOptions);
   }
 }
