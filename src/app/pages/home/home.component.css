@@ -106,6 +106,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      .mat-focus-indicator.mat-raised-button.mat-button-base{
+        font-weight: 400;
+    }
       
 }
 

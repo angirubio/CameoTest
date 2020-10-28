@@ -90,47 +90,55 @@ img
     .example-card {
         max-width: 400px;
     }
+    
       
     .example-header-image {
         background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
         background-size: cover;
     }
 
-   /* .mat-expansion-panel-header-description.ng-tns-c112-10{
-       padding-left: 6%;
-   }
-
-   .mat-expansion-panel-header-description.ng-tns-c112-16{
-    padding-left: 6%;
-   }
-
-   .mat-expansion-panel-header-description.ng-tns-c112-4{
-    padding-left: 6%;
-   } */
+    p{
+        font-weight: 300;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
    .mat-expansion-panel-header-description.ng-tns-c112-9{
     padding-right: 13%;
    }
 
-   /* .mat-expansion-panel-header-description.ng-tns-c112-10{
-    padding-left: 6%;
-    padding-right: 25%;
-   } */
-
    .mat-expansion-panel-body {
     padding: 0 24px 16px;
    }
-
- /* .mat-card-actions.mat-card-actions{
-    
-   } */
 
   .mat-card > mat-card-actions{
     margin-bottom: 8%;
     margin-top: 5%;
    }
 
-   /* mat-expansion-panel-header-description ng-tns-c112-8 */
+   .mat-card-actions{
+    text-align: center;
+   }
+
+  .mat-card-title{
+    font-weight: 300;
+   }
+
+   .mat-button-wrapper{
+       font-weight: 400;
+   }
+
+   /* .mat-card-subtitle{
+       margin-bottom: 23%;
+   } */
+
+   .mat-focus-indicator.mat-raised-button.mat-button-base{
+       width: 65%;
+       font-weight: 400;
+   }
 
    .mat-expansion-panel-header-description{
         justify-content: flex-end;
@@ -138,10 +146,8 @@ img
 
    /* GRID */
    .grid {
-    /* margin-left: 6%; */
     display: grid;
     grid-template-columns: 400px repeat(1, 400px) 400px;
-    /* grid-template-columns: 1fr 1fr; */
     grid-template-rows: 1fr 0.1fr;   
   }
 
