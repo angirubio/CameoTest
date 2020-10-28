@@ -179,22 +179,6 @@ app.get("/clases/solicitudes", function (request, response) {
   });
 });
 
-// app.delete("/usuario",
-//     function(req, response)
-//     {
-//         let sql = "DELETE FROM usuario WHERE usuario_id = ?";
-//         connection.query(sql, [req.body.id], function( err, result)
-//         {
-//             if (err)
-//             console.log(err);
-//             else
-//             {
-//                 response.send(result);
-//             }
-//         })
-//     }
-// );
-
 //Filtrar búsquedas
 
 app.get("/clases/buscar", function (req, response) {

@@ -92,6 +92,21 @@
         padding-bottom: 3%;
       }
 
+      .mat-focus-indicator.mat-raised-button.mat-button-base.cdk-focused.cdk-mouse-focused:hover{
+        background: black;
+        color: white;
+      }
+
+      .mat-card-content{
+        font-weight: 300;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
       /* .grid{
         display: grid;
         grid-template-columns: 100px repeat(2, 50px) 200px;
