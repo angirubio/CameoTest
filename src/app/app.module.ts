@@ -42,6 +42,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http'
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
+import {EncrDecrService} from './shared/encr-decr-service.service';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     MatExpansionModule,
     MatCardModule,
     MatGridListModule,
-    DatePipe
+    DatePipe,
+    EncrDecrService
   ],
   bootstrap: [AppComponent]
 })
