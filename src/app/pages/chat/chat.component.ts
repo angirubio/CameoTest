@@ -51,6 +51,7 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {    
+    this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
     this.emisor = JSON.parse(localStorage.getItem('usuario'));
     this.receptor = JSON.parse(localStorage.getItem('usuario'));
     // this.emisor = JSON.parse(localStorage.getItem('usuario'));

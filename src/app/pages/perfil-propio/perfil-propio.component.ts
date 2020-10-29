@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
+import {EncrDecrService} from '../../shared/encr-decr-service.service';
 
 @Component({
   selector: 'app-perfil-propio',
@@ -13,7 +14,9 @@ export class PerfilPropioComponent implements OnInit {
   public usuario:Usuario = this.apiService.usuario;
   public usuario_update:Usuario;
 
-  constructor(private apiService:UsuarioService, private router: Router) {}
+  constructor(private apiService:UsuarioService, private EncrDecr:EncrDecrService, private router: Router) {
+    // this.usuario.contrasena = this.EncrDecr.get('123456$#@$^@1ERF', this.usuario.contrasena);
+  }
 
   actualizarBasicos(nombre_usuario:string,status:string,fotousuario:string)
   { 
@@ -59,7 +62,8 @@ export class PerfilPropioComponent implements OnInit {
     if (contrasena == "") {
       contrasena = this.usuario.contrasena
     } else{
-      this.usuario.contrasena = contrasena
+      // this.usuario.contrasena = contrasena
+      this.usuario.contrasena = this.EncrDecr.set('123456$#@$^@1ERF', contrasena);
     }
     this.apiService.putUsuario(this.usuario).subscribe((data) =>
       {
