@@ -37,19 +37,22 @@ export class OrganizarClasesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
     this.claseService.organizarClases(this.apiService.usuario.usuario_id).subscribe((data:Clases[])=>{
       console.log(data)
       this.clasesGestionar = data;
-      this.router.navigateByUrl('/organizar-clases')
+      // this.router.navigateByUrl('/organizar-clases')
       console.log( this.clasesGestionar );
       
     });
 
      // Obteniendo valores del localstorage para la sesion del objeto
-     this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
+     
      console.log(this.apiService.usuario);
 
      this.claseService.clase = JSON.parse(localStorage.getItem('clase'));
-     console.log(this.claseService.clase);    
+     console.log(this.claseService.clase);        
+     this.clase = this.claseService.clase;
+     
   }
 }

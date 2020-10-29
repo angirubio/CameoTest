@@ -24,10 +24,10 @@ body{
 
 .main{
     display: grid;
-    grid-template-columns: [full-start] minmax(100px, 1fr) [center-start] repeat(
+    grid-template-columns: [full-start] minmax(0px, 1fr) [center-start] repeat(
         12,
         [col-start] minmax(min-content, 120px) [col-end]
-    ) [center-end] minmax(100px, 1fr) [full-end];
+    ) [center-end] minmax(0px, 1fr) [full-end];
     grid-template-rows: min-content calc(100vh - 120px) 100vh;
 }
 

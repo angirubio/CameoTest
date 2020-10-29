@@ -71,6 +71,8 @@ export class PerfilPropioComponent implements OnInit {
       // Obteniendo valores del localstorage para la sesion del objeto
       this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
       console.log(this.apiService.usuario);
+      this.usuario= this.apiService.usuario;
+
   }
 
 }

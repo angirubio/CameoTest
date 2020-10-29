@@ -35,6 +35,8 @@ export class PeticionesClaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
+    console.log(this.apiService.usuario);
     this.claseService.solicitudes(this.apiService.usuario.usuario_id).subscribe((data:any[])=>{  
       this.peticiones = data;
     });
