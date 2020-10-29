@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       else 
       {
         this.apiService.usuario = data[0]
+        console.log(data[0]);        
         this.router.navigateByUrl('/home')
       }
     })

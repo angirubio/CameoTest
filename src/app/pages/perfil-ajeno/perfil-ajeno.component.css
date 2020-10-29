@@ -117,6 +117,7 @@
 
     .mat-card-title{
         font-weight: 300;
+        padding-bottom: 1%;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
