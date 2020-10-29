@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { Clases } from 'src/app/models/clases';
 import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class PerfilAjenoComponent implements OnInit {
   public claseUsuario: Clases[];
   public misCameos: any[];
 
-  constructor(public dialog: MatDialog, private claseService: ClasesService, private router: Router )
+  constructor(public dialog: MatDialog, private claseService: ClasesService, private apiService: UsuarioService, private router: Router )
   {
     this.cameosHidden = false;
     this.clasesHidden = false;
@@ -56,6 +57,10 @@ export class PerfilAjenoComponent implements OnInit {
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {
        this.misCameos = data;
      });
+
+     // Obteniendo valores del localstorage para la sesion del objeto
+    this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
+    console.log(this.apiService.usuario);
   }
 
 }

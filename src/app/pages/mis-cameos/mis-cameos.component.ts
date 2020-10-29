@@ -29,6 +29,10 @@ export class MisCameosComponent implements OnInit {
     // this.claseService.infoCameos(this.cameos).subscribe((data: any[]) => {
     //   this.cameos = data;
     // });
+
+    // Obteniendo valores del localstorage para la sesion del objeto
+    this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
+    console.log(this.apiService.usuario);
   }
 
 }
