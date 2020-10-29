@@ -37,5 +37,8 @@ export class PublicacionComponent implements OnInit {
       this.router.navigateByUrl('/mis-cameos')
     })
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    
+
+   }
 }

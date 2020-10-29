@@ -35,9 +35,12 @@ export class LoginComponent implements OnInit {
       else 
       {
         this.apiService.usuario = data[0]
+        console.log(data[0]);        
         this.router.navigateByUrl('/home')
+        localStorage.setItem('usuario', JSON.stringify(this.apiService.usuario));
+        // console.log(this.apiService.usuario.nombre_usuario);        
       }
-    })
+    });
   }
 
   ngOnInit(): void {

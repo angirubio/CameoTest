@@ -28,6 +28,10 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
     this.initialAnimations();
     this.initScrollAnimations();
+
+    // LIMPIANDO LA INFO DEL USUARIO DEL LOCALSTORAGE
+    localStorage.removeItem('usuario');
+    localStorage.clear();
   }
   initScrollAnimations(): void{
     gsap.to(this.imageFirst.nativeElement, {
@@ -238,17 +242,6 @@ export class LandingPageComponent implements OnInit {
       y: 40,
       opacity: 0,
     });
-    // gsap.from(this.document.querySelector('.info-10__visual .heading-10'), {
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.info-10__visual .heading-10'),
-    //     scrub: true,
-    //     toggleClass: 'active',
-    //     start: '-60% bottom',
-    //   },
-    //   duration: 1.5,
-    //   y: 40,
-    //   opacity: 0,
-    // });
     gsap.from(this.document.querySelector('.info-1__visual .btn--learn'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.info-1__visual .btn--learn'),

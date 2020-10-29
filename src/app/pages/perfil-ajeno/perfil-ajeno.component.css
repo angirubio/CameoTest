@@ -99,12 +99,10 @@
     .example-card {
         max-width: 400px;
     }
-    
-      
-    /* .example-header-image {
-        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-        background-size: cover;
-    } */
+
+    .mat-card-header .mat-card-title {
+        padding-bottom: 1px;
+    }
 
     p{
         font-weight: 300;
@@ -113,24 +111,19 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        width: 98%;
     }
 
     .mat-card-title{
         font-weight: 300;
+        padding-bottom: 1%;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        width: 106%;
     }
-
-   /* .mat-expansion-panel-header-description.ng-tns-c112-9{
-    padding-right: 13%;
-   }
-
-   .mat-expansion-panel-body {
-    padding: 0 24px 16px;
-   } */
 
   .mat-card > mat-card-actions{
     margin-bottom: 8%;
@@ -148,10 +141,6 @@
    .mat-button-wrapper{
        font-weight: 400;
    }
-
-   /* .mat-card-subtitle{
-       margin-bottom: 23%;
-   } */
 
    .mat-focus-indicator.mat-raised-button.mat-button-base{
        width: 65%;
