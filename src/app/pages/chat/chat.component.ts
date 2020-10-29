@@ -50,8 +50,8 @@ export class ChatComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
+    // this.emisor = JSON.parse(localStorage.getItem('usuario'));
     this.chatService.getUsuarios(this.emisor.usuario_id).subscribe((data:Usuario[])=>{
       this.usuarios = data;
       this.receptor = this.usuarios[0];
