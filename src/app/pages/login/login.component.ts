@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         console.log(data[0]);        
         this.router.navigateByUrl('/home')
         localStorage.setItem('usuario', JSON.stringify(this.apiService.usuario));
-        console.log(this.apiService.usuario.nombre_usuario);        
+        // console.log(this.apiService.usuario.nombre_usuario);        
       }
     });
   }

@@ -42,5 +42,11 @@ export class OrganizarClasesComponent implements OnInit {
       this.clasesGestionar = data;
       this.router.navigateByUrl('/organizar-clases')
     });
+
+     // Obteniendo valores del localstorage para la sesion del objeto
+     this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
+
+      // Obteniendo valores del localstorage para la sesion del objeto
+      this.claseService.clase = JSON.parse(localStorage.getItem('clase'));
   }
 }

@@ -46,9 +46,15 @@ export class PublicarClaseComponent implements OnInit {
       this.claseService.clase = data[0];
       this.router.navigateByUrl('/organizar-clases')
     });
+
+    localStorage.setItem('clase', JSON.stringify(this.claseService.clase));
+    console.log(this.claseService.clase);  
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
+    console.log(this.apiService.usuario);
+    }
   }
 
 
