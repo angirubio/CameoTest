@@ -48,7 +48,7 @@ export class RegistroComponent implements OnInit {
     this.apiService.postUsuario(new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, encrypted, this.default_foto, this.default_status)).subscribe((data) =>
     {
       this.apiService.usuario = new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, encrypted, this.default_foto, this.default_status)
-      this.router.navigateByUrl('/home')
+      this.router.navigateByUrl('/login')
     });
   }
   ngOnInit(): void {

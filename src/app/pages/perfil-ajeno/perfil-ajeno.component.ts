@@ -13,6 +13,7 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class PerfilAjenoComponent implements OnInit {
   
+  public clasesHome: Clases[];
   public cameosHidden: boolean;
   public clasesHidden: boolean;
   public usuario;
@@ -38,6 +39,11 @@ export class PerfilAjenoComponent implements OnInit {
   
   hideClases(){
     this.clasesHidden = true;
+  }
+
+  abrirChat(i:string){
+    this.apiService.receptor = this.clasesHome[i];
+    this.router.navigateByUrl('/chat');
   }
 
 
