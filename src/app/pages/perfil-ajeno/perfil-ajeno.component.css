@@ -113,6 +113,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        width: 98%;
     }
 
     .mat-card-title{
@@ -123,6 +124,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        width: 106%;
     }
 
    /* .mat-expansion-panel-header-description.ng-tns-c112-9{
