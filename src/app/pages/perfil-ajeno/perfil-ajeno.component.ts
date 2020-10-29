@@ -55,7 +55,6 @@ export class PerfilAjenoComponent implements OnInit {
 
      this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
      console.log(this.apiService.usuario);
-     this.usuario= this.apiService.usuario;
 
      // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS REALIZADOS
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {
