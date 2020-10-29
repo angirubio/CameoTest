@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('usuario', JSON.stringify(this.apiService.usuario));
         console.log(this.apiService.usuario.nombre_usuario);        
       }
-    })
+    });
   }
 
   ngOnInit(): void {

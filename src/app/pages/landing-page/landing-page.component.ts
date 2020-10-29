@@ -28,6 +28,9 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
     this.initialAnimations();
     this.initScrollAnimations();
+
+    localStorage.removeItem('usuario');
+    localStorage.clear();
   }
   initScrollAnimations(): void{
     gsap.to(this.imageFirst.nativeElement, {
