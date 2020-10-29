@@ -51,6 +51,7 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.chatService.getUsuarios(this.emisor.usuario_id).subscribe((data:Usuario[])=>{
       this.usuarios = data;
       this.receptor = this.usuarios[0];
