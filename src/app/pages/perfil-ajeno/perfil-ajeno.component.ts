@@ -41,8 +41,8 @@ export class PerfilAjenoComponent implements OnInit {
     this.clasesHidden = true;
   }
 
-  abrirChat(i:string){
-    this.apiService.receptor = this.clasesHome[i];
+  abrirChat(){
+    this.apiService.receptor = this.usuario;
     this.router.navigateByUrl('/chat');
   }
 
