@@ -13,6 +13,7 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class PerfilAjenoComponent implements OnInit {
   
+  public clasesHome: Clases[];
   public cameosHidden: boolean;
   public clasesHidden: boolean;
   public usuario;
@@ -40,6 +41,11 @@ export class PerfilAjenoComponent implements OnInit {
     this.clasesHidden = true;
   }
 
+  abrirChat(i:string){
+    this.apiService.receptor = this.clasesHome[i];
+    this.router.navigateByUrl('/chat');
+  }
+
 
   verClase(i:string){ // METODO PARA REDIRIGIR EL USUARIO A LAS CLASES
     this.claseService.clase = this.claseUsuario[i];
@@ -53,6 +59,7 @@ export class PerfilAjenoComponent implements OnInit {
      });
 
      this.apiService.usuario = JSON.parse(localStorage.getItem('usuario'));
+     console.log(this.apiService.usuario);
 
      // CREANDO DESDE SERVICIO LA VISTA DE MIS CAMEOS REALIZADOS
      this.claseService.misCameos(this.usuario.usuario_id).subscribe((data: any[]) => {

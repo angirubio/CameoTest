@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
 
   verPerfil(i:string)
   {   
-    this.claseService.clase = this.clasesHome[i];
+    this.claseService.clase = this.clasesHome[i];    
     this.router.navigateByUrl('/usuario');
   }
   
