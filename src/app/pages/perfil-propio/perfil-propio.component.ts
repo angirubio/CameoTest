@@ -15,7 +15,7 @@ export class PerfilPropioComponent implements OnInit {
   public usuario_update:Usuario;
 
   constructor(private apiService:UsuarioService, private EncrDecr:EncrDecrService, private router: Router) {
-    // this.usuario.contrasena = this.EncrDecr.get('123456$#@$^@1ERF', this.usuario.contrasena);
+    this.usuario.contrasena = this.EncrDecr.get('123456$#@$^@1ERF', this.usuario.contrasena);
   }
 
   actualizarBasicos(nombre_usuario:string,status:string,fotousuario:string)

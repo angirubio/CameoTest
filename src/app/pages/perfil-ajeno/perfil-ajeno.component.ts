@@ -41,8 +41,8 @@ export class PerfilAjenoComponent implements OnInit {
     this.clasesHidden = true;
   }
 
-  abrirChat(i:string){
-    this.apiService.receptor = this.clasesHome[i];
+  abrirChat(){
+    this.apiService.receptor = this.usuario;
     this.router.navigateByUrl('/chat');
   }
 
@@ -55,7 +55,6 @@ export class PerfilAjenoComponent implements OnInit {
   ngOnInit(): void {// CREANDO DESDE SERVICIO LA VISTA DE LAS CLASES
      this.claseService.organizarClases(this.usuario.usuario_id).subscribe((data:Clases[]) => {
        this.claseUsuario = data;
-       console.log(data);
        
      });
 

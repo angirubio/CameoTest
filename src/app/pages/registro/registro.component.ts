@@ -41,10 +41,7 @@ export class RegistroComponent implements OnInit {
   // Metodo que llama al servicio para crear el registro 
   insertUser(user:any)
   {
-    console.log("Contraseña normal: " + user.contrasena)
     let encrypted = this.EncrDecr.set('123456$#@$^@1ERF', user.contrasena);
-    console.log('Contraseña encriptada :' + encrypted);
-    
     this.apiService.postUsuario(new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, encrypted, this.default_foto, this.default_status)).subscribe((data) =>
     {
       this.apiService.usuario = new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, encrypted, this.default_foto, this.default_status)
