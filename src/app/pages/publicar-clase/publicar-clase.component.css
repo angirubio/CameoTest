@@ -48,7 +48,7 @@ h1{
   }
 
   .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent:hover{
-    background: rgb(245, 45, 88);
+    background: #F0605C;
     color: white;
   }
 
@@ -70,7 +70,7 @@ h1{
   }
 
   .content-column{
-    border: 2px solid rgb(245, 45, 88);
+    border: 2px solid #F0605C;
     margin: initial;
   }
 

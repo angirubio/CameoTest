@@ -7,7 +7,7 @@
     }
     h1{
         font-size: 72px;
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     h4{
         padding-top: 1%;
@@ -43,7 +43,7 @@
         background-size: cover;
     }
     body > div.encabezado > div.buscador > section > div > form > div > div > div > div.col-lg-2.col-md-2.col-sm-2.p-0 > button{
-        background: rgb(245, 45, 88);
+        background: #F0605C;
     }
 
     body > div.publicaciones > div > div.col-md-8 > div > div > mat-card{

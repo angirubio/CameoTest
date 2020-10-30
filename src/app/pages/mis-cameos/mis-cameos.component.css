@@ -35,7 +35,7 @@
         float: left;
         height: 140px;
         width: 140px;
-        border: 2px solid rgb(245, 45, 88);
+        border: 2px solid #F0605C;
     }
     .card{
         width: 150%;
@@ -62,7 +62,7 @@
         padding-right: 20%;
     }
     .classTrue{
-        background-color: rgba(245, 45, 88, 0.89);
+        background-color: #F0605C;
     }
     .classFalse{
         background-color: white;

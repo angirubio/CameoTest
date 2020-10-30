@@ -177,7 +177,7 @@ p.paragraph-contact{
 
 
 .menu__link:hover{
-    color: rgb(245, 45, 88);
+    color: #F0605C;
 }
 
 #linkedin{
@@ -256,7 +256,7 @@ img{
     grid-column: 1 / 4;
     font-size: 60px;
     font-weight: 600;
-    color:  rgb(245, 45, 88);
+    color:  #F0605C;
 }
 p.paragraph{
     grid-row: 3 / 3;
@@ -486,19 +486,19 @@ section.thirth-section > div.info-10 > div.info-10__text{
 }
 
  #principio{
-    color: rgb(245, 45, 88);
+    color: #F0605C;
     font-size: 292%;
 }
 
  #final{
-    color: rgb(245, 45, 88);
+    color: #F0605C;
     font-size: 292%;
 }
 
 #names{
     font-size: 292%;
     margin-right: 80%;
-    color: red;
+    color: #F0605C;
 }
 
 /* Fin de tercera section */

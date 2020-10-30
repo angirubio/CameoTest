@@ -51,7 +51,7 @@
         
     }
     body > div > div > form > button:hover{
-        background: rgb(245, 45, 88);
+        background: #F0605C;
     }
     
     body > div > div > h3{
@@ -88,7 +88,7 @@
     
     body > div > div > div > a{
         text-decoration: none;
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     body > div > div > div > a:hover{
@@ -101,7 +101,7 @@
         border: #080808ce;
     }
     body > div > div > form > div:nth-child(6) > button:hover{
-        background: rgb(245, 45, 88);
+        background: #F0605C;
     }
     body > div > div{
         display: flex;

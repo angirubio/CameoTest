@@ -34,7 +34,7 @@
     }
     
     body > div > div > form > button:hover{
-        background: rgb(245, 45, 88);
+        background: #F0605C;
     }
     
     body > div > div > form > button{
@@ -58,7 +58,7 @@
     
     body > div > div > div > a{
         text-decoration: none;
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     body > div > div > div > a:hover{

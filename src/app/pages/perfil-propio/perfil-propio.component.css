@@ -33,7 +33,7 @@
         height: 450px;
         border-style: solid;
         border-width: 10px;
-        border-color: rgb(245, 45, 88);
+        border-color: #F0605C;
         text-align: center;
     }
     
@@ -84,7 +84,7 @@ mat-label{
     }
   
 .mat-focus-indicator.button-publish.mat-raised-button.mat-button-base.mat-accent:hover{
-      background: rgb(245, 45, 88);
+      background: #F0605C;
       color: white;
 }
   
@@ -103,7 +103,7 @@ mat-label{
       padding-top: 5%;
 }
 .content-column{
-    border: 2px solid rgb(245, 45, 88);
+    border: 2px solid #F0605C;
 }
 .content-card-row{
     height: 50%;
@@ -179,7 +179,7 @@ img
     height: 450px;
     border-style: solid;
     border-width: 10px;
-    border-color: rgb(245, 45, 88);
+    border-color: #F0605C;
     text-align: center;
 }
 h6
