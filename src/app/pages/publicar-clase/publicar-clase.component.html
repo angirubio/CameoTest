@@ -5,7 +5,6 @@
       <h1>publicar una clase</h1>
   </div>
 </div>
-
 <mat-card class="main-content-card">
     <button mat-raised-button color="accent" class="button-publish" (click)="publicar(titulo.value, descripcion.value, precio.value, tema.value, habilidad.value, fecha.value, plataforma.value, foto.value)">Publicar Clase</button>
     <mat-card-content class="content-column">
@@ -45,8 +44,7 @@
               Pon un precio a tu clase
               <mat-icon> monetization_on</mat-icon>
           </mat-panel-description>
-        </mat-expansion-panel-header>
-    
+        </mat-expansion-panel-header>    
         <mat-form-field>
           <mat-label>Escribe el precio</mat-label>
           <input matInput #precio>
@@ -65,13 +63,11 @@
                 #Habilidades
                 <mat-icon> wb_incandescent </mat-icon>
             </mat-panel-description>
-          </mat-expansion-panel-header>
-      
+          </mat-expansion-panel-header>      
           <mat-form-field>
             <mat-label>Tema Clase</mat-label>
             <input matInput #tema>
-          </mat-form-field>
-      
+          </mat-form-field>      
           <mat-form-field>
             <mat-label>Habilidad o Conocimiento</mat-label>
             <input matInput #habilidad>
@@ -90,15 +86,12 @@
               Información Clase
               <mat-icon>date_range</mat-icon>
             </mat-panel-description>
-          </mat-expansion-panel-header>
-      
+          </mat-expansion-panel-header>      
           <mat-form-field appearance="fill">
             <mat-label>Escribe una fecha y una hora</mat-label>
             <input #fecha matInput type="datetime-local" placeholder="Escribe una fecha y una hora">
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          <!-- <mat-datepicker #picker></mat-datepicker> -->
-      
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Atras</button>
             <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
@@ -115,8 +108,6 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-form-field>
-            <!-- <mat-label>Online, presencial</mat-label> -->
-            <!-- <input matInput #plataforma> -->
             <mat-label >Modalidad</mat-label>
             <mat-select #plataforma>
               <mat-option value="Online">Online</mat-option>
@@ -137,8 +128,7 @@
               URL de la foto
                 <mat-icon>camera_enhance</mat-icon>
             </mat-panel-description>
-          </mat-expansion-panel-header>
-      
+          </mat-expansion-panel-header>      
           <mat-form-field>
             <mat-label>Escribe la URL de la foto</mat-label>
             <input matInput #foto>
