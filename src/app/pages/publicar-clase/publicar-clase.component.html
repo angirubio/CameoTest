@@ -102,7 +102,6 @@
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Atras</button>
             <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
-            <!-- <button mat-button color="success" (click)="setStep(4)">Terminar</button> -->
           </mat-action-row>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
@@ -116,8 +115,13 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-form-field>
-            <mat-label>Online, presencial</mat-label>
+            <!-- <mat-label>Online, presencial</mat-label> -->
             <input matInput #plataforma>
+            <mat-label>Modalidad</mat-label>
+            <mat-select>
+              <mat-option value="online">Online</mat-option>
+              <mat-option value="presencial">Presencial</mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Atras</button>
@@ -145,10 +149,6 @@
           </mat-action-row>
         </mat-expansion-panel> 
       </mat-accordion>
-    <!-- <div class="secondInfoPublish">
-        <form class="example-form">
-      </form>
-    </div> -->
 </mat-card-content>
 </mat-card>
 
