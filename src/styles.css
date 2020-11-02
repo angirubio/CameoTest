@@ -512,6 +512,10 @@ button.swal2-confirm.swal2-styled{
     background-color: #F0605C!important;
 }
 
+.swal2-popup.swal2-modal.swal2-icon-error.swal2-show{
+    font-size: 105%!important;
+}
+
 
 }
 
