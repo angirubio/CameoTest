@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
           icon: 'error',
           title: 'Oops...',
           text: 'Debes completar todos los campos'
-        })
-        // alert("Debes completar todos los campos")
+        });
       }
       // console.log(data)
       else if (data.length == 0)
@@ -40,8 +39,7 @@ export class LoginComponent implements OnInit {
           icon: 'error',
           title: 'Oops...',
           text: 'Usuario o contraseña erróneo'
-        })
-        // alert("usuario o contraseña erróneo")
+        });
       }
       else 
       {

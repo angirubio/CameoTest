@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
@@ -39,7 +40,14 @@ export class PerfilPropioComponent implements OnInit {
     this.apiService.putUsuario(this.usuario).subscribe((data) =>
       {
         this.router.navigateByUrl('/perfil')
-      })
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Datos perfil actualizados correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      });
   }
 
   actualizarCuenta(nombre:string,apellido:string,email:string,contrasena:string)
@@ -68,6 +76,13 @@ export class PerfilPropioComponent implements OnInit {
     this.apiService.putUsuario(this.usuario).subscribe((data) =>
       {
         this.router.navigateByUrl('/perfil')
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Cuenta actualizada correctamente!',
+          showConfirmButton: false,
+          timer: 1500
+        });
       })
   }
 
