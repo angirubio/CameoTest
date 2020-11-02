@@ -7,7 +7,7 @@
     }
     
     a:hover{
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     /* #nav-tab{
@@ -31,7 +31,7 @@
     }
     
     .nav-tabs .nav-link.active:hover {
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     #nav-tab{

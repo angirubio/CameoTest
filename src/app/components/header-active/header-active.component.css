@@ -18,7 +18,7 @@
     }
     
     .mat-focus-indicator.mat-menu-trigger.mat-button.mat-button-base:hover{
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     .mat-focus-indicator.mat-button.mat-button-base.mat-basic{
@@ -26,15 +26,15 @@
     }
     
     .mat-focus-indicator.mat-button.mat-button-base.mat-basic:hover{
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     .mat-focus-indicator.mat-menu-item.ng-tns-c82-0:hover{
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     .mat-icon.mat-warn {
-        color: rgb(245, 45, 88);
+        color: #F0605C;
     }
     
     /* .cdk-overlay-pane{

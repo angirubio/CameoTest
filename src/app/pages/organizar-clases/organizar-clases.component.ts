@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { Router } from '@angular/router';
 import { Clases } from 'src/app/models/clases';
 import { ClasesService } from 'src/app/shared/clases.service';
@@ -20,6 +21,23 @@ export class OrganizarClasesComponent implements OnInit {
     if (this.clasesGestionar[i].publicada == true) {
       this.claseService.putEstadoClases(false,this.clasesGestionar[i].clases_id).subscribe((data) =>
       {
+        Swal.fire({
+          title: 'Estas seguro que la quieres ocultar?',
+          text: "Si ocultas una clase no será visible para los otros usuarios",
+          icon: 'warning',
+          showCancelButton: false,
+          confirmButtonColor: 'black',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Si, Ocultar!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'Clase ocultada!',
+              'Ahora tu clase no está visible para los otros usuarios',
+              'success'
+            )
+          }
+        })
         this.clasesGestionar[i].publicada = !this.clasesGestionar[i].publicada
       })
     } else{

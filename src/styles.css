@@ -508,5 +508,10 @@ section.thirth-section > div.info-10 > div.info-10__text{
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+button.swal2-confirm.swal2-styled{
+    background-color: #F0605C!important;
+}
+
+
 }
 
