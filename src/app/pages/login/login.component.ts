@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
@@ -25,12 +26,22 @@ export class LoginComponent implements OnInit {
     {
       if (!nombre_usuario || !contrasena)
       {
-        alert("Debes completar todos los campos")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Debes completar todos los campos'
+        })
+        // alert("Debes completar todos los campos")
       }
       // console.log(data)
       else if (data.length == 0)
-      {    
-        alert("usuario o contraseña erróneo")
+      {  
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Usuario o contraseña erróneo'
+        })
+        // alert("usuario o contraseña erróneo")
       }
       else 
       {
