@@ -129,6 +129,7 @@
             <button
               type="submit"
               (click)="insertarUsuario()"
+              [disabled]="myForm.invalid"
               class="btn btn-danger"
             >
               Registrarse
