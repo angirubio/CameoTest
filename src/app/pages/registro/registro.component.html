@@ -100,12 +100,31 @@
               class="invalid-feedback">
               Debe introducir una clave min 8 caracteres y máximo 20.
             </div>
-            <!-- <div
-              *ngIf="!myForm.get('contrasena').valid && !myForm.get('confirmContrasena').valid"
-              class="invalid-feedback">
-              La contraseña no esta bien.
-            </div> -->
           </div>
+
+          <div class="input-group">
+            <!-- <label>Contraseña</label> -->
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-lock"></i
+            ></span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="repetir_password"
+              placeholder="repetir contraseña"
+              [ngClass]="{ 'is-invalid': !myForm.get('repetir_password').valid }"
+            />
+            <div
+              *ngIf="!myForm.get('repetir_password').valid"
+              class="invalid-feedback">
+              Debe introducir una clave min 8 caracteres y máximo 20 y debe coincidir con tu contraseña.
+            </div>    
+            <div
+              class="repetir_password"
+              *ngIf="checarSiSonIguales()">
+            Las contraseñas no coinciden entre ellas</div>        
+          </div>
+
           <div class="input-group">
             <button
               type="submit"

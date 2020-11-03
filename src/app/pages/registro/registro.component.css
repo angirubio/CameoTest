@@ -103,6 +103,27 @@
     body > div > div > form > div:nth-child(6) > button:hover{
         background: #F0605C;
     }
+
+    body > div > div > form > div:nth-child(7) > button{
+        width: 100%;
+        background: #080808ce;
+        border: #080808ce;
+    }
+    body > div > div > form > div:nth-child(7) > button:hover{
+        background: #F0605C;
+    }
+
+    body > div > div > form > div:nth-child(6){
+        margin-bottom: 3%;
+    }
+
+    .repetir_password{
+        width: 100%;
+        margin-top: .25rem;
+        font-size: 80%;
+        color: #dc3545;
+    }
+
     body > div > div{
         display: flex;
         flex-direction: column;
