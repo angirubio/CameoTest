@@ -474,7 +474,7 @@ section.thirth-section > div.info-10 > div.info-3__visual > img{
     display: grid;
     grid-template-rows: repeat(6, min-content);
     grid-gap: 25px;
-    padding-right: 11%;
+    padding-right: 15%;
 }
 
 .info-1__visual{
