@@ -4,6 +4,7 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {EncrDecrService} from '../../shared/encr-decr-service.service';
+import { validarQueSeanIguales } from './registro.validators';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -31,13 +32,25 @@ export class RegistroComponent implements OnInit {
     const maxWordsLength = 30;
     // Guardo las propiedades que se recogen del formulario con el metodo de angular formBuilder.group
     this.myForm = this.formBuilder.group({
-      nombre: [, Validators.maxLength(maxWordsLength)],
-      apellido: [, Validators.maxLength(maxWordsLength)],
-      nombre_usuario: [, Validators.minLength(minWordsLength)],
-      email: [, [ Validators.email]],
-      contrasena: [, [Validators.minLength(minPassLength), Validators.maxLength(maxPassLength)]],
+      nombre: ['', Validators.maxLength(maxWordsLength)],
+      apellido: ['', Validators.maxLength(maxWordsLength)],
+      nombre_usuario: ['', Validators.minLength(minWordsLength)],
+      email: ['', [ Validators.email]],
+      contrasena: ['', [ Validators.minLength(minPassLength), Validators.maxLength(maxPassLength)]],
+      repetir_password:['',  ]
+    },{
+      validators: validarQueSeanIguales,
     });
   }
+
+  // Validacion de contraseñas
+  checarSiSonIguales():  boolean  {
+    return  this.myForm.hasError('noSonIguales')  &&
+      this.myForm.get('contrasena').dirty &&
+      this.myForm.get('repetir_password').dirty;
+  }
+  
+
   // Metodo que llama al servicio para crear el registro 
   insertUser(user:any)
   {

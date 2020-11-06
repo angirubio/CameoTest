@@ -237,13 +237,16 @@ position: relative;
 .msg_head{
 position: relative;
 }
-#action_menu_btn{
-position: absolute;
-right: 4%;
-top: 35%;
-cursor: pointer;
-font-size: 15px;
+
+#action_menu_btn
+{
+  position: absolute;
+  right: 4%;
+  top: 94%;
+  cursor: pointer;
+  font-size: 15px;
 }
+
 @media(max-width: 576px){
   .contacts_card{
   margin-bottom: 15px !important;
