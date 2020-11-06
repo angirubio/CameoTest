@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -57,8 +58,18 @@ export class RegistroComponent implements OnInit {
     let encrypted = this.EncrDecr.set('123456$#@$^@1ERF', user.contrasena);
     this.apiService.postUsuario(new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, encrypted, this.default_foto, this.default_status)).subscribe((data) =>
     {
-      this.apiService.usuario = new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, encrypted, this.default_foto, this.default_status)
-      this.router.navigateByUrl('/login')
+      if (user.nombre == "" || user.apellido == "" || user.nombre_usuario == "" || user.email == "" || encrypted == "") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Debes completar todos los campos, para poder registrarte...'
+        });
+      } else {
+
+        this.apiService.usuario = new Usuario(0,user.nombre, user.apellido, user.nombre_usuario, user.email, encrypted, this.default_foto, this.default_status)
+        this.router.navigateByUrl('/login')
+        
+      }
     });
   }
   ngOnInit(): void {
