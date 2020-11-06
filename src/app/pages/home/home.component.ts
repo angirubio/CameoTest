@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { Clases } from 'src/app/models/clases';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { Router } from '@angular/router';
@@ -22,15 +23,27 @@ export class HomeComponent implements OnInit {
   buscar(titulo:string)
   {
     this.claseService.filtrarBusqueda(titulo).subscribe((data:Clases[])=>{
-      if (data.length === 0)
-      {
-        alert("Upsss! No hay ninguna coincidencia con tu búsqueda. Prueba a buscar otra cosa!")
-      }
-
-      else{
+      if (data.length === 0) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'No hay ninguna coincidencia con tu búsqueda. Prueba a buscar otra cosa!'
+        });
+        
+      } else {
         this.clasesHome = data;
         this.router.navigateByUrl('/home')
       }
+
+      // if (data.length === 0)
+      // {
+      //   alert("Upsss! No hay ninguna coincidencia con tu búsqueda. Prueba a buscar otra cosa!")
+      // }
+
+      // else{
+      //   this.clasesHome = data;
+      //   this.router.navigateByUrl('/home')
+      // }
       
     });
   }
