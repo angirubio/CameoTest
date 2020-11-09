@@ -19,12 +19,12 @@ export class RegistroComponent implements OnInit {
   // public default_foto:string = "https://3.bp.blogspot.com/-qDc5kIFIhb8/UoJEpGN9DmI/AAAAAAABl1s/BfP6FcBY1R8/s1600/BlueHead.jpg";
   // public default_foto:string = "https://external-preview.redd.it/pkhNGV2Vh3MOUg3tdv0OLfMreVwS3nc-k_6MBrAKG5M.png?auto=webp&s=84e7b522e35d0d2cf13332f28a41a4811010b73b";
   public default_status:string = "nivel: Principiante"
-  
+
   constructor(private apiService: UsuarioService, private formBuilder: FormBuilder, private router: Router, private EncrDecr: EncrDecrService) { 
     this.buildForm();
   }
   // Este será el evento que ejecutará onClick
-  public insertarUsuario(){
+    public insertarUsuario(){
     let usuario = this.myForm.value;
     this.insertUser(usuario);
   }
