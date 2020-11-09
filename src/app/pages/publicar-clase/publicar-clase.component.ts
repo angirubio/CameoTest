@@ -4,6 +4,7 @@ import { Clases } from 'src/app/models/clases';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 
 @Component({
   selector: 'app-publicar-clase',
@@ -41,6 +42,11 @@ export class PublicarClaseComponent implements OnInit {
       this.default_foto_clase = foto;
     }
     this.claseService.clase = new Clases(0,titulo,descripcion,precio, tema, habilidad, fecha, plataforma,foto,this.id,this.publicada)
+    Swal.fire({
+      icon: 'success',
+      title: 'Clase publicada con éxito!',
+      text: 'Utiliza el panel para gestionar tus clases'
+    });
     this.claseService.postClase(this.claseService.clase).subscribe((data) =>
     {
       this.claseService.clase = data[0];

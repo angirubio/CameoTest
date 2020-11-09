@@ -4,6 +4,8 @@ import { Usuario } from 'src/app/models/usuario';
 import { Clases } from 'src/app/models/clases';
 import { ClasesService } from 'src/app/shared/clases.service';
 import { UsuarioService } from 'src/app/shared/usuario.service';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
+
 @Component({
   selector: 'app-publicacion',
   templateUrl: './publicacion.component.html',
@@ -34,11 +36,27 @@ export class PublicacionComponent implements OnInit {
     console.log(this.clasePublicacion);
     this.claseService.postCameo(this.clasePublicacion.clases_id,this.usuario.usuario_id,this.aceptacion).subscribe((data) =>
     {
+      Swal.fire({
+        title: '¿Quieres apuntarte a esta clase?',
+        text: "Asegúrate de comprobar tu disponibilidad",
+        icon: 'warning',
+        showCancelButton: false,
+        confirmButtonColor: 'black',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, apúntame!'
+        
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Bien hecho!',
+            'Te has apuntado correctamente. Espera que el profesor acepte tu solicitud',
+            'success'
+          )
+        }
+      })
       this.router.navigateByUrl('/mis-cameos')
     })
   }
   ngOnInit(): void {
-    
-
    }
 }

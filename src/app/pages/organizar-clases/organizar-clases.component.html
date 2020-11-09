@@ -17,10 +17,10 @@
                   <div class="card-body">
                     <div class="grid">
                       <div *ngIf="clase.publicada == true">
-                        <button class="btn btn-dark"(click)="cambiarEstadoClase(i)">Publicada</button>
+                        <button class="btn btn-dark"(click)="cambiarEstadoClase(i)">Ocultar</button>
                       </div>
                       <div *ngIf="clase.publicada == false">
-                        <button class="btn btn-dark"(click)="cambiarEstadoClase(i)">Oculta</button>
+                        <button class="btn btn-dark"(click)="cambiarEstadoClase(i)">Publicar</button>
                       </div>
                     <h6>{{clase.tema}}</h6>
                     <h6><b><i>{{clase.doctrina}}</i></b></h6>
@@ -46,4 +46,11 @@
       </div>
     </div>
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <app-footer></app-footer>
